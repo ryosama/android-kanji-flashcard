@@ -6,6 +6,8 @@
 - 52 457 vérifications du moteur réussies sur les 2 495 kanji, y compris les quatre types de QCM pour chaque entrée.
 - Analyse Android Lint : aucune erreur bloquante.
 - Les cinq CSV français sont présents dans l'APK.
+- Après la réorganisation : compilation des cinq écrans séparés, tests du moteur et analyse Android réussis.
+- Documentation vérifiée sur les 92 fonctions Kotlin : chacune possède un commentaire expliquant son rôle. Le découpage est décrit dans [CODE_GUIDE.md](CODE_GUIDE.md).
 
 ## Essais sur téléphone à effectuer
 

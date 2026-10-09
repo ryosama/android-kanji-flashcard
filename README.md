@@ -37,8 +37,11 @@ APK : `app/build/outputs/apk/debug/app-debug.apk`. Il s'agit d'une version de te
 
 ## Organisation
 
+- [Guide de lecture et de modification du code](CODE_GUIDE.md) : rôle de chaque fichier, composants graphiques et circulation des données.
 - `core` : import CSV, correction, moteur Leitner, QCM et format de sauvegarde ; vérifications indépendantes d'Android.
-- `app` : interface Android, fichiers privés et export/import via le sélecteur de documents.
+- `app` : activité de coordination, état de séance, fichiers privés et export/import.
+- `app/src/main/java/fr/kanjiflashcards/ui/screens` : un fichier par écran (accueil, normal, facile, statistiques, réglages).
+- `app/src/main/java/fr/kanjiflashcards/ui` : palette et fonctions graphiques partagées, présentation commune aux révisions.
 - `listes/francais` : CSV sources, intégrés directement aux ressources de l'application.
 - `design UI` : maquettes SVG d'origine.
 
