@@ -26,6 +26,8 @@ Dans `app/src/main/java/fr/kanjiflashcards/ui/` :
 
 Exemples : changer la couleur de tous les boutons principaux dans `AppColors.accent` ; changer leur hauteur minimale dans `UiComponents.button` ; changer la taille du grand kanji dans `ReviewLayout.show` ; changer la largeur des colonnes du tableau dans `StatisticsScreen.columnWidths`.
 
+L'icône de l'application provient de `icon.png`, à la racine du projet. Sa copie intégrée à l'APK est `app/src/main/res/drawable-nodpi/ic_launcher.png`, référencée par `android:icon` dans `AndroidManifest.xml`. Après modification de l'image source, remplacer cette copie puis recompiler l'APK.
+
 Les dimensions de mise en page sont exprimées en **dp**, converties par `UiComponents.dp`. Les tailles de caractères sont exprimées en **sp** et suivent le réglage de taille de texte Android. Un poids de `1f` dans une ligne signifie que le composant partage l'espace restant avec les autres composants de même poids.
 
 ## Comment circulent les données ?
