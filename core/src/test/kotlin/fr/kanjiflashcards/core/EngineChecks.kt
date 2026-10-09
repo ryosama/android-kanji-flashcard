@@ -32,6 +32,8 @@ fun main(args: Array<String>) {
         verify(Answers.acceptsMeaning(answer, fictional), "Sens rejeté : $answer")
     for(answer in listOf("", "une", "nom", "réun", "constitution"))
         verify(!Answers.acceptsMeaning(answer, fictional), "Sens invalide accepté : $answer")
+    val right = catalog.first { it.id == "5:右" }
+    verify(Answers.acceptsMeaning("droite", right), "Précision entre parenthèses obligatoire")
     val escaped = Catalog.parse(5, "1;試;shiシ;;\"essai; test, \"\"épreuve\"\"\"\r\n")
     verify(escaped.single().meanings == listOf("essai; test", "\"épreuve\""), "Guillemets CSV")
     invalid { Catalog.parse(5, "1;試;shiシ") }

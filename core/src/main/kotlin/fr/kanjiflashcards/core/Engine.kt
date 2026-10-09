@@ -82,7 +82,11 @@ object Answers {
     fun acceptsMeaning(input: String, kanji: Kanji): Boolean {
         val answer = meaning(input)
         if (answer.isEmpty()) return false
-        return kanji.meanings.any {
+        // Les parenthèses précisent le contexte (ex. « droite (direction) »),
+        // sans obliger l'apprenant à recopier cette précision.
+        val meanings = kanji.meanings.flatMap { listOf(it, it.replace(Regex("\\([^)]*\\)"), "").trim()) }
+            .filter(String::isNotBlank)
+        return meanings.any {
             val expected = meaning(it)
             val length = minOf(answer.count(Char::isLetter), expected.count(Char::isLetter))
             val tolerance = when { length >= 10 -> 2; length >= 5 -> 1; else -> 0 }

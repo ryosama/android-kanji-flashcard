@@ -3,7 +3,7 @@
 ## Vérifications automatisées
 
 - Compilation de l'APK de test réussie.
-- 52 456 vérifications du moteur réussies sur les 2 495 kanji, y compris les quatre types de QCM pour chaque entrée.
+- 52 457 vérifications du moteur réussies sur les 2 495 kanji, y compris les quatre types de QCM pour chaque entrée.
 - Analyse Android Lint : aucune erreur bloquante.
 - Les cinq CSV français sont présents dans l'APK.
 
