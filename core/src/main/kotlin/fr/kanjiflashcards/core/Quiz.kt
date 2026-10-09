@@ -11,12 +11,15 @@ enum class QuestionType(val title: String) {
 /**
  * QCM prêt à afficher : son ordre est conservé pendant la rotation du téléphone.
  *
- * @property type type réellement tiré ; MIXED est un choix de séance, pas une consigne de carte.
+ * @property type consigne commune, ou MIXED si les propositions combinent plusieurs types.
  * @property options quatre réponses dans leur ordre d'affichage.
  * @property correctIndex position de l'unique bonne réponse, de 0 à 3.
+ * @property optionTypes type de chaque proposition, dans le même ordre que options.
+ * Le type commun sert de valeur par défaut pour les QCM classiques et les anciennes séances.
  */
 data class Quiz(
     val type: QuestionType,
     val options: List<String>,
     val correctIndex: Int,
+    val optionTypes: List<QuestionType> = List(options.size) { type },
 )

@@ -206,6 +206,7 @@ class MainActivity : Activity() {
                 layout = layout,
                 onTextChanged = { field, value -> updateAnswerText(field, value) },
                 onSubmit = { field, value -> validateField(field, value) },
+                onUnknown = { completeAnswer(false) },
             ).show()
         }
     }

@@ -10,8 +10,11 @@ Ce projet est une application de révision des Kanji japonais sous forme de flas
 - Des écrans de l'application ont été designé dans le répertoire "design UI" (avec le logiciel Inkscape), il faut s'en inspirer.
 Ces design ne sont pas gravé dans le marbre, il s'agit d'une idée. Tu peux proposer des idées graphiques et des colorations plus sympa dans l'air du temps.
 - L'application est en mode sombre
+- Chaque interface graphique devra avoir son propre fichier kotlin pour une meilleur lisibilité
+- Il faut pouvoir exporter et importer sa progression via un fichier ".tsv"
 
 ### Application ###
+- L'icon de l'application est "icon.png" (à la racine du répertoire projet)
 - Les révisions sont séparées en 5 niveau de JLPT
 - Ces 5 niveau correpondent à 5 fichiers CSV (séparateur point-virgule) dans le répertoire "listes/francais"
 - Les colonnes de ces fichiers sont : nombre (inutil), kanji, prononcitation1, prononcitation2, significations (séparé par des virgules)
@@ -20,7 +23,7 @@ Ces design ne sont pas gravé dans le marbre, il s'agit d'une idée. Tu peux pro
 - Les kanjis sont au fur et à mesure sélectionné dans la liste du niveau en suivant l'algorthime du système de flashcard décrit ici : https://fr.wikipedia.org/wiki/Carte_m%C3%A9moire_(apprentissage)
 - Il y a deux modes de révisions :
     - mode "facile" :
-        4 responses de "signification", "prononcitation en romanji" ou "prononciation en hiragana/katakana" sont proposé
+        4 responses de "signification", "prononcitation en romanji" ou "prononciation en hiragana/katakana" sont proposé. Ces types de réponses peuvent être mélangé au sein d'un même kanji. Un menu propose quand on lance lemode facile de choisir entre "Que signification", "Que kana", "Que romanji", "Mélangé"
         Ces réponses sont prise au hasard parmis les valeurs du fichier du même niveau
         Il suffit de cliquer sur le bouton qui correspond pour valider la réponse.
         Si la réponse est bonne, on affiche en bas d'écran en vert un texte "bonne réponse ->".
@@ -37,6 +40,14 @@ Ces design ne sont pas gravé dans le marbre, il s'agit d'une idée. Tu peux pro
         Si les deux réponses sont valides, on affiche en bas d'écran en vert un texte "bonne réponse ->".
         Si l'une des deux réponses est fausse (ou les deux), on affiche en bas d'écran en rouge un texte "mauvaise réponse ->" et on écrit sous les cases de réponses les bonnes réponses en vert.
         Dans les deux cas, on clique sur le message "bonne réponses ->" ou "mauvaise réponse ->" pour passer au kanji suivant.
+
+### Réponses ###
+- Quand mode facile et normal doit avoir un bouton "je ne sais pas" qui compte comme une mauvaise réponse.
+- Dans le mode "facile", il faut que les réponses qui proposent les romanji contiennent les deux version de la prononciations (exemple pour "三", il faut proposer "san" et "mi(tsu)".
+- Toujours en mode facile si la proposition est en kana, il faut proposer "サン" et "み(つ)" sur le meme bouton réponse (espacé pour que l'on puisse comprendre que c'est deux son différents qui ne sont pas liés).
+- Toujours en mode facile pour la réponse en francais, il faut proposer toutes les significations (pas juste une), exemple pour "見" il faut avoir une réponse "voir, regarder, espoir, possibilité, idée, opinion, visible"
+
+### Statistiques ###
 - Il y pour chaque niveau un bouton statistique. Ce bouton a comme label le nombre de kanji maitrisé dans le niveau (de 0 à 100%)
     En cliquant sur ce bouton, on arrive sur une page (non designée) avec la liste des kanji du niveau et s'il est maitrisé ou pas.
     Ce listing est un tableau avec les colonnes suivantes

@@ -103,6 +103,7 @@ class ReviewSession {
             state.putStringArrayList("options", ArrayList(currentQuiz.options))
             state.putString("quizType", currentQuiz.type.name)
             state.putInt("quizCorrect", currentQuiz.correctIndex)
+            state.putStringArrayList("optionTypes", ArrayList(currentQuiz.optionTypes.map { it.name }))
         }
     }
 
@@ -123,10 +124,15 @@ class ReviewSession {
         meaningResult = decodeResult(state.getInt("meaningResult", -1))
 
         state.getStringArrayList("options")?.let { options ->
+            val quizType = QuestionType.valueOf(requireNotNull(state.getString("quizType")))
+            val optionTypes = state.getStringArrayList("optionTypes")?.map { QuestionType.valueOf(it) }
+                ?: List(options.size) { quizType }
+
             quiz = Quiz(
-                type = QuestionType.valueOf(requireNotNull(state.getString("quizType"))),
+                type = quizType,
                 options = options,
                 correctIndex = state.getInt("quizCorrect"),
+                optionTypes = optionTypes,
             )
         }
     }

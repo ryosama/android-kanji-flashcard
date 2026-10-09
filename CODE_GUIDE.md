@@ -9,12 +9,12 @@ Les fichiers sont dans `app/src/main/java/fr/kanjiflashcards/ui/screens/`.
 | Fichier | Partie visible | Fonctions à consulter |
 | --- | --- | --- |
 | `HomeScreen.kt` | Accueil et panneaux N5 → N1 | `show`, `levelPanel`, `levelButton` |
-| `NormalReviewScreen.kt` | Cases Prononciation et Signification, boutons OK | `show`, `addAnswerField` |
-| `EasyReviewScreen.kt` | Consigne et quatre boutons du QCM | `show` |
+| `NormalReviewScreen.kt` | Cases Prononciation et Signification, boutons OK et « Je ne sais pas » | `show`, `addAnswerField` |
+| `EasyReviewScreen.kt` | Consigne, quatre choix et bouton « Je ne sais pas » | `show` |
 | `StatisticsScreen.kt` | Recherche, filtre, tri, tableau et pagination | `show`, `addFilterControls`, `addTableRow`, `appendPage` |
 | `SettingsScreen.kt` | Export/import et boutons de réinitialisation | `show`, `confirmReset` |
 
-Chaque écran reçoit les données à afficher et des actions à appeler lorsqu'un bouton est utilisé. Par exemple, le bouton OK du mode normal appelle `onSubmit` ; l'activité transmet alors la saisie au moteur de correction. Les écrans ne lisent pas les CSV et n'enregistrent pas directement la progression.
+Chaque écran reçoit les données à afficher et des actions à appeler lorsqu'un bouton est utilisé. Par exemple, le bouton OK du mode normal appelle `onSubmit` ; l'activité transmet alors la saisie au moteur de correction. Dans les deux modes, « Je ne sais pas » appelle `completeAnswer(false)` pour enregistrer une erreur sur la carte entière. Les écrans ne lisent pas les CSV et n'enregistrent pas directement la progression.
 
 ## Où modifier l'apparence commune ?
 
@@ -51,7 +51,7 @@ Les fichiers sont dans `core/src/main/kotlin/fr/kanjiflashcards/core/`. Ce modul
 | `Progress.kt` | Paliers, échéances, compteurs et contrôle de leur cohérence |
 | `Leitner.kt` | Progression après une réponse et sélection des cartes dues |
 | `Quiz.kt` | Types de questions et données d'un QCM |
-| `Quizzes.kt` | Génération de quatre choix avec exclusion des réponses ambiguës |
+| `Quizzes.kt` | Quatre groupes complets de lectures/sens, classiques ou mélangés, avec exclusion des réponses ambiguës |
 | `Backup.kt` | Format TSV versionné et validation complète des sauvegardes |
 
 Exemples : les délais sont dans `Leitner.days`, les seuils de fautes dans `Answers.acceptsMeaning`, et les exclusions des distracteurs dans `Quizzes.make`.

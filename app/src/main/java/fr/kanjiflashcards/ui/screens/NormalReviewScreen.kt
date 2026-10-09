@@ -16,6 +16,7 @@ class NormalReviewScreen(
     private val session: ReviewSession,
     private val layout: ReviewLayout,
     private val onTextChanged: (AnswerField, String) -> Unit,
+    private val onUnknown: () -> Unit,
     private val onSubmit: (AnswerField, String) -> Unit,
 ) {
     /** Affiche les deux champs de réponse dans la structure commune des pages de révision. */
@@ -23,6 +24,13 @@ class NormalReviewScreen(
         layout.show { content ->
             addAnswerField(content, AnswerField.PRONUNCIATION, session.readingText, session.readingResult)
             addAnswerField(content, AnswerField.MEANING, session.meaningText, session.meaningResult)
+
+            // Abandon de la carte entière : une erreur est enregistrée et la correction est révélée.
+            content.addView(ui.button("Je ne sais pas", AppColors.secondaryText) {
+                onUnknown()
+            }.apply {
+                isEnabled = !session.finished
+            })
         }
     }
 

@@ -24,11 +24,15 @@ data class Kanji(
     val readings: Set<String>
         get() = (Answers.readings(on) + Answers.readings(kun)).toSet()
 
-    /** Lectures en alphabet latin utilisées pour les questions rōmaji du mode facile. */
+    /** Toutes les lectures latines à afficher ensemble, avec leurs terminaisons optionnelles. */
     val romaji: List<String>
-        get() = readings.filter { reading -> reading.any { it in 'a'..'z' } }.sorted()
+        get() = (Answers.displayReadings(on) + Answers.displayReadings(kun))
+            .distinct()
+            .filter { reading -> reading.any { it in 'a'..'z' } }
 
-    /** Lectures japonaises utilisées pour les questions en hiragana/katakana du mode facile. */
+    /** Toutes les lectures japonaises à afficher ensemble, avec leurs terminaisons optionnelles. */
     val kana: List<String>
-        get() = readings.filter { reading -> reading.any { it in '\u3040'..'\u30ff' } }.sorted()
+        get() = (Answers.displayReadings(on) + Answers.displayReadings(kun))
+            .distinct()
+            .filter { reading -> reading.any { it in '\u3040'..'\u30ff' } }
 }

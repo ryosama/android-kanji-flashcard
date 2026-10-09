@@ -100,23 +100,99 @@ fun main(args: Array<String>) {
     invalid { Backup.decode(Backup.encode(persisted) + Backup.encode(persisted).substringAfter('\n'), ids) }
     invalid { Backup.decode("x".repeat(2_000_001), ids) }
 
+    // Mélange : les marques sonores doivent permettre de proposer は face à ば ou ぱ.
+    val voicedFixtures = listOf(
+        Kanji(5, "甲", "haハ", "", listOf("feuille")),
+        Kanji(5, "乙", "baバ", "", listOf("balle")),
+        Kanji(5, "丙", "paパ", "", listOf("papier")),
+        Kanji(5, "丁", "daダ", "", listOf("dent")),
+    )
+    verify(!Answers.acceptsReading("ば", voicedFixtures.first()), "Les sons ha et ba sont confondus")
+    val voicedQuizzes = (0..255).map { seed ->
+        Quizzes.make(voicedFixtures.first(), voicedFixtures, QuestionType.MIXED, Random(seed))
+    }
+    verify(voicedQuizzes.any { quiz ->
+        val kana = quiz.options.filterIndexed { index, _ -> quiz.optionTypes[index] == QuestionType.KANA }
+            .map(Answers::pronunciation)
+        "は" in kana && kana.any { it == "ば" || it == "ぱ" }
+    }, "Les kana distincts par leurs marques sonores ne peuvent pas être proposés ensemble")
+
+    // L'affichage conserve les terminaisons facultatives et réunit les deux familles de lectures.
+    val three = catalog.first { it.character == "三" }
+    verify(three.romaji.toSet() == setOf("san", "mi(tsu)"), "Lectures rōmaji de 三 incomplètes")
+    verify(three.kana.toSet() == setOf("サン", "み(つ)"), "Lectures kana de 三 incomplètes")
+
     // QCM : une graine fixe rend le tirage reproductible sur tous les niveaux et tous les types.
     val random = Random(42)
     for (level in 1..5) {
         val cards = catalog.filter { it.level == level }
+        // Index indépendant des groupes complets du catalogue, préparé une fois par niveau.
+        val groupOwners = QuestionType.entries.filter { it != QuestionType.MIXED }.associateWith { format ->
+            cards.groupBy { candidate ->
+                when (format) {
+                    QuestionType.MEANING -> candidate.meanings
+                    QuestionType.ROMAJI -> candidate.romaji
+                    QuestionType.KANA -> candidate.kana
+                    QuestionType.MIXED -> emptyList()
+                }
+            }
+        }
 
         for (card in cards) {
             for (type in QuestionType.entries) {
                 val quiz = Quizzes.make(card, cards, type, random)
                 verify(quiz.options.size == 4 && quiz.correctIndex in 0..3, "QCM incomplet ${card.id}")
+                verify(quiz.optionTypes.size == quiz.options.size, "Types absents ${card.id}")
+
+                if (type == QuestionType.MIXED) {
+                    verify(quiz.type == QuestionType.MIXED, "Consigne non mélangée ${card.id}")
+                    verify(
+                        quiz.optionTypes.toSet() == setOf(QuestionType.MEANING, QuestionType.ROMAJI, QuestionType.KANA),
+                        "Les trois formats ne sont pas présents ${card.id}",
+                    )
+                } else {
+                    verify(quiz.optionTypes.all { it == quiz.type }, "Format classique mélangé ${card.id}")
+                }
+
+                val optionKeys = quiz.options.mapIndexed { index, value ->
+                    value.split(" · ").map { part ->
+                        if (quiz.optionTypes[index] == QuestionType.MEANING) {
+                            Answers.meaning(part)
+                        } else {
+                            Answers.pronunciation(part)
+                        }
+                    }.distinct().sorted()
+                }
+                verify(optionKeys.distinct().size == 4, "Propositions équivalentes ${card.id}: ${quiz.options}")
 
                 for ((index, value) in quiz.options.withIndex()) {
-                    val accepts = if (quiz.type == QuestionType.MEANING) {
-                        Answers.acceptsMeaning(value, card)
+                    val parts = value.split(" · ")
+                    val expanded = if (quiz.optionTypes[index] == QuestionType.MEANING) {
+                        parts
                     } else {
-                        Answers.acceptsReading(value, card)
+                        parts.flatMap(Answers::readings)
+                    }
+                    val accepts = expanded.any {
+                        Answers.acceptsMeaning(it, card) || Answers.acceptsReading(it, card)
                     }
                     verify(accepts == (index == quiz.correctIndex), "Collision QCM ${card.id}: $value")
+
+                    // Chaque bouton doit représenter un groupe complet d'une carte du même niveau.
+                    val owners = groupOwners.getValue(quiz.optionTypes[index])[parts].orEmpty()
+                    val hasExpectedSource = if (index == quiz.correctIndex) {
+                        owners.any { it.id == card.id }
+                    } else {
+                        owners.any { it.id != card.id }
+                    }
+                    verify(hasExpectedSource, "Groupe incomplet ou extérieur au niveau ${card.id}: $value")
+
+                    val optionType = quiz.optionTypes[index]
+                    val matchesDeclaredType = if (optionType == QuestionType.KANA) {
+                        value.any { it in '\u3040'..'\u30ff' }
+                    } else {
+                        value.none { it in '\u3040'..'\u30ff' }
+                    }
+                    verify(matchesDeclaredType, "Format incorrect ${card.id}: $value")
                 }
             }
         }

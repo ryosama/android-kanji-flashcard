@@ -13,6 +13,21 @@ object Answers {
     private val kanaStart = Regex("[\\u3040-\\u30ff]")
 
     /**
+     * Sépare les lectures du CSV pour l'affichage, en conservant les terminaisons optionnelles.
+     * Contrairement à readings, « mi(tsu) » reste une seule lecture lisible sur le bouton.
+     */
+    fun displayReadings(raw: String): List<String> {
+        if (raw.isBlank() || raw == "(none)") {
+            return emptyList()
+        }
+
+        val splitIndex = kanaStart.find(raw)?.range?.first ?: raw.length
+        return listOf(raw.take(splitIndex), raw.drop(splitIndex)).flatMap { part ->
+            part.split(',', '、', ';').map { it.trim().trim('-') }.filter(String::isNotBlank)
+        }.distinct()
+    }
+
+    /**
      * Extrait toutes les lectures d'une colonne CSV, complète et sans terminaison entre parenthèses.
      * Exemple : « hito(tsu)ひと(つ) » donne hito, hitotsu, ひと et ひとつ.
      * Les tirets de suffixe/préfixe sont retirés et « (none) » signifie aucune lecture.
