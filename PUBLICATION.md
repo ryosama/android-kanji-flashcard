@@ -2,6 +2,8 @@
 
 Destination : https://github.com/ryosama/android-kanji-flashcard
 
+Le dépôt est public. La [release 0.1.0](https://github.com/ryosama/android-kanji-flashcard/releases/tag/v0.1.0) est publiée avec l'APK signé et sa somme SHA-256.
+
 ## État du projet
 
 - Branche principale : `main` ; historique conservé avec des identités de contribution génériques.
