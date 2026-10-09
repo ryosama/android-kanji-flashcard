@@ -40,6 +40,10 @@ jobs:
 
       - name: Préparer le SDK Android
         uses: android-actions/setup-android@9fc6c4e9069bf8d3d10b2204b1fb8f6ef7065407 # v3
+        with:
+          # Le paquet historique « tools » n'est plus fourni par le dépôt Android.
+          packages: platform-tools
+          log-accepted-android-sdk-licenses: false
 
       - name: Installer les composants Android du projet
         run: sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
