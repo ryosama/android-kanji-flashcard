@@ -1,0 +1,370 @@
+﻿1;政;seiセイ;matsurigotoまつりごと;politique, gouvernement
+2;議;giギ; ;délibération, consultation, débat
+3;民;minミン;tamiたみ;peuple, nation, sujets
+4;連;renレン;tsura(naru), tsu(reru)つら(なる)、つ(れる);emmener, conduire, relier, joindre
+5;対;tai, tsuiタイ、 ツイ; ;opposé, égal, contre, comparer
+6;部;buブ; ;partie, section, service, département
+7;合;gou, ga, kaゴウ、 ガッ、 カッ;a(u), aiあ(う)、あい;convenir, correspondre, réunir, un dixième
+8;市;shiシ;ichiいち;marché, ville
+9;内;naiナイ;uchiうち;intérieur, dedans, maison, parmi
+10;相;sou, shouソウ、 ショウ;aiあい;mutuel, réciproque, ensemble, ministre
+11;定;tei, jouテイ、 ジョウ;sada(meru)さだ(める);déterminer, fixer, décider, établir
+12;回;kaiカイ;mawa(su)まわ(す);fois, tour, tourner, compteur
+13;選;senセン;era(bu)えら(ぶ);choisir, élire, sélectionner
+14;米;bei, mai, meetoruベイ、 マイ、 メエトル;komeこめ;riz, États-Unis, mètre
+15;実;jitsuジツ;mi, mino(ru)み、みの(る);réalité, vérité
+16;関;kanカン;seki, kaka(waru)せき、 かか(わる);relation, lien, barrière, concerner
+17;決;ketsuケツ;ki(meru)き(める);décider, fixer, convenir, nommer
+18;全;zenゼン;matta(ku), sube(te)まった(く)、 すべ(て);entier, tout, complet
+19;表;hyouヒョウ;omote, arawa(su)おもて、 あらわ(す);surface, tableau, graphique
+20;戦;senセン;ikusa, tataka(u)いくさ、 たたか(う);guerre, bataille, match
+21;経;keiケイ;he(ru), ta(tsu)へ(る)、 た(つ);passer, traverser, expirer, longitude
+22;最;saiサイ;motto(mo)もっと(も);le plus, extrême, maximum
+23;現;genゲン;arawa(reru), utsu(tsu)あらわ(れる)、 うつ(つ);présent, actuel, existant
+24;調;chouチョウ;shira(beru), tono(u)しら(べる)、ととの(う);examiner, régler, préparer, ton
+25;化;ka, keカ、 ケ;ba(keru), fu(keru)ば(ける)、 ふ(ける);changement, transformation, influence
+26;当;touトウ;a(taru)あ(たる);atteindre, juste, approprié
+27;約;yakuヤク;tsuzu(maru)つづ(まる);promesse, environ, réduire
+28;首;shuシュ;kubiくび;cou
+29;法;houホウ;noriのり;loi, méthode, règle, principe
+30;性;sei, shouセイ、 ショウ; ;sexe, genre, nature
+31;的;tekiテキ; ;cible, objectif, suffixe adjectival
+32;要;youヨウ;i(ru), kanameい(る)、 かなめ;nécessaire, essentiel, point principal
+33;制;seiセイ; ;système, règle, réglementation
+34;治;ji, chiジ、チ;nasa(meru), nao(ru)おさ(める)、なお(る);gouverner, soigner, guérir
+35;務;muム;tsuto(meru)つと(める);tâche, devoir, fonction
+36;成;sei, jouセイ、 ジョウ;na(ru)な(る);devenir, se transformer, grandir
+37;期;ki, goキ、 ゴ; ;période, durée, échéance
+38;取;shuシュ;to(ru)と(る);prendre, obtenir
+39;都;to, tsuト、ツ;miyakoみやこ;métropole, capitale
+40;和;wa, oワ、オ;yawa(ragu), nago(mu)やわ(らぐ)、なご(む);harmonie, paix, style japonais
+41;機;kiキ;hataはた;machine, avion, occasion
+42;平;hei, byouヘイ、ビョウ;tai(ra), hiraたい(ら)、ひら;plat, égal, paix
+43;加;kaカ;kuwa(eru)くわ(える);ajouter, augmenter, participer
+44;受;juジュ;u(keru)う(ける);recevoir, accepter, subir, répondre
+45;続;zokuゾク;tsuzukuつづ(く);continuer, suite, série
+46;進;shinシン;susu(mu)すす(む);avancer, progresser
+47;数;suuスウ;kazu, kazo(eru)かず、 かぞ(える);nombre, chiffres, quantité
+48;記;kiキ;shiru(su)しる(す);écrire, noter, récit
+49;初;shoショ;haji(me), hatsuはじ(め)、はつ;début, premier, première fois
+50;指;shiシ;yubi, sa(su)ゆび、さ(す);doigt, indiquer, désigner
+51;権;kenケン; ;droit, autorité, pouvoir
+52;支;shiシ;sasa(eru)ささ(える);soutenir, branche, appui
+53;産;sanサン;u(mu), mu(su)う(む)、 む(す);produire, accoucher, naissance
+54;点;tenテン;tsu(keru)つ(ける);point, marque, tache
+55;報;houホウ;mukku(iru)むく(いる);rapport, information, récompense
+56;済;sai, seiサイ、セイ;su(mu)す(む);terminer, régler, soulager
+57;活;katsuカツ; ;vie, activité, vivant
+58;原;genゲン;haraはら;origine, original, champ
+59;共;kyouキョウ;tomoとも;ensemble, tous les deux, commun
+60;得;tokuトク;e(ru)え(る);obtenir, gagner, acquérir, pouvoir
+61;解;kai, geカイ、ゲ;to(ku), hodo(ku)と(く)、ほど(く);expliquer, dénouer, comprendre
+62;交;kouコウ;maji(waru), ma(zeru), ka(wasu)まじ(わる)、 ま(ぜる)、 か(わす);mélanger, fréquenter, échange
+63;資;shiシ; ;ressources, capitaux, fonds, données
+64;予;yo, shaヨ、 シャ;arakaji(me)あらかじ(め);à l'avance, préalable, prévision
+65;向;kouコウ;mu(ku), muka(i)む(く)、むか(い);direction, faire face, au-delà
+66;際;saiサイ;kiwaきわ;occasion, moment, circonstance
+67;勝;shouショウ;ka(tsu), masa(ru)か(つ)、 まさ(る);victoire, gagner
+68;面;menメン;omo, omote, tsuraおも、おもて、つら;visage, face, surface, masque
+69;告;kokuコク;tsu(geru)つ(げる);informer, annoncer, révéler
+70;反;hanハン;so(ru)そ(る);contre, anti-, opposition
+71;判;hanハン; ;jugement, décision, signature
+72;認;ninニン;mito(meru), shitata(meru)みと(める)、したた(める);reconnaître, admettre, constater
+73;参;sanサン;mai(ru)まい(る);participer, aller, venir
+74;利;riリ;ki(ku)き(く);avantage, bénéfice, profit
+75;組;soソ;ku(mu), kumiく(む)、くみ;groupe, assembler, organiser
+76;信;shinシン; ;confiance, foi, vérité
+77;在;zaiザイ;a(ru)あ(る);exister, se trouver
+78;件;kenケン;kudanくだん;affaire, cas, dossier
+79;側;sokuソク;gawa, sobaがわ、そば;côté, flanc
+80;任;ninニン;maka(seru)まか(せる);responsabilité, charge, confier
+81;引;inイン;hi(ku)ひ(く);tirer, attirer
+82;求;kyuuキュウ;moto(meru)もと(める);demander, rechercher, exiger
+83;所;shoショ;tokoroところ;endroit, lieu, étendue
+84;次;ji, shiジ、シ;tsu(gu), tsugiつ(ぐ)、つぎ;suivant, prochain, ordre
+85;昨;sakuサク; ;hier, précédent
+86;論;ronロン;agetsura(u)あげつら(う);argumentation, discussion, théorie
+87;官;kanカン; ;fonctionnaire, administration, gouvernement
+88;増;zouゾウ;ma(su), fu(eru)ま(す)、 ふ(える);augmenter, accroître, ajouter
+89;係;keiケイ;kaka(ru), kakariかか(る)、かかり;responsable, chargé de, relation
+90;感;kanカン; ;sentiment, sensation, émotion
+91;情;jou, seiジョウ、セイ;nasa(ke)なさ(け);sentiments, émotion, passion
+92;投;touトウ;na(geru)な(げる);lancer, jeter, investir
+93;示;ji, shiジ、シ;shime(su)しめ(す);montrer, indiquer, afficher
+94;変;henヘン;ka(waru)か(わる);changement, étrange, inhabituel
+95;打;daダ;u(tsu), bu(tsu)う(つ)、ぶ(つ);frapper, taper
+96;直;choku, jikiチョク、 ジキ;tada(chini), su(gu)ただ(ちに)、 す(ぐ);droit, direct, honnêteté, réparer
+97;両;ryouリョウ; ;les deux, double
+98;式;shikiシキ; ;style, cérémonie, formule
+99;確;kakuカク;tashi(ka)たし(か);certain, ferme, confirmer
+100;果;kaカ;ha(tasu)は(たす);fruit, résultat, accomplir
+101;容;youヨウ; ;contenir, forme, apparence
+102;必;hitsuヒツ;kanara(zu)かなら(ず);nécessairement, certain, inévitable
+103;演;enエン; ;représentation, jouer, interpréter
+104;歳;sai, seiサイ、セイ; ;âge, année, fin d'année
+105;争;souソウ;araso(u)あらそ(う);se disputer, rivaliser, conflit
+106;談;danダン; ;discuter, conversation
+107;能;nouノウ;ata(u)あた(う);capacité, aptitude, talent
+108;位;iイ;kurai, guraiくらい、 ぐらい;rang, position, grade, environ
+109;置;chiチ;o(ku)お(く);placer, poser, laisser
+110;流;ryuu, ruリュウ、ル;naga(reru)なが(れる);courant, écoulement, couler
+111;格;kaku, kou, kyakuカク、コウ、キャク; ;statut, rang, qualification
+112;疑;giギ;utaga(u)うたが(う);doute, soupçon, méfiance
+113;過;kaカ;su(giru), yogi(ru)す(ぎる)、よぎ(る);dépasser, excès, passer
+114;局;kyokuキョク; ;bureau, service, administration
+115;放;houホウ;hana(su), hou(ru)はな(す)、ほう(る);libérer, relâcher, laisser partir
+116;常;jouジョウ;tsuneつね;habituel, ordinaire, normal
+117;状;jouジョウ; ;état, condition, forme
+118;球;kyuuキュウ;tamaたま;balle, sphère, globe
+119;職;shokuショク; ;emploi, profession, poste
+120;与;yoヨ;ata(eru), azuka(ru)あた(える)、 あずか(る);donner, accorder, attribuer
+121;供;kyou, ku, kuuキョウ、ク、クウ;sona(eru), tomoそな(える)、とも;offrir, fournir, accompagner
+122;役;yaku, ekiヤク、エキ; ;rôle, devoir, service
+123;構;kouコウ;kama(u)かま(う);construire, structure, posture
+124;割;katsuカツ;wa(ru), wariわ(る)、わり;diviser, proportion, couper
+125;身;shinシン;miみ;corps, personne, soi-même
+126;費;hiヒ;tsui(yasu)つい(やす);dépense, frais, consommer
+127;付;fuフ;tsu(keru)つ(ける);attacher, ajouter, joindre
+128;由;yu, yuuユ、ユウ;yoshi, yo(ru)よし、よ(る);raison, cause, origine
+129;説;setsu, zeiセツ、 ゼイ;to(ku)と(く);explication, théorie, opinion
+130;難;nanナン;kata(i), muzuka(shii), niku(i)かた(い)、むずか(しい)、 にく(い);difficile, difficulté, accident
+131;優;yuu, uユウ、ウ;yasa(shii), sugu(reru)やさ(しい)、すぐ(れる);douceur, gentillesse, supérieur, acteur
+132;夫;fu, fuuフ、フウ;ottoおっと;mari, époux, homme
+133;収;shuuシュウ;osa(meru)おさ(める);recevoir, récolter, revenus, ranger
+134;断;danダン;ta(tsu), kotowa(ru)た(つ)、 ことわ(る);couper, refuser, interrompre
+135;石;seki, shaku, kokuセキ、シャク、コク;ishiいし;pierre
+136;違;iイ;chiga(u), taga(u)ちが(う)、たが(う);différence, différer, se tromper
+137;消;shouショウ;ki(eru), ke(su)き(える)、け(す);éteindre, effacer, disparaître
+138;神;shin, jinシン、 ジン;kamiかみ;dieu, divinité, esprit, âme
+139;番;banバン;tsugaiつが(い);tour, numéro, ordre
+140;規;kiキ; ;norme, règle, mesure
+141;術;jutsuジュツ;subeすべ;art, technique, compétence, moyen
+142;備;biビ;sona(eru)そな(える);préparer, équiper, provisions
+143;宅;takuタク; ;maison, domicile, résidence
+144;害;gaiガイ; ;dommage, préjudice, nuisance
+145;配;haiハイ;kuba(ru)くば(る);distribuer, répartir, conjoint
+146;警;keiケイ; ;avertir, mettre en garde
+147;育;ikuイク;soda(tsu), haguku(mu)そだ(つ)、はぐく(む);élever, grandir, éduquer
+148;席;sekiセキ;mushiroむしろ;siège, place assise
+149;訪;houホウ;toozu(reru), tazu(neru)おとず(れる)、たず(ねる);rendre visite, visiter
+150;乗;jou, shouジョウ、 ショウ;no(ru)の(る);monter dans un véhicule, voyager
+151;残;zanザン;noko(ru)のこ(る);rester, reste, solde
+152;想;sou, soソウ、ソ;omo(u)おも(う);idée, pensée, imaginer
+153;声;sei, shouセイ、ショウ;koeこえ;voix
+154;助;joジョ;tasu(keru)たす(ける);aider, secourir, assister
+155;労;rouロウ;rou(suru), itawa(ru), negira(u)ろう(する)、いたわ(る)、ねぎら(う);travail, effort, remercier
+156;例;reiレイ;tato(eba)たと(えば);exemple
+157;然;zen, nenゼン、ネン;shika, saしか、さ;ainsi, de cette manière, si c'est le cas
+158;限;genゲン;kagi(ru)かぎ(る);limiter, restreindre, limite
+159;追;tsuiツイ;o(u)お(う);poursuivre, chasser, suivre
+160;商;shouショウ;akina(u)あきな(う);commerce, vendre, marchand
+161;葉;youヨウ;haは;feuille, lame, compteur d'objets plats
+162;伝;denデン;tsuta(waru)つた(わる);transmettre, communiquer, tradition
+163;働;douドウ;hatara(ku)はたら(く);travailler
+164;形;kei, gyouケイ、ギョウ;kata, katachi, nariかた、かたち、なり;forme, silhouette, style
+165;景;kei, keケイ、ケ; ;paysage, vue
+166;落;rakuラク;o(chiru)お(ちる);tomber, laisser tomber
+167;好;kouコウ;kono(mu), su(ku)この(む)、 す(く);aimer, apprécier, agréable
+168;退;taiタイ;shirizo(ku), hi(ku), no(keru), do(ku)しりぞ(く)、 ひ(く)、 の(ける)、 ど(く);se retirer, démissionner, reculer
+169;頭;tou, zu, toトウ、ズ、ト;atama, kashiraあたま、かしら;tête
+170;負;fuフ;ma(keru), o(u)ま(ける)、 お(う);perdre, défaite, négatif, assumer
+171;渡;toト;wata(ru)わた(る);traverser, faire passer, ferry
+172;失;shitsuシツ;ushina(u), u(seru)うしな(う)、 う(せる);perdre, erreur, faute, perte
+173;差;saサ;sa(su)さ(す);différence, écart, distinction
+174;末;matsuマツ;sueすえ;fin, extrémité, bout
+175;守;shu, suシュ、ス;mamo(ru), moriまも(る)、もり;protéger, garder, respecter
+176;若;jakuジャク;waka(i), mo(shi)わか(い)、も(し);jeune
+177;種;shuシュ;tane, -gusaたね、-ぐさ;espèce, sorte, catégorie, graine
+178;美;bi, miビ、 ミ;utsukushiiうつく(しい);beauté, beau
+179;命;mei, myouメイ、ミョウ;inochiいのち;destin, vie, ordre, commandement
+180;福;fukuフク; ;bonheur, chance, fortune, bénédiction
+181;望;bouボウ;nozo(mu), mochiのぞ(む)、 もち;espoir, souhait, ambition, pleine lune
+182;非;hiヒ;ara(zu)あら(ず);négation, erreur, non-
+183;観;kanカン;mi(ru)み(る);point de vue, apparence, observer
+184;察;satsuサツ; ;examiner, supposer, deviner
+185;段;danダン; ;degré, étape, marche, escalier
+186;横;ouオウ;yokoよこ;horizontal, côté, travers
+187;深;shinシン;fuka(i)ふか(い);profond, approfondir
+188;申;shinシン;mou(su), saruもう(す)、さる;dire humblement, déclarer
+189;様;youヨウ;sama, sanさま、さん;manière, état, suffixe honorifique
+190;財;zai, sai, zokuザイ、 サイ、 ゾク; ;biens, fortune, patrimoine, richesse
+191;港;kouコウ;minatoみなと;port, havre
+192;識;shikiシキ;shi(ru)し(る);connaissance, reconnaître
+193;呼;koコ;yo(bu)よ(ぶ);appeler, inviter
+194;達;tatsu, daタツ、 ダ;-tachi-たち;atteindre, arriver, accomplir
+195;良;ryouリョウ;yo(i), i(i)よ(い)、い(い);bon, bien
+196;阪;hanハン;sakaさか;pente, hauteur
+197;候;kouコウ;sourouそうろう;climat, saison, temps météorologique
+198;程;teiテイ;hodoほど;degré, étendue, mesure
+199;満;manマン;mi(chiru)み(ちる);plein, remplir, satisfaire
+200;敗;haiハイ;yabu(reru)やぶ(れる);échec, défaite
+201;値;chiチ;ne, ataiね、 あたい;prix, valeur, coût
+202;突;totsu, kaトツ、カ;tsu(ku)つ(く);percer, heurter, dépasser
+203;光;kouコウ;hika(ru), hikariひか(る)、ひかり;lumière, rayon, briller
+204;路;ro, ruロ、ル;michiみち;chemin, route, voie
+205;科;kaカ; ;département, discipline, cours
+206;積;sekiセキ;tsu(mu)つ(む);empiler, accumuler, volume
+207;他;taタ;hokaほか;autre, autrui
+208;処;shoショ; ;traiter, gérer, disposer
+209;太;tai, taタイ、タ;futo(i)ふと(い);gros, épais, corpulent
+210;客;kyaku, kakuキャク、カク; ;invité, visiteur, client
+211;否;hiヒ;ina, iyaいな、いや;non, nier, refuser
+212;師;shiシ; ;maître, professeur, expert
+213;登;tou, toトウ、ト;nobo(ru), a(garu)のぼ(る)、あ(がる);monter, gravir, s'inscrire
+214;易;eki, iエキ、 イ;yasa(shii), yasu(i)やさ(しい)、 やす(い);facile, simple
+215;速;sokuソク;haya(i)はや(い);rapide, vitesse
+216;存;son, zonソン、ゾン; ;exister, savoir
+217;飛;hiヒ;to(bu)と(ぶ);voler dans les airs
+218;殺;satsu, saiサツ、サイ;koro(su)ころ(す);tuer, assassiner
+219;号;gouゴウ; ;numéro, appellation
+220;単;tanタン;hitoeひとえ;simple, unique
+221;座;zaザ;suwa(ru)すわ(る);siège, s'asseoir, position assise
+222;破;haハ;yabu(ru)やぶ(る);déchirer, casser, rompre
+223;除;jo, jiジョ、ジ;nozo(ku)のぞ(く);retirer, exclure, supprimer
+224;完;kanカン; ;parfait, achevé, accomplissement
+225;降;kou, goコウ、 ゴ;o(riru), fu(ru)お(りる)、 ふ(る);descendre, tomber, se rendre
+226;責;sekiセキ;se(meru)せ(める);responsabilité, blâme, reprocher
+227;捕;hoホ;to(raeru), tsuka(maeru)と(らえる)、つか(まえる);attraper, capturer
+228;危;kiキ;abu(nai), aya(ui)あぶ(ない)、あや(うい);dangereux, crainte, inquiétude
+229;給;kyuuキュウ;tama(u), tamo(u)たま(う)、たも(う);salaire, rémunération, fournir
+230;苦;kuク;kuru(shii), niga(i)くる(しい)、にが(い);souffrance, amer, pénible
+231;迎;geiゲイ;muka(eru)むか(える);accueillir, rencontrer, saluer
+232;園;enエン;sonoその;parc, jardin, cour
+233;具;guグ;sona(eru), tsubasa(ni)そな(える)、つぶさ(に);outil, ustensile, équipement
+234;辞;jiジ;ya(meru)や(める);démissionner, mot, terme
+235;因;inイン;yo(ru), china(mu)よ(る)、ちな(む);cause, facteur, dépendre de
+236;馬;baバ;umaうま;cheval
+237;愛;aiアイ;ito(shii), manaいと(しい)、まな;amour, affection
+238;富;fu, fuuフ、フウ;to(mu), tomiと(む)、 とみ;richesse, abondance, s'enrichir
+239;彼;hiヒ;kare, kanoかれ、 かの;il, lui
+240;未;mi, biミ、ビ;ima(da), ma(da)いま(だ)、ま(だ);pas encore, non-
+241;舞;buブ;ma(u), maiま(う)、まい;danser, danse
+242;亡;bou, mouボウ、モウ;na(kunaru)な(くなる);décédé, mourir, disparition
+243;冷;reiレイ;tsume(tai), hi(eru), sa(meru)つめ(たい)、ひ(える)、さ(める);froid, refroidir, frais
+244;適;tekiテキ;kana(u)かな(う);approprié, convenable, adapté
+245;婦;fuフ;yomeよめ;femme, épouse, dame
+246;寄;kiキ;yo(ru)よ(る);approcher, se rassembler
+247;込; ;ko(mu)こ(む);être bondé, entrer, inclure
+248;顔;ganガン;kaoかお;visage, expression
+249;類;ruiルイ;tagu(i)たぐ(い);type, catégorie, variété, espèce
+250;余;yoヨ;ama(ru)あま(る);surplus, excédent, trop
+251;王;ouオウ; ;roi, souverain
+252;返;henヘン;kae(su)かえ(す);rendre, retourner, répondre
+253;妻;saiサイ;tsumaつま;épouse, femme
+254;背;haiハイ;se, seiせ、せい;dos, taille, stature
+255;熱;netsuネツ;atsu(i)あつ(い);chaleur, fièvre, passion
+256;宿;shukuシュク;yadoやど;auberge, hébergement, logement
+257;薬;yakuヤク;kusuriくすり;médicament, produit chimique
+258;険;kenケン;kewa(shii)けわ(しい);escarpé, dangereux, inaccessible
+259;頼;raiライ;tano(mu), tayo(ru)たの(む)、 たよ(る);demander, compter sur, confiance
+260;覚;kakuカク;obo(eru), sa(masu)おぼ(える)、 さ(ます);mémoriser, apprendre, se souvenir, s'éveiller
+261;船;senセン;fune, funaふね、ふな;bateau, navire
+262;途;toト;michiみち;chemin, trajet, route
+263;許;kyoキョ;yuru(su)ゆる(す);autoriser, permettre, approuver
+264;抜;batsuバツ;nu(ku)ぬ(く);extraire, retirer, arracher
+265;便;ben, binベン、 ビン;tayo(ri)たよ(り);commodité, pratique, courrier
+266;留;ryuu, ruリュウ、 ル;to(maru), todo(meru)と(まる)、 とど(める);retenir, arrêter, rester
+267;罪;zaiザイ;tsumiつみ;culpabilité, péché, crime
+268;努;doド;tsuto(meru)つと(める);effort, s'efforcer, diligence
+269;精;sei, shouセイ、ショウ;shira(geru)しら(げる);raffiné, esprit, énergie
+270;散;sanサン;chi(ru), bara(keru)ち(る)、ばら(ける);disperser, éparpiller
+271;静;sei, jouセイ、ジョウ;shizu(ka)しず(か);calme, silencieux
+272;婚;konコン; ;mariage
+273;喜;kiキ;yoroko(bu)よろこ(ぶ);se réjouir, joie, plaisir
+274;浮;fuフ;u(kabu)う(かぶ);flotter, remonter à la surface
+275;絶;zetsuゼツ;ta(eru)た(える);interrompre, couper, incomparable
+276;幸;kouコウ;saiwa(i), sara, shiawa(se)さいわ(い)、さち、 しあわ(せ);bonheur, chance, fortune
+277;押;ouオウ;o(su)お(す);pousser, appuyer
+278;倒;touトウ;tao(reru)たお(れる);renverser, tomber, s'effondrer
+279;等;touトウ;hito(shii), nadoひと(しい)、など;etc., et ainsi de suite, égal
+280;老;rouロウ;o(iru), fu(keru)お(いる)、ふ(ける);vieux, âgé
+281;曲;kyokuキョク;ma(garu)ま(がる);courber, mélodie, musique
+282;払; ;hara(u)はら(う);payer
+283;庭;teiテイ;niwaにわ;jardin, cour intérieure
+284;徒;toト;itazura, adaいたずら、 あだ;à pied, disciple, inutile, vain
+285;勤;kin, gonキン、ゴン;tsuto(meru)つと(める);travailler, service, assiduité
+286;遅;chiチ;oku(reru), oso(i)おく(れる)、 おそ(い);retard, lent, tard
+287;居;kyo, koキョ、コ;i(ru), o(ru)い(る)、お(る);habiter, être, résider
+288;雑;zatsu, zouザツ、ゾウ;maji(ru)まじ(る);divers, mélangé, varié
+289;招;shouショウ;mane(ku)まね(く);inviter, convoquer
+290;困;konコン;koma(ru)こま(る);être embarrassé, difficulté
+291;欠;ketsu, kenケツ、ケン;ka(keru)か(ける);manquer, absence, lacune
+292;更;kouコウ;sara(ni), fu(keru)さら(に)、ふ(ける);renouveler, encore, de nouveau
+293;刻;kokuコク;kiza(mu)きざ(む);graver, tailler, hacher
+294;賛;sanサン; ;approuver, louer, faire l'éloge
+295;抱;houホウ;da(ku), ida(ku), kaka(eru)だ(く)、いだ(く)、かか(える);enlacer, serrer dans ses bras
+296;犯;hanハン;oka(su)おか(す);crime, délit, commettre une infraction
+297;恐;kyouキョウ;oso(reru), kowa(i)おそ(れる)、こわ(い);peur, craindre, effroi
+298;息;musu, sokuムス、ソク;ikiいき;souffle, respiration, fils, intérêts
+299;遠;en, onエン;too(i)とお(い);loin, éloigné, distant
+300;戻;reiレイ;modo(ru)もど(る);revenir, retourner, rétablir
+301;願;ganガン;nega(u)ねが(う);souhait, demande, prière
+302;絵;kai, eカイ、エ; ;image, dessin, peinture
+303;越;etsuエツ;ko(su)こ(す);dépasser, franchir, traverser, déménager
+304;欲;yokuヨク;ho(shii)ほ(しい);désir, envie, avidité
+305;痛;tsuuツウ;ita(i)いた(い);douleur, faire mal, blessure
+306;笑;shouショウ;wara(u), e(mu)わら(う)、え(む);rire, sourire
+307;互;goゴ;taga(i), katami(ni)たが(い)、かたみ(に);mutuellement, réciproquement
+308;束;sokuソク;taba, tsukaたば、つか;paquet, botte, lier
+309;似;ji, neジ、ね;ni(ru)に(る);ressembler, imiter
+310;列;retsu, reレツ、レ; ;rangée, file, colonne
+311;探;tanタン;sagu(ru), saga(su)さぐ(る)、さが(す);chercher, rechercher
+312;逃;touトウ;ni(geru), noga(su)に(げる)、のが(す);fuir, s'échapper
+313;遊;yuuユウ;aso(bu)あそ(ぶ);jouer, s'amuser
+314;迷;meiメイ;mayo(u)まよ(う);se perdre, hésiter, être perplexe
+315;夢;muム;yumeゆめ;rêve, vision
+316;君;kunクン;kimiきみ;tu, toi, suffixe masculin
+317;閉;heiヘイ;to(jiru), shi(meru)と(じる)、し(める);fermer, clos
+318;緒;shoショ;oお;début, cordon, lien
+319;折;setsu, shakuセツ、シャク;o(ru), oriお(る)、おり;plier, casser, fracture
+320;草;souソウ;kusaくさ;herbe, mauvaises herbes, plantes
+321;暮;boボ;ku(rasu)く(らす);crépuscule, vivre, subsistance
+322;酒;shuシュ;sake, saka-さけ、さか-;saké, alcool
+323;悲;hiヒ;kana(shii)かな(しい);tristesse, être triste
+324;晴;seiセイ;ha(reru)は(れる);s'éclaircir, beau temps
+325;掛;keiケイ;ka(keru)か(ける);suspendre, accrocher
+326;到;touトウ;ita(ru)いた(る);arriver, atteindre
+327;寝;shinシン;ne(ru)ね(る);dormir, se coucher, se reposer
+328;暗;anアン;kura(i)くら(い);obscurité, sombre, informel
+329;盗;touトウ;nusu(mu)ぬす(む);voler, dérober
+330;吸;kyuuキュウ;su(u)す(う);aspirer, inhaler, sucer
+331;陽;youヨウ;hiひ;soleil, lumière solaire, positif
+332;御;gyo, goギョ、ゴ;on, oおん、お;honorable, préfixe honorifique
+333;歯;shiシ;haは;dent, dent d'engrenage
+334;忘;bouボウ;wasu(reru)わす(れる);oublier
+335;雪;setsuセツ;yukiゆき;neige
+336;吹;suiスイ;fu(ku)ふ(く);souffler, expirer
+337;娘;jouジョウ;musume, koむすめ、こ;fille, jeune femme
+338;誤;goゴ;ayama(ru)あやま(る);erreur, se tromper
+339;洗;senセン;ara(u)あら(う);laver
+340;慣;kanカン;na(reru)な(れる);s'habituer, être habitué
+341;礼;rei, raiレイ、ライ; ;salut, révérence, cérémonie, remerciement
+342;窓;souソウ;madoまど;fenêtre, vitre
+343;昔;seki, shakuセキ、シャク;mukashiむかし;autrefois, jadis, temps anciens
+344;貧;hin, binヒン、ビン;mazu(shii)まず(しい);pauvreté, pauvre
+345;怒;doド;ika(ru), oko(ru)いか(る)、 おこ(る);colère, se fâcher
+346;泳;eiエイ;oyo(gu)およ(ぐ);nager
+347;祖;soソ; ;ancêtre, fondateur, pionnier
+348;杯;haiハイ;sakazukiさかずき;verre, tasse, coupe, compteur de verres
+349;疲;hiヒ;tsuka(reru)つか(れる);fatigue, se fatiguer
+350;皆;kaiカイ;mina, minnaみな、 みんな;tous, tout le monde
+351;鳴;meiメイ;na(ku), na(ru)な(く)、な(る);crier, chanter (animal), aboyer
+352;腹;fukuフク;haraはら;ventre, abdomen, estomac
+353;煙;enエン;kemu(ru), kemuriけむ(る)、けむり;fumée
+354;眠;minミン;nemu(ru)ねむ(る);dormir, sommeil
+355;怖;fuフ;kowa(i), o(jiru)こわ(い)、お(じる);effrayant, peur
+356;耳;jiジ;mimiみみ;oreille
+357;頂;chouチョウ;itada(ku)いただ(く);sommet, recevoir humblement, pic
+358;箱;souソウ;hakoはこ;boîte, coffre
+359;晩;banバン; ;soir, tombée de la nuit
+360;寒;kanカン;samu(i)さむ(い);froid
+361;髪;hatsuハツ;kamiかみ;cheveux
+362;忙;bou, mouボウ、モウ;isoga(shii)いそが(しい);occupé, affairé
+363;才;saiサイ; ;talent, génie, âge en années
+364;靴;kaカ;kutsuくつ;chaussures
+365;恥;chiチ;haji, ha(zukashii)はじ、は(ずかしい);honte, déshonneur
+366;偶;guuグウ;tamaたま;hasard, accidentellement, nombre pair
+367;偉;iイ;era(i)えら(い);remarquable, admirable, grandeur
+368;猫;byouビョウ;nekoねこ;chat
+369;幾;kiキ;iku(tsu)いく(つ);combien, plusieurs, quelque
+370;誰;suiスイ;dareだれ;qui, quelqu'un

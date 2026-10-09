@@ -1,0 +1,52 @@
+Ce projet est une application de révision des Kanji japonais sous forme de flashcard
+
+### Technique ###
+- Ce projet est destiné au smartphone Android et est développé en langage Kotlin
+- Le code source aura des commentaires explicites et comprehensible pour un humain sur les fonctions et les varibles/constantes importante pour la comprenhension.
+- Il faudra installer ce qu'il faut sur le PC pour le developpement android
+- Ce projet est gérer par le logiciel GIT 
+- Quand il sera viable il sera publié sur github (github.com/ryosama/android-kanji-flashcard)
+- Il ne faut pas mettre de données personnelles (nom / prenom / clé privé) dans le code ou dans les messages de commit GIT
+- Des écrans de l'application ont été designé dans le répertoire "design UI" (avec le logiciel Inkscape), il faut s'en inspirer.
+Ces design ne sont pas gravé dans le marbre, il s'agit d'une idée. Tu peux proposer des idées graphiques et des colorations plus sympa dans l'air du temps.
+- L'application est en mode sombre
+
+### Application ###
+- Les révisions sont séparées en 5 niveau de JLPT
+- Ces 5 niveau correpondent à 5 fichiers CSV (séparateur point-virgule) dans le répertoire "listes/francais"
+- Les colonnes de ces fichiers sont : nombre (inutil), kanji, prononcitation1, prononcitation2, significations (séparé par des virgules)
+- La révision se déroule ainsi, on choisit un mot de révision (normal ou facile).
+- La page s'affiche et propose un kanji du niveau tiré au hasard
+- Les kanjis sont au fur et à mesure sélectionné dans la liste du niveau en suivant l'algorthime du système de flashcard décrit ici : https://fr.wikipedia.org/wiki/Carte_m%C3%A9moire_(apprentissage)
+- Il y a deux modes de révisions :
+    - mode "facile" :
+        4 responses de "signification", "prononcitation en romanji" ou "prononciation en hiragana/katakana" sont proposé
+        Ces réponses sont prise au hasard parmis les valeurs du fichier du même niveau
+        Il suffit de cliquer sur le bouton qui correspond pour valider la réponse.
+        Si la réponse est bonne, on affiche en bas d'écran en vert un texte "bonne réponse ->".
+            Il suffit de cliquer sur ce message pour aller au kanji suivant (tiré au hasard)
+        Si la réponse est fausse, on affiche en bas d'écran en rouge un texte "mauvaise réponse ->".
+            On affiche alors la bonne réponse en vert. On clique sur mauvaise réponse pour passer au kanji suivant
+
+    - mode "normal" :
+        Il y a une case pour répondre sur la prononciation (on peut écrire en romanji ou en hiragana).
+        Si on écrit en romanji, il faut autoriser que "oo", "ou" et "ô" soit la même prononciation. "tchi" et "chi" sont la même prononciation.
+        On peut valider la réponse avec un bouton "OK" en face de la case
+        Il y a également une case pour répondre sur un des sens de la signification. Il suffit qu'un des snes soit bon pour valider la signification.
+        On peut valider la réponse avec un bouton "OK" en face de la case
+        Si les deux réponses sont valides, on affiche en bas d'écran en vert un texte "bonne réponse ->".
+        Si l'une des deux réponses est fausse (ou les deux), on affiche en bas d'écran en rouge un texte "mauvaise réponse ->" et on écrit sous les cases de réponses les bonnes réponses en vert.
+        Dans les deux cas, on clique sur le message "bonne réponses ->" ou "mauvaise réponse ->" pour passer au kanji suivant.
+- Il y pour chaque niveau un bouton statistique. Ce bouton a comme label le nombre de kanji maitrisé dans le niveau (de 0 à 100%)
+    En cliquant sur ce bouton, on arrive sur une page (non designée) avec la liste des kanji du niveau et s'il est maitrisé ou pas.
+    Ce listing est un tableau avec les colonnes suivantes
+        - kanji
+        - prononcitation1
+        - prononcitation2
+        - signification
+        - niveau de maitrise (de 0% à 100%). Avce un code couleur qui va du dégradé rouge (0%) au vert (100%) en passant par le orange et le jaune.
+        - nombre de fois proposé
+        - nombre de bonne réponse (en vert)
+        - nombre de mauvause réponse (en rouge)
+    
+- Pour chaque page (sauf la page d'accueil) on trouve en haut à gauche un bouton pour revenir à la page d'accueil.

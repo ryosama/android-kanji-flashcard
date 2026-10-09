@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="page d'accueil.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.75277076"
+     inkscape:cx="328.12114"
+     inkscape:cy="456.31422"
+     inkscape:window-width="1920"
+     inkscape:window-height="1023"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="405.05202"
+       y="371.21705"
+       width="206.01657"
+       height="58.96924"
+       id="rect4236" />
+    <rect
+       x="158.59249"
+       y="370.14902"
+       width="185.81662"
+       height="59.085429"
+       id="rect4180" />
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#2f2f2f;fill-opacity:1;stroke:#000000;stroke-width:2.10552;stroke-dasharray:none;stroke-opacity:1"
+       id="rect788"
+       width="141.97934"
+       height="257.80896"
+       x="31.657967"
+       y="26.755066" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+       x="57.898209"
+       y="16.068813"
+       id="text898"
+       inkscape:label="descriptif de la page"><tspan
+         sodipodi:role="line"
+         id="tspan896"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2"
+         x="57.898209"
+         y="16.068813">Page d'accueil</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-4.6104197,0.28016015)"
+       id="text4178"
+       style="font-weight:bold;font-size:48px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';white-space:pre;shape-inside:url(#rect4180);display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.55906;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:label="label niveau normal"><tspan
+         x="158.5918"
+         y="413.82245"
+         id="tspan6657">Normal</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,23.57861,-0.81835206)"
+       id="text4234"
+       style="font-weight:bold;font-size:48px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';white-space:pre;shape-inside:url(#rect4236);display:inline;fill:#fdfdfd;fill-opacity:1;stroke:none;stroke-width:7.55906;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:label="label niveau facile"><tspan
+         x="405.05273"
+         y="414.89081"
+         id="tspan6659">Facile</tspan></text>
+    <g
+       id="g6589"
+       inkscape:label="bouton niveau normal">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#008013;stroke-width:1.66708;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1004"
+         width="53.596172"
+         height="18.685085"
+         x="35.818592"
+         y="123.16751"
+         inkscape:label="bouton niveau 5 normal" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#3d8000;stroke-width:1.66708;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1004-6"
+         width="53.596172"
+         height="18.685085"
+         x="35.818592"
+         y="154.06825"
+         inkscape:label="bouton niveau 4 normal" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#688000;stroke-width:1.66708;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1004-7"
+         width="53.596172"
+         height="18.685085"
+         x="35.818592"
+         y="185.10243"
+         inkscape:label="bouton niveau 3 normal" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#c28100;stroke-width:1.66708;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1004-5"
+         width="53.596172"
+         height="18.685085"
+         x="35.818592"
+         y="216.14282"
+         inkscape:label="bouton niveau 2 normal" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#f55200;stroke-width:1.66708;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1004-35"
+         width="53.596172"
+         height="18.685085"
+         x="35.818592"
+         y="247.18011"
+         inkscape:label="bouton niveau 1 normal" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+       x="101.17831"
+       y="53.492825"
+       id="text4316"
+       inkscape:label="titre de la page"><tspan
+         sodipodi:role="line"
+         id="tspan4314"
+         style="text-align:center;text-anchor:middle;stroke-width:2;fill:#ffffff;fill-opacity:1"
+         x="101.17831"
+         y="53.492825">Flashcard KANJI</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:2;fill:#ffffff;fill-opacity:1"
+         x="101.17831"
+         y="69.367821"
+         id="tspan4318">JLPT</tspan></text>
+    <g
+       id="g6582"
+       inkscape:label="bouton niveau facile">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#008013;stroke-width:1.66708;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1004-62"
+         width="53.596172"
+         height="18.685085"
+         x="114.69081"
+         y="123.16751"
+         inkscape:label="bouton niveau 5 facile" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#3d8000;stroke-width:1.66708;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1004-6-9"
+         width="53.596172"
+         height="18.685085"
+         x="114.69081"
+         y="154.06825"
+         inkscape:label="bouton niveau 4 facile" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#688000;stroke-width:1.66708;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1004-7-1"
+         width="53.596172"
+         height="18.685085"
+         x="114.69081"
+         y="185.10243"
+         inkscape:label="bouton niveau 3 facile" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#c28100;stroke-width:1.66708;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1004-5-2"
+         width="53.596172"
+         height="18.685085"
+         x="114.69081"
+         y="216.14282"
+         inkscape:label="bouton niveau 2 facile" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#f55200;stroke-width:1.66708;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1004-35-7"
+         width="53.596172"
+         height="18.685085"
+         x="114.69081"
+         y="247.18011"
+         inkscape:label="bouton niveau 1 facile" />
+    </g>
+    <g
+       id="g6551"
+       inkscape:label="label bouton niveau normal">
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;text-anchor:middle;fill:#f55200;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="64.09623"
+         y="259.72305"
+         id="text4416"><tspan
+           sodipodi:role="line"
+           id="tspan4414"
+           style="fill:#f55200;fill-opacity:1;stroke:none;stroke-width:2"
+           x="64.09623"
+           y="259.72305">JLPT1</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;text-anchor:middle;fill:#c28100;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="63.296131"
+         y="228.74927"
+         id="text4416-3"><tspan
+           sodipodi:role="line"
+           id="tspan4414-6"
+           style="fill:#c28100;fill-opacity:1;stroke:none;stroke-width:2"
+           x="63.296131"
+           y="228.74927">JLPT2</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;text-anchor:middle;fill:#688000;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="63.34058"
+         y="197.70888"
+         id="text4416-06"><tspan
+           sodipodi:role="line"
+           id="tspan4414-2"
+           style="fill:#688000;fill-opacity:1;stroke:none;stroke-width:2"
+           x="63.34058"
+           y="197.70888">JLPT3</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;text-anchor:middle;fill:#3d8000;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="63.19453"
+         y="166.61119"
+         id="text4416-6"><tspan
+           sodipodi:role="line"
+           id="tspan4414-1"
+           style="fill:#3d8000;fill-opacity:1;stroke:none;stroke-width:2"
+           x="63.19453"
+           y="166.61119">JLPT4</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;text-anchor:middle;fill:#008013;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="63.378681"
+         y="135.71046"
+         id="text4416-8"><tspan
+           sodipodi:role="line"
+           id="tspan4414-7"
+           style="fill:#008013;fill-opacity:1;stroke:none;stroke-width:2"
+           x="63.378681"
+           y="135.71046">JLPT5</tspan></text>
+    </g>
+    <g
+       id="g6563"
+       inkscape:label="label bouton niveau facile">
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;text-anchor:middle;fill:#f55200;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="142.96844"
+         y="259.72305"
+         id="text4416-0"><tspan
+           sodipodi:role="line"
+           id="tspan4414-9"
+           style="fill:#f55200;fill-opacity:1;stroke:none;stroke-width:2"
+           x="142.96844"
+           y="259.72305">JLPT1</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;text-anchor:middle;fill:#008013;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="142.2509"
+         y="135.71046"
+         id="text4416-9"><tspan
+           sodipodi:role="line"
+           id="tspan4414-20"
+           style="fill:#008013;fill-opacity:1;stroke:none;stroke-width:2"
+           x="142.2509"
+           y="135.71046">JLPT5</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;text-anchor:middle;fill:#3d8000;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="142.06676"
+         y="166.61119"
+         id="text4416-2"><tspan
+           sodipodi:role="line"
+           id="tspan4414-3"
+           style="fill:#3d8000;fill-opacity:1;stroke:none;stroke-width:2"
+           x="142.06676"
+           y="166.61119">JLPT4</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;text-anchor:middle;fill:#688000;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="142.2128"
+         y="197.70888"
+         id="text4416-7"><tspan
+           sodipodi:role="line"
+           id="tspan4414-5"
+           style="fill:#688000;fill-opacity:1;stroke:none;stroke-width:2"
+           x="142.2128"
+           y="197.70888">JLPT3</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';text-align:center;text-anchor:middle;fill:#c28100;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="142.16835"
+         y="228.74927"
+         id="text4416-92"><tspan
+           sodipodi:role="line"
+           id="tspan4414-28"
+           style="fill:#c28100;fill-opacity:1;stroke:none;stroke-width:2"
+           x="142.16835"
+           y="228.74927">JLPT2</tspan></text>
+    </g>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#008013;stroke-width:1.12863;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4824"
+       width="19.740089"
+       height="18.170498"
+       x="92.161041"
+       y="123.4248"
+       inkscape:label="bouton statistique niveau 5" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#3d8000;stroke-width:1.12863;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4824-7"
+       width="19.740089"
+       height="18.170498"
+       x="92.161041"
+       y="154.32555"
+       inkscape:label="bouton statistique niveau 4" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#688000;stroke-width:1.12863;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4824-6"
+       width="19.740089"
+       height="18.170498"
+       x="92.161041"
+       y="185.35973"
+       inkscape:label="bouton statistique niveau 3" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#c28100;stroke-width:1.12863;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4824-74"
+       width="19.740089"
+       height="18.170498"
+       x="92.161041"
+       y="216.40012"
+       inkscape:label="bouton statistique niveau 2" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#f55200;stroke-width:1.12863;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4824-5"
+       width="19.740089"
+       height="18.170498"
+       x="92.161041"
+       y="247.43741"
+       inkscape:label="bouton statistique niveau 1" />
+    <g
+       id="g6575"
+       inkscape:label="label bouton statistique">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#008013;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="101.91256"
+         y="135.5369"
+         id="text4416-9-2"><tspan
+           sodipodi:role="line"
+           id="tspan4414-20-9"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#008013;fill-opacity:1;stroke:none;stroke-width:2"
+           x="101.91256"
+           y="135.5369">10%</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#3d8000;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="101.91256"
+         y="166.43764"
+         id="text4416-9-2-6"><tspan
+           sodipodi:role="line"
+           id="tspan4414-20-9-5"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3d8000;fill-opacity:1;stroke:none;stroke-width:2"
+           x="101.91256"
+           y="166.43764">20%</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#688000;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="101.91256"
+         y="197.47182"
+         id="text4416-9-2-9"><tspan
+           sodipodi:role="line"
+           id="tspan4414-20-9-3"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#688000;fill-opacity:1;stroke:none;stroke-width:2"
+           x="101.91256"
+           y="197.47182">4%</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#c28100;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="101.91256"
+         y="228.51221"
+         id="text4416-9-2-5"><tspan
+           sodipodi:role="line"
+           id="tspan4414-20-9-2"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#c28100;fill-opacity:1;stroke:none;stroke-width:2"
+           x="101.91256"
+           y="228.51221">0%</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#f55200;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="101.91256"
+         y="259.5495"
+         id="text4416-9-2-4"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#f55200;fill-opacity:1;stroke:none;stroke-width:2"
+           x="101.91256"
+           y="259.5495"
+           id="tspan5050">1%</tspan></text>
+    </g>
+  </g>
+</svg>

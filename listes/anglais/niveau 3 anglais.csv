@@ -1,0 +1,370 @@
+1;政;seiセイ;matsurigotoまつりごと;politics, government
+2;議;giギ; ;deliberation, consultation, debate
+3;民;minミン;tamiたみ;people, nation, subjects
+4;連;renレン;tsura(naru), tsu(reru)つら(なる)、つ(れる);take along, lead, join, connect
+5;対;tai, tsuiタイ、 ツイ; ;opposite, even, equal, versus, anti-, compare
+6;部;buブ; ;section, bureau, dept, class, copy, part, portion
+7;合;gou, ga, kaゴウ、 ガッ、 カッ;a(u), aiあ(う)、あい;fit, suit, join, 0.1
+8;市;shiシ;ichiいち;market, city, town
+9;内;naiナイ;uchiうち;inside, within, between, among, house, home
+10;相;sou, shouソウ、 ショウ;aiあい;inter-, mutual, together, each other, minister of state
+11;定;tei, jouテイ、 ジョウ;sada(meru)さだ(める);determine, fix, establish, decide
+12;回;kaiカイ;mawa(su)まわ(す);-times, round, revolve, counter
+13;選;senセン;era(bu)えら(ぶ);elect, select, choose, prefer
+14;米;bei, mai, meetoruベイ、 マイ、 メエトル;komeこめ;rice, USA, meter
+15;実;jitsuジツ;mi, mino(ru)み、みの(る);reality, truth
+16;関;kanカン;seki, kaka(waru)せき、 かか(わる);connection, barrier, gateway, involve, concerning
+17;決;ketsuケツ;ki(meru)き(める);decide, fix, agree upon, appoint
+18;全;zenゼン;matta(ku), sube(te)まった(く)、 すべ(て);whole, entire, all, complete, fulfill
+19;表;hyouヒョウ;omote, arawa(su)おもて、 あらわ(す);surface, table, chart, diagram
+20;戦;senセン;ikusa, tataka(u)いくさ、 たたか(う);war, battle, match
+21;経;keiケイ;he(ru), ta(tsu)へ(る)、 た(つ);longitude, pass thru, expire, warp
+22;最;saiサイ;motto(mo)もっと(も);utmost, most, extreme
+23;現;genゲン;arawa(reru), utsu(tsu)あらわ(れる)、 うつ(つ);present, existing, actual
+24;調;chouチョウ;shira(beru), tono(u)しら(べる)、ととの(う);tune, tone, meter, prepare, investigate
+25;化;ka, keカ、 ケ;ba(keru), fu(keru)ば(ける)、 ふ(ける);change, take the form of, influence, enchant, delude, -ization
+26;当;touトウ;a(taru)あ(たる);hit, right, appropriate
+27;約;yakuヤク;tsuzu(maru)つづ(まる);promise, approximately, shrink
+28;首;shuシュ;kubiくび;neck
+29;法;houホウ;noriのり;method, law, rule, principle, model, system
+30;性;sei, shouセイ、 ショウ; ;sex, gender, nature
+31;的;tekiテキ; ;mark, target, object, adjective ending
+32;要;youヨウ;i(ru), kanameい(る)、 かなめ;need, main point, essence, pivot
+33;制;seiセイ; ;system, law, rule
+34;治;ji, chiジ、チ;nasa(meru), nao(ru)おさ(める)、なお(る);reign, cure, heal
+35;務;muム;tsuto(meru)つと(める);task, duties
+36;成;sei, jouセイ、 ジョウ;na(ru)な(る);turn into, become, get, grow, elapse
+37;期;ki, goキ、 ゴ; ;period, time, date, term
+38;取;shuシュ;to(ru)と(る);take, fetch
+39;都;to, tsuト、ツ;miyakoみやこ;metropolis, capital
+40;和;wa, oワ、オ;yawa(ragu), nago(mu)やわ(らぐ)、なご(む);harmony, Japanese style, peace
+41;機;kiキ;hataはた;machine, airplane, opportunity
+42;平;hei, byouヘイ、ビョウ;tai(ra), hiraたい(ら)、ひら;even, flat, peace
+43;加;kaカ;kuwa(eru)くわ(える);add, addition, increase, join
+44;受;juジュ;u(keru)う(ける);accept, undergo, answer (phone), take
+45;続;zokuゾク;tsuzukuつづ(く);continue, series, sequel
+46;進;shinシン;susu(mu)すす(む);advance, proceed
+47;数;suuスウ;kazu, kazo(eru)かず、 かぞ(える);number, strength, fate, law, figures
+48;記;kiキ;shiru(su)しる(す);scribe, account, narrative
+49;初;shoショ;haji(me), hatsuはじ(め)、はつ;first time, beginning
+50;指;shiシ;yubi, sa(su)ゆび、さ(す);finger, point to, indicate
+51;権;kenケン; ;authority, power, rights
+52;支;shiシ;sasa(eru)ささ(える);branch, support, sustain
+53;産;sanサン;u(mu), mu(su)う(む)、 む(す);products, bear, give birth
+54;点;tenテン;tsu(keru)つ(ける);spot, point, mark
+55;報;houホウ;mukku(iru)むく(いる);report, news, reward
+56;済;sai, seiサイ、セイ;su(mu)す(む);settle, relieve, finish
+57;活;katsuカツ; ;living
+58;原;genゲン;haraはら;original, primitive, field
+59;共;kyouキョウ;tomoとも;together, both, neither
+60;得;tokuトク;e(ru)え(る);gain, get, find, earn, acquire, can, may, able to, profit
+61;解;kai, geカイ、ゲ;to(ku), hodo(ku)と(く)、ほど(く);unravel, explanation
+62;交;kouコウ;maji(waru), ma(zeru), ka(wasu)まじ(わる)、 ま(ぜる)、 か(わす);mingle, mixing, association, coming & going
+63;資;shiシ; ;assets, resources, capital, funds, data, be conducive to
+64;予;yo, shaヨ、 シャ;arakaji(me)あらかじ(め);beforehand, previous, myself, I
+65;向;kouコウ;mu(ku), muka(i)む(く)、むか(い);facing, beyond
+66;際;saiサイ;kiwaきわ;occasion, time
+67;勝;shouショウ;ka(tsu), masa(ru)か(つ)、 まさ(る);victory, win
+68;面;menメン;omo, omote, tsuraおも、おもて、つら;mask, face, features, surface
+69;告;kokuコク;tsu(geru)つ(げる);revelation, inform
+70;反;hanハン;so(ru)そ(る);anti-
+71;判;hanハン; ;judgement, signature
+72;認;ninニン;mito(meru), shitata(meru)みと(める)、したた(める);acknowledge, witness, recognize
+73;参;sanサン;mai(ru)まい(る);going, coming, participate
+74;利;riリ;ki(ku)き(く);profit, advantage, benefit
+75;組;soソ;ku(mu), kumiく(む)、くみ;association, assemble, unite
+76;信;shinシン; ;faith, truth, trust
+77;在;zaiザイ;a(ru)あ(る);exist, outskirts
+78;件;kenケン;kudanくだん;affair, case, matter
+79;側;sokuソク;gawa, sobaがわ、そば;side, lean, oppose
+80;任;ninニン;maka(seru)まか(せる);responsibility, duty
+81;引;inイン;hi(ku)ひ(く);pull, tug, jerk
+82;求;kyuuキュウ;moto(meru)もと(める);request, want, demand
+83;所;shoショ;tokoroところ;place, extent
+84;次;ji, shiジ、シ;tsu(gu), tsugiつ(ぐ)、つぎ;next, order
+85;昨;sakuサク; ;yesterday, previous
+86;論;ronロン;agetsura(u)あげつら(う);argument, discourse
+87;官;kanカン; ;bureaucrat, the government, organ
+88;増;zouゾウ;ma(su), fu(eru)ま(す)、 ふ(える);increase, add
+89;係;keiケイ;kaka(ru), kakariかか(る)、かかり;person in charge, connection
+90;感;kanカン; ;emotion, feeling, sensation
+91;情;jou, seiジョウ、セイ;nasa(ke)なさ(け);feelings, emotion, passion
+92;投;touトウ;na(geru)な(げる);throw, discard
+93;示;ji, shiジ、シ;shime(su)しめ(す);show, indicate, display
+94;変;henヘン;ka(waru)か(わる);unusual, change, strange
+95;打;daダ;u(tsu), bu(tsu)う(つ)、ぶ(つ);strike, hit, knock
+96;直;choku, jikiチョク、 ジキ;tada(chini), su(gu)ただ(ちに)、 す(ぐ);straightaway, honesty, frankness, fix, repair
+97;両;ryouリョウ; ;both
+98;式;shikiシキ; ;style, ceremony
+99;確;kakuカク;tashi(ka)たし(か);assurance, firm, confirm
+100;果;kaカ;ha(tasu)は(たす);fruit, reward, carry out, achieve, complete
+101;容;youヨウ; ;contain, form
+102;必;hitsuヒツ;kanara(zu)かなら(ず);invariably, certain, inevitable
+103;演;enエン; ;performance, act, play, render, stage
+104;歳;sai, seiサイ、セイ; ;age, year-end
+105;争;souソウ;araso(u)あらそ(う);contend, dispute, argue
+106;談;danダン; ;discuss, talk
+107;能;nouノウ;ata(u)あた(う);ability, talent, skill, capacity
+108;位;iイ;kurai, guraiくらい、 ぐらい;rank, grade, about
+109;置;chiチ;o(ku)お(く);placement, put, set, deposit, leave behind
+110;流;ryuu, ruリュウ、ル;naga(reru)なが(れる);current, flow
+111;格;kaku, kou, kyakuカク、コウ、キャク; ;status, rank, capacity
+112;疑;giギ;utaga(u)うたが(う);doubt, distrust
+113;過;kaカ;su(giru), yogi(ru)す(ぎる)、よぎ(る);overdo, exceed, go beyond
+114;局;kyokuキョク; ;bureau, board, office
+115;放;houホウ;hana(su), hou(ru)はな(す)、ほう(る);set free, release
+116;常;jouジョウ;tsuneつね;usual, ordinary, normal
+117;状;jouジョウ; ;conditions, form, appearance
+118;球;kyuuキュウ;tamaたま;ball, sphere
+119;職;shokuショク; ;post, employment, work
+120;与;yoヨ;ata(eru), azuka(ru)あた(える)、 あずか(る);give, award
+121;供;kyou, ku, kuuキョウ、ク、クウ;sona(eru), tomoそな(える)、とも;submit, offer, present, accompany
+122;役;yaku, ekiヤク、エキ; ;duty, service, role
+123;構;kouコウ;kama(u)かま(う);posture, build, pretend
+124;割;katsuカツ;wa(ru), wariわ(る)、わり;proportion, divide, cut, separate
+125;身;shinシン;miみ;somebody, person
+126;費;hiヒ;tsui(yasu)つい(やす);expense, consume
+127;付;fuフ;tsu(keru)つ(ける);adhere, attach, refer to, append
+128;由;yu, yuuユ、ユウ;yoshi, yo(ru)よし、よ(る);wherefore, a reason
+129;説;setsu, zeiセツ、 ゼイ;to(ku)と(く);opinion, theory, explanation
+130;難;nanナン;kata(i), muzuka(shii), niku(i)かた(い)、むずか(しい)、 にく(い);difficult, trouble, accident
+131;優;yuu, uユウ、ウ;yasa(shii), sugu(reru)やさ(しい)、すぐ(れる);tenderness, kind, actor
+132;夫;fu, fuuフ、フウ;ottoおっと;husband, man
+133;収;shuuシュウ;osa(meru)おさ(める);income, obtain, reap, pay, supply, store
+134;断;danダン;ta(tsu), kotowa(ru)た(つ)、 ことわ(る);severance, decline, refuse, apologize
+135;石;seki, shaku, kokuセキ、シャク、コク;ishiいし;stone
+136;違;iイ;chiga(u), taga(u)ちが(う)、たが(う);difference, differ
+137;消;shouショウ;ki(eru), ke(su)き(える)、け(す);extinguish, turn off
+138;神;shin, jinシン、 ジン;kamiかみ;gods, mind, soul
+139;番;banバン;tsugaiつが(い);turn, number in a series
+140;規;kiキ; ;standard, measure
+141;術;jutsuジュツ;subeすべ;art, technique, skill, means, trick
+142;備;biビ;sona(eru)そな(える);equip, provision, preparation
+143;宅;takuタク; ;home, house, residence
+144;害;gaiガイ; ;harm, injury
+145;配;haiハイ;kuba(ru)くば(る);distribute, spouse
+146;警;keiケイ; ;admonish, commandment
+147;育;ikuイク;soda(tsu), haguku(mu)そだ(つ)、はぐく(む);bring up, grow up, raise
+148;席;sekiセキ;mushiroむしろ;seat
+149;訪;houホウ;toozu(reru), tazu(neru)おとず(れる)、たず(ねる);call on, visit
+150;乗;jou, shouジョウ、 ショウ;no(ru)の(る);ride
+151;残;zanザン;noko(ru)のこ(る);remainder, balance
+152;想;sou, soソウ、ソ;omo(u)おも(う);concept, think, idea
+153;声;sei, shouセイ、ショウ;koeこえ;voice
+154;助;joジョ;tasu(keru)たす(ける);help, rescue, assist
+155;労;rouロウ;rou(suru), itawa(ru), negira(u)ろう(する)、いたわ(る)、ねぎら(う);labor, thank for
+156;例;reiレイ;tato(eba)たと(えば);example
+157;然;zen, nenゼン、ネン;shika, saしか、さ;sort of thing, if so
+158;限;genゲン;kagi(ru)かぎ(る);limit, restrict
+159;追;tsuiツイ;o(u)お(う);chase, drive away
+160;商;shouショウ;akina(u)あきな(う);"deal; selling; merchant"
+161;葉;youヨウ;haは;leaf, plane, needle, blade, counter for flat things
+162;伝;denデン;tsuta(waru)つた(わる);transmit, go along, walk along, follow, report, communicate, legend, tradition
+163;働;douドウ;hatara(ku)はたら(く);work
+164;形;kei, gyouケイ、ギョウ;kata, katachi, nariかた、かたち、なり;shape, form, style
+165;景;kei, keケイ、ケ; ;scenery, view
+166;落;rakuラク;o(chiru)お(ちる);fall, drop
+167;好;kouコウ;kono(mu), su(ku)この(む)、 す(く);fond, pleasing, like something
+168;退;taiタイ;shirizo(ku), hi(ku), no(keru), do(ku)しりぞ(く)、 ひ(く)、 の(ける)、 ど(く);retreat, withdraw, retire, resign, repel, expel, reject
+169;頭;tou, zu, toトウ、ズ、ト;atama, kashiraあたま、かしら;head
+170;負;fuフ;ma(keru), o(u)ま(ける)、 お(う);defeat, negative, minus, assume a responsibility
+171;渡;toト;wata(ru)わた(る);transit, ferry, cross
+172;失;shitsuシツ;ushina(u), u(seru)うしな(う)、 う(せる);lose, error, fault, disadvantage, loss
+173;差;saサ;sa(su)さ(す);distinction, difference, variation
+174;末;matsuマツ;sueすえ;end, close, tip
+175;守;shu, suシュ、ス;mamo(ru), moriまも(る)、もり;guard, protect, obey
+176;若;jakuジャク;waka(i), mo(shi)わか(い)、も(し);young
+177;種;shuシュ;tane, -gusaたね、-ぐさ;species, kind, class, seed
+178;美;bi, miビ、 ミ;utsukushiiうつく(しい);beauty, beautiful
+179;命;mei, myouメイ、ミョウ;inochiいのち;fate, command
+180;福;fukuフク; ;blessing, fortune, luck, wealth
+181;望;bouボウ;nozo(mu), mochiのぞ(む)、 もち;ambition, full moon, hope, desire, aspire to, expect
+182;非;hiヒ;ara(zu)あら(ず);un-, mistake, negative
+183;観;kanカン;mi(ru)み(る);outlook, appearance, condition
+184;察;satsuサツ; ;guess, presume, judge
+185;段;danダン; ;grade, steps, stairs
+186;横;ouオウ;yokoよこ;sideways, side
+187;深;shinシン;fuka(i)ふか(い);deep, heighten
+188;申;shinシン;mou(su), saruもう(す)、さる;have the honor to
+189;様;youヨウ;sama, sanさま、さん;manner, situation, polite suffix
+190;財;zai, sai, zokuザイ、 サイ、 ゾク; ;property, money, wealth, assets
+191;港;kouコウ;minatoみなと;harbor, port
+192;識;shikiシキ;shi(ru)し(る);know
+193;呼;koコ;yo(bu)よ(ぶ);call, invite
+194;達;tatsu, daタツ、 ダ;-tachi-たち;accomplished, reach, arrive, attain
+195;良;ryouリョウ;yo(i), i(i)よ(い)、い(い);good
+196;阪;hanハン;sakaさか;heights, slope
+197;候;kouコウ;sourouそうろう;climate, season, weather
+198;程;teiテイ;hodoほど;extent, degree
+199;満;manマン;mi(chiru)み(ちる);full, fullness, enough, satisfy
+200;敗;haiハイ;yabu(reru)やぶ(れる);failure, defeat
+201;値;chiチ;ne, ataiね、 あたい;price, cost, value
+202;突;totsu, kaトツ、カ;tsu(ku)つ(く);stab, protruding, thrust
+203;光;kouコウ;hika(ru), hikariひか(る)、ひかり;ray, light
+204;路;ro, ruロ、ル;michiみち;path, route, road
+205;科;kaカ; ;department, course, section
+206;積;sekiセキ;tsu(mu)つ(む);volume, contents, pile up, stack
+207;他;taタ;hokaほか;other, another
+208;処;shoショ; ;dispose, manage, deal with
+209;太;tai, taタイ、タ;futo(i)ふと(い);plump, thick, big around
+210;客;kyaku, kakuキャク、カク; ;guest, visitor, customer
+211;否;hiヒ;ina, iyaいな、いや;negate, no, decline
+212;師;shiシ; ;expert, teacher, master
+213;登;tou, toトウ、ト;nobo(ru), a(garu)のぼ(る)、あ(がる);ascend, climb up
+214;易;eki, iエキ、 イ;yasa(shii), yasu(i)やさ(しい)、 やす(い);easy, ready to, simple
+215;速;sokuソク;haya(i)はや(い);quick, fast
+216;存;son, zonソン、ゾン; ;exist, be aware of
+217;飛;hiヒ;to(bu)と(ぶ);fly
+218;殺;satsu, saiサツ、サイ;koro(su)ころ(す);kill, murder
+219;号;gouゴウ; ;number, item
+220;単;tanタン;hitoeひとえ;simple, single
+221;座;zaザ;suwa(ru)すわ(る);squat, seat, sit
+222;破;haハ;yabu(ru)やぶ(る);rip, tear, break
+223;除;jo, jiジョ、ジ;nozo(ku)のぞ(く);exclude, remove
+224;完;kanカン; ;perfect, completion
+225;降;kou, goコウ、 ゴ;o(riru), fu(ru)お(りる)、 ふ(る);descend, precipitate, fall, surrender
+226;責;sekiセキ;se(meru)せ(める);blame, condemn
+227;捕;hoホ;to(raeru), tsuka(maeru)と(らえる)、つか(まえる);catch, capture
+228;危;kiキ;abu(nai), aya(ui)あぶ(ない)、あや(うい);dangerous, fear, uneasy
+229;給;kyuuキュウ;tama(u), tamo(u)たま(う)、たも(う);salary, wage, gift
+230;苦;kuク;kuru(shii), niga(i)くる(しい)、にが(い);suffering, bitter
+231;迎;geiゲイ;muka(eru)むか(える);welcome, meet, greet
+232;園;enエン;sonoその;park, garden, yard
+233;具;guグ;sona(eru), tsubasa(ni)そな(える)、つぶさ(に);tool, utensil
+234;辞;jiジ;ya(meru)や(める);resign, word, term
+235;因;inイン;yo(ru), china(mu)よ(る)、ちな(む);cause, factor, depend on
+236;馬;baバ;umaうま;horse
+237;愛;aiアイ;ito(shii), manaいと(しい)、まな;love, affection
+238;富;fu, fuuフ、フウ;to(mu), tomiと(む)、 とみ;wealth, enrich, abundant
+239;彼;hiヒ;kare, kanoかれ、 かの;he, him
+240;未;mi, biミ、ビ;ima(da), ma(da)いま(だ)、ま(だ);un-, not yet
+241;舞;buブ;ma(u), maiま(う)、まい;dance, circle
+242;亡;bou, mouボウ、モウ;na(kunaru)な(くなる);deceased, dying
+243;冷;reiレイ;tsume(tai), hi(eru), sa(meru)つめ(たい)、ひ(える)、さ(める);cool, cold, chill
+244;適;tekiテキ;kana(u)かな(う);suitable, occasional, rare
+245;婦;fuフ;yomeよめ;lady, woman, wife
+246;寄;kiキ;yo(ru)よ(る);draw near, gather
+247;込; ;ko(mu)こ(む);crowded, mixture
+248;顔;ganガン;kaoかお;face, expression
+249;類;ruiルイ;tagu(i)たぐ(い);sort, kind, variety, class, genus
+250;余;yoヨ;ama(ru)あま(る);too much, surplus
+251;王;ouオウ; ;king, rule
+252;返;henヘン;kae(su)かえ(す);return, answer
+253;妻;saiサイ;tsumaつま;wife, spouse
+254;背;haiハイ;se, seiせ、せい;stature, height, back
+255;熱;netsuネツ;atsu(i)あつ(い);heat, fever, passion
+256;宿;shukuシュク;yadoやど;inn, lodging
+257;薬;yakuヤク;kusuriくすり;medicine, chemical
+258;険;kenケン;kewa(shii)けわ(しい);precipitous, inaccessible place
+259;頼;raiライ;tano(mu), tayo(ru)たの(む)、 たよ(る);trust, request
+260;覚;kakuカク;obo(eru), sa(masu)おぼ(える)、 さ(ます);memorize, learn, remember, awake
+261;船;senセン;fune, funaふね、ふな;ship, boat
+262;途;toト;michiみち;route, way, road
+263;許;kyoキョ;yuru(su)ゆる(す);permit, approve
+264;抜;batsuバツ;nu(ku)ぬ(く);slip out, extract, pull out, remove
+265;便;ben, binベン、 ビン;tayo(ri)たよ(り);convenience, facility
+266;留;ryuu, ruリュウ、 ル;to(maru), todo(meru)と(まる)、 とど(める);detain, fasten, halt, stop
+267;罪;zaiザイ;tsumiつみ;guilt, sin, crime
+268;努;doド;tsuto(meru)つと(める);toil, diligent, as much as possible
+269;精;sei, shouセイ、ショウ;shira(geru)しら(げる);refined, ghost, fairy, energy
+270;散;sanサン;chi(ru), bara(keru)ち(る)、ばら(ける);scatter, disperse
+271;静;sei, jouセイ、ジョウ;shizu(ka)しず(か);quiet
+272;婚;konコン; ;marriage
+273;喜;kiキ;yoroko(bu)よろこ(ぶ);rejoice, take pleasure in
+274;浮;fuフ;u(kabu)う(かぶ);float, rise to surface
+275;絶;zetsuゼツ;ta(eru)た(える);discontinue, unparalleled
+276;幸;kouコウ;saiwa(i), sara, shiawa(se)さいわ(い)、さち、 しあわ(せ);happiness, blessing, fortune
+277;押;ouオウ;o(su)お(す);push
+278;倒;touトウ;tao(reru)たお(れる);overthrow, fall, collapse
+279;等;touトウ;hito(shii), nadoひと(しい)、など;etc., and so forth
+280;老;rouロウ;o(iru), fu(keru)お(いる)、ふ(ける);old
+281;曲;kyokuキョク;ma(garu)ま(がる);bend, music, melody
+282;払; ;hara(u)はら(う);pay
+283;庭;teiテイ;niwaにわ;courtyard, garden, yard
+284;徒;toト;itazura, adaいたずら、 あだ;on foot, junior, vanity, futility, uselessness
+285;勤;kin, gonキン、ゴン;tsuto(meru)つと(める);diligence, employed, serve
+286;遅;chiチ;oku(reru), oso(i)おく(れる)、 おそ(い);slow, late, back, later
+287;居;kyo, koキョ、コ;i(ru), o(ru)い(る)、お(る);reside, to be, exist
+288;雑;zatsu, zouザツ、ゾウ;maji(ru)まじ(る);miscellaneous
+289;招;shouショウ;mane(ku)まね(く);invite, summon, engage
+290;困;konコン;koma(ru)こま(る);quandary, become distressed
+291;欠;ketsu, kenケツ、ケン;ka(keru)か(ける);lack, gap
+292;更;kouコウ;sara(ni), fu(keru)さら(に)、ふ(ける);renew, renovate, again
+293;刻;kokuコク;kiza(mu)きざ(む);engrave, cut fine, chop
+294;賛;sanサン; ;approve, praise
+295;抱;houホウ;da(ku), ida(ku), kaka(eru)だ(く)、いだ(く)、かか(える);embrace, hug
+296;犯;hanハン;oka(su)おか(す);crime, sin, offense
+297;恐;kyouキョウ;oso(reru), kowa(i)おそ(れる)、こわ(い);fear, dread
+298;息;musu, sokuムス、ソク;ikiいき;breath, son, interest (on money)
+299;遠;en, onエン;too(i)とお(い);distant, far
+300;戻;reiレイ;modo(ru)もど(る);re-, return, revert
+301;願;ganガン;nega(u)ねが(う);petition, request, wish
+302;絵;kai, eカイ、エ; ;picture, drawing
+303;越;etsuエツ;ko(su)こ(す);surpass, cross over, move to, exceed
+304;欲;yokuヨク;ho(shii)ほ(しい);longing, greed, passion
+305;痛;tsuuツウ;ita(i)いた(い);pain, hurt, damage, bruise
+306;笑;shouショウ;wara(u), e(mu)わら(う)、え(む);laugh
+307;互;goゴ;taga(i), katami(ni)たが(い)、かたみ(に);mutually, reciprocally, together
+308;束;sokuソク;taba, tsukaたば、つか;bundle, manage
+309;似;ji, neジ、ね;ni(ru)に(る);becoming, resemble, imitate
+310;列;retsu, reレツ、レ; ;file, row, column
+311;探;tanタン;sagu(ru), saga(su)さぐ(る)、さが(す);search, look for
+312;逃;touトウ;ni(geru), noga(su)に(げる)、のが(す);escape, flee
+313;遊;yuuユウ;aso(bu)あそ(ぶ);play
+314;迷;meiメイ;mayo(u)まよ(う);astray, be perplexed, in doubt, lost
+315;夢;muム;yumeゆめ;dream, vision
+316;君;kunクン;kimiきみ;you, male name suffix
+317;閉;heiヘイ;to(jiru), shi(meru)と(じる)、し(める);closed, shut
+318;緒;shoショ;oお;beginning, end, cord, strap
+319;折;setsu, shakuセツ、シャク;o(ru), oriお(る)、おり;fold, break, fracture
+320;草;souソウ;kusaくさ;grass, weeds, herbs
+321;暮;boボ;ku(rasu)く(らす);evening, livelihood
+322;酒;shuシュ;sake, saka-さけ、さか-;sake, alcohol
+323;悲;hiヒ;kana(shii)かな(しい);grieve, sad
+324;晴;seiセイ;ha(reru)は(れる);clear up
+325;掛;keiケイ;ka(keru)か(ける);hang, suspend
+326;到;touトウ;ita(ru)いた(る);arrival, proceed, reach
+327;寝;shinシン;ne(ru)ね(る);lie down, sleep, rest
+328;暗;anアン;kura(i)くら(い);darkness, disappear, shade, informal
+329;盗;touトウ;nusu(mu)ぬす(む);steal, rob
+330;吸;kyuuキュウ;su(u)す(う);suck, inhale
+331;陽;youヨウ;hiひ;sunshine, positive
+332;御;gyo, goギョ、ゴ;on, oおん、お;honorable
+333;歯;shiシ;haは;tooth, cog
+334;忘;bouボウ;wasu(reru)わす(れる);forget
+335;雪;setsuセツ;yukiゆき;snow
+336;吹;suiスイ;fu(ku)ふ(く);blow, breathe, puff
+337;娘;jouジョウ;musume, koむすめ、こ;daughter, girl
+338;誤;goゴ;ayama(ru)あやま(る);mistake
+339;洗;senセン;ara(u)あら(う);wash
+340;慣;kanカン;na(reru)な(れる);accustomed, get used to
+341;礼;rei, raiレイ、ライ; ;salute, bow, ceremony, thanks
+342;窓;souソウ;madoまど;window, pane
+343;昔;seki, shakuセキ、シャク;mukashiむかし;once upon a time, old times
+344;貧;hin, binヒン、ビン;mazu(shii)まず(しい);poverty, poor
+345;怒;doド;ika(ru), oko(ru)いか(る)、 おこ(る);angry, be offended
+346;泳;eiエイ;oyo(gu)およ(ぐ);swim
+347;祖;soソ; ;ancestor, pioneer, founder
+348;杯;haiハイ;sakazukiさかずき;glass, cup
+349;疲;hiヒ;tsuka(reru)つか(れる);exhausted, tire
+350;皆;kaiカイ;mina, minnaみな、 みんな;all, everyone, everybody
+351;鳴;meiメイ;na(ku), na(ru)な(く)、な(る);chirp, cry, bark
+352;腹;fukuフク;haraはら;abdomen, belly, stomach
+353;煙;enエン;kemu(ru), kemuriけむ(る)、けむり;smoke
+354;眠;minミン;nemu(ru)ねむ(る);sleep
+355;怖;fuフ;kowa(i), o(jiru)こわ(い)、お(じる);dreadful, fearful
+356;耳;jiジ;mimiみみ;ear
+357;頂;chouチョウ;itada(ku)いただ(く);receive, top, summit, peak
+358;箱;souソウ;hakoはこ;box, chest
+359;晩;banバン; ;nightfall, night
+360;寒;kanカン;samu(i)さむ(い);cold
+361;髪;hatsuハツ;kamiかみ;hair (on the head)
+362;忙;bou, mouボウ、モウ;isoga(shii)いそが(しい);busy, occupied
+363;才;saiサイ; ;genius, years old
+364;靴;kaカ;kutsuくつ;shoes
+365;恥;chiチ;haji, ha(zukashii)はじ、は(ずかしい);shame, dishonor
+366;偶;guuグウ;tamaたま;accidentally, even number
+367;偉;iイ;era(i)えら(い);admirable, greatness
+368;猫;byouビョウ;nekoねこ;cat
+369;幾;kiキ;iku(tsu)いく(つ);how many, how much, some
+370;誰;suiスイ;dareだれ;who, someone, somebody

@@ -1,0 +1,374 @@
+1;党;touトウ;nakama, muraなかま、 むら;party, faction, clique
+2;協;kyouキョウ; ;co-, cooperation
+3;総;souソウ;sube(te), fusaすべ(て)、 ふさ;general, whole, all
+4;区;kuク; ;ward, district
+5;領;ryouリョウ;eriえり;jurisdiction, dominion
+6;県;kenケン;ka(keru)か(ける);prefecture
+7;設;setsuセツ;mou(keru)もう(ける);establishment, provision
+8;保;ho, houホ、ホウ;tamo(tsu)たも(つ);protect, guarantee, keep
+9;改;kaiカイ;arata(meru)あらた(める);reformation, change, modify
+10;第;daiダイ; ;No., number
+11;結;ketsuケツ;musu(bu), yu(u)むす(ぶ)、ゆ(う);tie, bind, contract
+12;派;haハ; ;faction, group, party
+13;府;fuフ; ;borough, urban prefecture, govt office
+14;査;saサ; ;investigate
+15;委;iイ;yuda(neru)ゆだ(ねる);committee, entrust to
+16;軍;gunグン;ikusaいくさ;army, force, troops
+17;案;anアン;tsukueつくえ;plan, suggestion, draft
+18;策;sakuサク; ;scheme, plan, policy
+19;団;dan, tonダン、トン;katamari, maru(i)かたまり、 まる(い);group, association
+20;各;kakuカク;onoonoおのおの;"each; every; either"
+21;島;touトウ;shimaしま;island
+22;革;kakuカク;kawaかわ;"leather; skin; reform; become serious"
+23;村;sonソン;muraむら;"village; town"
+24;勢;seiセイ;ikio(i)いきお(い);"forces; energy; military strength"
+25;減;genゲン;he(ru)へ(る);"dwindle; decrease; reduce"
+26;再;sai, saサイ、 サ;futata(bi)ふたた(び);again, twice, second time
+27;税;zeiゼイ; ;"tax; duty"
+28;営;eiエイ;itona(mu)いとな(む);"occupation; camp; perform; build; conduct (business)"
+29;比;hiヒ;kura(beru)くら(べる);"compare; race; ratio"
+30;防;bouボウ;fuse(gu)ふせ(ぐ);"ward off; defend; protect; resist"
+31;補;hoホ;ogina(u)おぎな(う);"supplement; supply; offset; compensate"
+32;境;kyouキョウ;sakaiさかい;boundary, border, region
+33;導;douドウ;michibi(ku)みちび(く);"guidance; leading; conduct; usher"
+34;副;fukuフク; ;"vice-; assistant; aide; duplicate; copy"
+35;算;sanサン;soroそろ;"calculate; divining; number; probability"
+36;輸;yu, shuユ、 シュ; ;transport, send, be inferior
+37;述;jutsuジュツ;no(beru)の(べる);"mention; state; speak"
+38;線;senセン;sujiすじ;"line; track"
+39;農;nouノウ; ;"agriculture; farmers"
+40;州;shuuシュウ;suす;"state; province"
+41;武;bu, muブ、 ム;take(shi)たけ(し);"warrior; military; chivalry; arms"
+42;象;shou, zouショウ、 ゾウ;katado(ru)かたど(る);"elephant; pattern after; image; shape"
+43;域;ikiイキ; ;"range; region; limits; stage; level"
+44;額;gakuガク;hitaiひたい;"forehead; tablet; framed picture; sum; amount; volume"
+45;欧;ouオウ;uta(u), ha(ku)うた(う)、 は(く);Europe
+46;担;tanタン;katsu(gu), nina(u)かつ(ぐ)、 にな(う);"shouldering; carry; raise; bear"
+47;準;junジュン;jun(jiru), nazora(eru)じゅん(じる)、 なぞら(える);"semi-; correspond to; imitate"
+48;賞;shouショウ;ho(meru)ほ(める);"prize; reward; praise"
+49;辺;henヘン;ata(ri), hoto(ri)あた(り)、 ほと(り);"environs; boundary; border; vicinity"
+50;造;zouゾウ;tsuku(ru)つく(る);"create; make; structure; physique"
+51;被;hiヒ;koumu(ru), kabu(ru)こうむ(る)、 かぶ(る);"incur; cover; shelter; wear; put on"
+52;技;giギ;wazaわざ;"skill; art; craft; ability; vocation; arts"
+53;低;teiテイ;hiku(i)ひく(い);"lower; short; humble"
+54;復;fukuフク;mataまた;restore, return to, revert
+55;移;iイ;utsu(ru)うつ(る);shift, move, change
+56;個;koコ; ;"individual; counter for articles"
+57;門;monモン;kado, toかど、 と;gate
+58;課;kaカ; ;chapter, lesson, section, department
+59;脳;nouノウ;nouzuruのうずる;"brain; memory"
+60;極;kyoku, gokuキョク、 ゴク;kiwa(meru)きわ(める);"poles; settlement; conclusion; end"
+61;含;ganガン;fuku(mu)ふく(む);"contain; include"
+62;蔵;zouゾウ;kuraくら;"storehouse; hide; own; have; possess"
+63;量;ryouリョウ;haka(ru)はか(る);"quantity; measure; weight; amount"
+64;型;keiケイ;kataかた;"type; model"
+65;況;kyouキョウ;mashi(te)まし(て);"condition; situation"
+66;針;shinシン;hariはり;"needle; pin; staple; stinger"
+67;専;senセン;moppa(ra)もっぱ(ら);"specialty; exclusive; mainly; solely"
+68;谷;kokuコク;tani, kiwa(maru)たに、 きわ(まる);valley
+69;史;shiシ; ;"history; chronicle"
+70;階;kaiカイ;kizahashiきざはし;"stair; counter for building story"
+71;管;kanカン;kudaくだ;"pipe; tube; wind instrument; control; jurisdiction"
+72;兵;hei, hyouヘイ、 ヒョウ;tsuwamonoつわもの;"soldier; private; troops; army"
+73;接;setsuセツ;tsu(gu)つ(ぐ);"touch; contact; adjoin; piece together"
+74;細;saiサイ;hoso(i), koma(kai)ほそ(い)、 こま(かい);"slender; narrow; detailed; precise"
+75;効;kouコウ;ki(ku)き(く);"merit; efficacy; efficiency; benefit"
+76;丸;ganガン;maru, maru(i)まる、まる(い);"round; full (month); perfection"
+77;湾;wanワン;irieいりえ;"gulf; bay; inlet"
+78;録;rokuロク;to(ru)と(る);record
+79;省;sei, shouセイ、 ショウ;kaeri(miru), habu(ku)かえり(みる)、 はぶ(く);"focus; government ministry; conserve"
+80;旧;kyuuキュウ;furu(i), motoふる(い)、 もと;"old times; old things; former; ex-"
+81;橋;kyouキョウ;hashiはし;bridge
+82;岸;ganガン;kishiきし;beach
+83;周;shuuシュウ;mawa(ri)まわ(り);"circumference; circuit; lap"
+84;材;zaiザイ; ;lumber, log, timber, wood
+85;戸;koコ;toと;"door; counter for houses"
+86;央;ouオウ; ;"center; middle"
+87;券;kenケン; ;ticket
+88;編;henヘン;a(mu)あ(む);"compilation; knit; braid; twist; editing"
+89;捜;souソウ;saga(su)さが(す);"search; look for; locate"
+90;竹;chikuチク;takeたけ;bamboo
+91;超;chouチョウ;ko(eru)こ(える);"transcend; super-; ultra-"
+92;並;heiヘイ;na(mi), nami, nara(beru)な(み)、なみ、なら(べる);row, and, besides
+93;療;ryouリョウ; ;"heal; cure"
+94;採;saiサイ;to(ru)と(る);"pick; take; fetch; take up"
+95;森;shinシン;moriもり;forest, woods
+96;競;kyou, keiキョウ、 ケイ;kiso(u), se(ru)きそ(う)、 せ(る);"compete with; bid; contest; race"
+97;介;kaiカイ; ;"jammed in; shellfish; mediate"
+98;根;konコン;neね;"root; radical"
+99;販;hanハン; ;marketing, sell, trade
+100;歴;rekiレキ; ;"curriculum; continuation; passage of time"
+101;将;shouショウ;masa(ni), hataまさ(に)、 はた;"leader; commander; general; admiral"
+102;幅;fukuフク;habaはば;"hanging scroll; width"
+103;般;hanハン; ;"carrier; carry; all; general; sort; kind"
+104;貿;bouボウ; ;"trade; exchange"
+105;講;kouコウ; ;"lecture; club; association"
+106;林;rinリン;hayashiはやし;"grove; forest"
+107;装;sou, shouソウ、 ショウ;yosoo(u)よそお(う);"attire; dress; pretend; disguise"
+108;諸;shoショ;moroもろ;"various; many; several; together"
+109;劇;gekiゲキ; ;"drama; play"
+110;河;kaカ;kawaかわ;river
+111;航;kouコウ; ;"navigate; sail; cruise; fly"
+112;鉄;tetsuテツ;kuroganeくろがね;iron
+113;児;jiジ;koこ;"newborn babe; child"
+114;禁;kinキン; ;"prohibition; ban; forbid"
+115;印;inイン;shirushiしるし;"stamp; seal; mark; symbol; trademark"
+116;逆;gyakuギャク;saka(rau)さか(らう);"inverted; reverse; opposite"
+117;換;kanカン;ka(eru)か(える);"interchange; period; change; convert; replace; renew"
+118;久;kyuu, kuキュウ、 ク;hisa(shii)ひさ(しい);"long time; old story"
+119;短;tanタン;mijika(i)みじか(い);"short; fault; defect; weak point"
+120;油;yuユ;aburaあぶら;"oil; fat"
+121;暴;bou, bakuボウ、 バク;aba(ku)あば(く);"outburst; force; violence"
+122;輪;rinリン;waわ;"wheel; ring; circle; link; loop; counter for wheels and flowers"
+123;占;senセン;shi(meru), urana(u)し(める)、 うらな(う);"fortune-telling; divining; forecasting"
+124;植;shokuショク;u(eru)う(える);plant
+125;清;seiセイ;kiyo(i)きよ(い);"pure; purify; cleanse"
+126;倍;baiバイ; ;"double; twice; times; fold"
+127;均;kinキン;nara(su)なら(す);"level; average"
+128;億;okuオク; ;"hundred million; 10**8"
+129;圧;atsuアツ;o(su)お(す);"pressure; push; overwhelm; oppress"
+130;芸;geiゲイ;u(eru), nori, wazaう(える)、 のり、 わざ;"technique; art; craft; performance; acting"
+131;署;shoショ; ;"signature; govt office; police station"
+132;伸;shinシン;no(biru)の(びる);"expand; stretch; extend"
+133;停;teiテイ;to(meru)と(める);"halt; stopping"
+134;爆;bakuバク;ha(zeru)は(ぜる);"bomb; burst open"
+135;陸;riku, rokuリク、 ロク;okaおか;"land; six"
+136;玉;gyokuギョク;tamaたま;"jewel; ball"
+137;波;haハ;namiなみ;"waves; billows"
+138;帯;taiタイ;o(biru)お(びる);"sash; belt; obi; zone; region"
+139;延;enエン;no(biru)の(びる);"prolong; stretching"
+140;羽;uウ;ha, wa, haneは、 わ、 はね;"feathers; counter for birds, rabbits"
+141;固;koコ;kata(meru)かた(める);"harden; set; clot; curdle"
+142;則;sokuソク;notto(ru)のっと(る);"rule; follow; based on"
+143;乱;ranラン;mida(reru)みだ(れる);"riot; war; disorder; disturb"
+144;普;fuフ;amane(ku)あまね(く);"universal; generally"
+145;測;sokuソク;haka(ru)はか(る);"fathom; plan; scheme; measure"
+146;豊;hou, buホウ、 ブ;yuta(ka), toyoゆた(か)、 とよ;"bountiful; excellent; rich"
+147;厚;kouコウ;atsu(i)あつ(い);"thick; heavy; rich"
+148;齢;reiレイ;yowai, toshiよわい、 とし;age
+149;囲;iイ;kako(mu)かこ(む);"surround; enclosure; preserve; keep"
+150;卒;sotsuソツ;so(ssuru)そっ(する);"graduate; soldier; private; die"
+151;略;ryakuリャク;hoboほぼ;"abbreviation; omission; outline; shorten"
+152;承;shouショウ;uketamawa(ru)うけたまわ(る);"hear; listen to; be informed; receive"
+153;順;junジュン; ;"obey; order; turn; occasion"
+154;岩;ganガン;iwaいわ;"boulder; rock; cliff"
+155;練;renレン;ne(ru)ね(る);practice, gloss, train, drill, polish, refine
+156;軽;keiケイ;karu(i)かる(い);"lightly; trifling; unimportant"
+157;了;ryouリョウ; ;"complete; finish"
+158;庁;chouチョウ;yakushoやくしょ;government office
+159;城;jou, seiジョウ、 セイ;shiroしろ;castle
+160;患;kanカン;wazura(u)わずら(う);"afflicted; disease; suffer from; be ill"
+161;層;souソウ; ;"stratum; social class; layer; story; floor"
+162;版;hanハン; ;"printing block; edition; impression; label"
+163;令;reiレイ; ;"orders; command; decree"
+164;角;kakuカク;kado, tsunoかど、 つの;"angle; corner; square"
+165;絡;rakuラク;kara(mu)から(む);"entwine; coil around; get caught in"
+166;損;sonソン;soko(nau)そこ(なう);"damage; loss; disadvantage; hurt; injure"
+167;募;boボ;tsuno(ru)つの(る);"recruit; campaign"
+168;裏;riリ;uraうら;"back; reverse; inside; rear"
+169;仏;butsuブツ;hotokeほとけ;Buddha, the dead, France
+170;績;sekiセキ; ;"exploits; achievements"
+171;築;chikuチク;kizu(ku)きず(く);"fabricate; build; construct"
+172;貨;kaカ;takaraたから;"freight; goods; property"
+173;混;konコン;ma(jiru)ま(じる);"mix; blend; confuse"
+174;昇;shouショウ;nobo(ru)のぼ(る);rise up
+175;池;chiチ;ikeいけ;"pond; pool; reservoir"
+176;血;ketsuケツ;chiち;blood
+177;温;onオン;atata(kai), nukuあたた(かい)、ぬく;warm
+178;季;kiキ; ;seasons
+179;星;seiセイ;hoshiほし;star
+180;永;eiエイ;naga(i)なが(い);"eternity; long; lengthy"
+181;著;cho, chakuチョ、 チャク;arawa(su), ichijiru(shii)あらわ(す)、 いちじる(しい);"renowned; publish; write"
+182;誌;shiシ; ;"document; records"
+183;庫;ko, kuコ、 ク;kuraくら;"warehouse; storehouse"
+184;刊;kanカン; ;"publish; carve; engrave"
+185;像;zouゾウ; ;"statue; picture; image; figure"
+186;香;kou, kyouコウ、 キョウ;kao(ri)かお(り);"incense; smell; perfume"
+187;坂;hanハン;sakaさか;"slope; incline; hill"
+188;底;teiテイ;sokoそこ;"bottom; sole; depth; bottom price"
+189;布;fuフ;nuno, shi(ku)ぬの、 し(く);"linen; cloth; spread; distribute"
+190;寺;jiジ;teraてら;Buddhist temple
+191;宇;uウ; ;"eaves; roof; house; heaven"
+192;巨;kyoキョ; ;"gigantic; big; large; great"
+193;震;shinシン;furu(u)ふる(う);"quake; shake; tremble; quiver"
+194;希;kiキ;mare, koinega(u)まれ、 こいねが(う);"hope; beg; request; pray"
+195;触;shokuショク;fu(reru), sawa(ru)ふ(れる)、 さわ(る);"contact; touch; feel; hit; proclaim; announce"
+196;依;i, eイ、 エ;yo(ru)よ(る);"reliant; depend on; consequently; therefore; due to"
+197;籍;sekiセキ; ;"enroll; register; membership"
+198;汚;oオ;yogo(su), kitana(i), kega(su)よご(す)、 きたな(い)、 けが(す);"dirty; pollute; disgrace; defile"
+199;枚;mai, baiマイ、 バイ; ;"sheet of...; counter for flat thin objects"
+200;複;fukuフク; ;"duplicate; double; compound; multiple"
+201;郵;yuuユウ; ;"mail; stagecoach stop"
+202;仲;chuuチュウ;nakaなか;"go-between; relationship"
+203;栄;eiエイ;saka(eru)さか(える);"flourish; prosperity; honor"
+204;札;satsuサツ;fudaふだ;"ticket; paper money; banknote; note"
+205;板;han, banハン、 バン;itaいた;"plank; board; plate; stage"
+206;骨;kotsuコツ;honeほね;"skeleton; bone; remains; frame"
+207;傾;keiケイ;katamu(ku)かたむ(く);"lean; incline; tilt; trend; bias"
+208;届;kaiカイ;todo(keru)とど(ける);"deliver; reach; arrive; report"
+209;巻;kanカン;ma(ku), makiま(く)、 まき;"scroll; volume; book; part; roll up; wind up; coil; counter for texts (or book scrolls)"
+210;燃;nenネン;mo(eru)も(える);"burn; blaze; glow"
+211;跡;sekiセキ;atoあと;"tracks; mark; print; impression"
+212;包;houホウ;tsutsu(mu), kuru(mu)つつ(む)、 くる(む);"wrap; pack up; cover; conceal"
+213;駐;chuuチュウ; ;"stop-over; reside in; resident"
+214;弱;jakuジャク;yowa(i)よわ(い);"weak; frail"
+215;紹;shouショウ; ;"introduce; inherit; help"
+216;雇;koコ;yato(u)やと(う);"employ; hire"
+217;替;taiタイ;ka(waru)か(わる);exchange, spare, substitute
+218;預;yoヨ;azu(keru)あず(ける);"deposit; custody; leave with; entrust to"
+219;焼;shouショウ;ya(ku)や(く);"bake; burning"
+220;簡;kanカン;fuda, era(bu)ふだ、 えら(ぶ);"simplicity; brevity"
+221;章;shouショウ; ;"badge; chapter; composition; poem"
+222;臓;zouゾウ;harawataはらわた;"entrails; viscera; bowels"
+223;律;ritsu, richiリツ、 リチ; ;"rhythm; law; regulation; control"
+224;贈;zouゾウ;oku(ru)おく(る);"presents; send; give to; award to"
+225;照;shouショウ;te(ru)て(る);"illuminate; shine; compare"
+226;薄;hakuハク;usu(i)うす(い);"dilute; thin; weak (tea)"
+227;群;gunグン;mu(reru), mura(garu)む(れる)、 むら(がる);"flock; group; crowd; herd"
+228;秒;byouビョウ; ;second
+229;奥;ouオウ;okuおく;"heart; interior"
+230;詰;kitsuキツ;tsu(meru)つ(める);"packed; close; rebuke; blame"
+231;双;souソウ;futaふた;"pair; set; comparison; counter for pairs"
+232;刺;shiシ;sa(su), togeさ(す)、 さし、 とげ;thorn, pierce, stab, prick, sting
+233;純;junジュン; ;"genuine; purity; innocence"
+234;翌;yokuヨク; ;"the following; next"
+235;快;kaiカイ;kokoroyo(i)こころよ(い);"cheerful; pleasant; agreeable; comfortable"
+236;片;henヘン;kataかた;"one-sided; piece"
+237;敬;keiケイ;uyama(u)うやま(う);"awe; respect; honor; revere"
+238;悩;nouノウ;naya(mu)なや(む);"trouble; worry; in pain; distress; illness"
+239;泉;senセン;izumiいずみ;"spring; fountain"
+240;皮;hiヒ;kawaかわ;"skin; hide; leather"
+241;漁;gyo, ryouギョ、 リョウ;asa(ru)あさ(る);"fishing; fishery"
+242;荒;kouコウ;ara(i), a(reru)あら(い)、あ(れる);"rough; wild"
+243;貯;choチョ;ta(meru)た(める);"savings; store"
+244;硬;kouコウ;kata(i)かた(い);"stiff; hard"
+245;埋;maiマイ;u(meru)う(める);"bury; be filled up; embedded"
+246;柱;chuuチュウ;hashiraはしら;"pillar; post; cylinder; support"
+247;祭;saiサイ;matsuriまつり;"ritual; offer prayers; celebrate"
+248;袋;taiタイ;fukuroふくろ;"sack; bag; pouch"
+249;筆;hitsuヒツ;fudeふで;"writing brush; writing; painting brush; handwriting"
+250;訓;kunクン;yo(mu), kun(zuru)よ(む)、くん(ずる);instruction, explanation, read
+251;浴;yokuヨク;a(biru)あ(びる);"bathe; be favored with; bask in"
+252;童;douドウ;warabeわらべ;"juvenile; child"
+253;宝;houホウ;takaraたから;"treasure; wealth; valuables"
+254;封;fuu, houフウ、 ホウ; ;"seal; closing"
+255;胸;kyouキョウ;muneむね;"bosom; breast; chest; heart; feelings"
+256;砂;sa, shaサ、 シャ;sunaすな;sand
+257;塩;enエン;shioしお;salt
+258;賢;kenケン;kashiko(i)かしこ(い);"intelligent; wise; wisdom; cleverness"
+259;腕;wanワン;udeうで;"arm; ability; talent"
+260;兆;chouチョウ;kiza(su)きざ(す);"trillion; sign; omen; symptoms"
+261;床;shouショウ;toko, yukaとこ、 ゆか;"bed; counter for beds; floor; padding; tatami"
+262;毛;mouモウ;keけ;"fur; hair; feather"
+263;緑;ryoku, rokuリョク、 ロク;midoriみどり;green
+264;尊;sonソン;touto(i)とうと(い);"revered; valuable; precious; noble"
+265;祝;shukuシュク;iwa(u)いわ(う);"celebrate; congratulate"
+266;柔;juu, nyuuジュウ、 ニュウ;yawa(rakai)やわ(らかい);"tender; weakness; gentleness; softness"
+267;殿;denデン;tono, donoとの、 どの;"Mr.; hall; mansion; palace; temple; lord"
+268;濃;nouノウ;ko(i)こ(い);"concentrated; thick; dark; undiluted"
+269;液;ekiエキ; ;"fluid; liquid; juice; sap; secretion"
+270;衣;i, eイ、 エ;koromo, kinuころも、 きぬ;"garment; clothes; dressing"
+271;肩;kenケン;kataかた;shoulder
+272;零;reiレイ;zeroぜろ;"zero; spill; overflow; nothing"
+273;幼;youヨウ;osana(i)おさな(い);"infancy; childhood"
+274;荷;kaカ;niに;"baggage; load; cargo; freight"
+275;泊;hakuハク;to(maru)と(まる);overnight stay
+276;黄;kou, ouコウ、 オウ;kiき;yellow
+277;甘;kanカン;ama(i)あま(い);"sweet; coax; pamper; sugary"
+278;臣;shin, jinシン、 ジン; ;"retainer; subject"
+279;浅;senセン;asa(i)あさ(い);"shallow; superficial; frivolous"
+280;掃;souソウ;ha(ku)は(く);"sweep; brush"
+281;雲;unウン;kumoくも;cloud
+282;掘;kutsuクツ;ho(ru)ほ(る);"dig; delve; excavate"
+283;捨;shaシャ;su(teru)す(てる);"discard; throw away; abandon"
+284;軟;nanナン;yawa(rakai)やわ(らかい);soft
+285;沈;chin, jinチン、 ジン;shizu(mu)しず(む);"sink; be submerged; subside; be depressed"
+286;凍;touトウ;koo(ru), kogo(eru)こお(る)、 こご(える);"frozen; refrigerate"
+287;乳;nyuuニュウ;chichi, chiちち、ち;milk, breasts
+288;恋;renレン;koi(shii)こい(しい);"romance; in love; yearn for; miss"
+289;紅;kou, kuコウ、 ク;beni, kurenaiべに、 くれない;"crimson; deep red"
+290;郊;kouコウ; ;outskirts, suburbs, rural area
+291;腰;youヨウ;koshiこし;"loins; hips; waist"
+292;炭;tanタン;sumiすみ;"charcoal; coal"
+293;踊;youヨウ;odo(ru)おど(る);"jump; dance; leap; skip"
+294;冊;satsuサツ;fumiふみ;"counter for books; volume"
+295;勇;yuuユウ;isa(mu)いさ(む);"courage; cheer up; bravery; heroism"
+296;械;kaiカイ;kaseかせ;"contraption; machine; instrument"
+297;菜;saiサイ;naな;"vegetable; side dish; greens"
+298;珍;chinチン;mezura(shii)めずら(しい);"rare; curious; strange"
+299;卵;ranラン;tamagoたまご;egg
+300;湖;koコ;mizuumiみずうみ;lake
+301;喫;kitsuキツ;no(mu)の(む);consume, eat, drink, smoke, receive
+302;干;kanカン;ho(su), hi(ru)ほ(す)、 ひ(る);"dry; parch"
+303;虫;chuu, kiチュウ、 キ;mushiむし;"insect; bug"
+304;刷;satsuサツ;su(ru), ha(ku)す(る)、 は(く);"printing; print; brush"
+305;湯;touトウ;yuゆ;"hot water; bath; hot spring"
+306;溶;youヨウ;to(keru)と(ける);"melt; dissolve; thaw"
+307;鉱;kouコウ;araganeあらがね;"mineral; ore"
+308;涙;ruiルイ;namidaなみだ;"tears; sympathy"
+309;匹;hitsuヒツ;hikiひき;counter for small animals
+310;孫;sonソン;magoまご;"grandchild; descendants"
+311;鋭;eiエイ;surudo(i)するど(い);"pointed; sharpness; edge; weapon; sharp; violent"
+312;枝;shiシ;edaえだ;"bough; branch; twig; limb; counter for branches"
+313;塗;toト;nu(ru), nu(ri)ぬ(る)、 ぬ(り);"paint; smear; coating"
+314;軒;kenケン;nokiのき;"flats; counter for houses"
+315;毒;dokuドク; ;"poison; germ; harm"
+316;叫;kyouキョウ;sake(bu)さけ(ぶ);"shout; exclaim; yell"
+317;拝;haiハイ;oga(mu)おが(む);"worship; adore; pray to"
+318;氷;hyouヒョウ;koori, hiこおり、 ひ;"ice; hail; freeze"
+319;乾;kanカン;kawa(ku)かわ(く);"drought; dry; drink up; heaven"
+320;棒;bouボウ; ;"rod; stick; cane; pole"
+321;祈;kiキ;ino(ru)いの(る);"pray; wish"
+322;拾;shuuシュウ;hiro(u)ひろ(う);"pick up; gather; find"
+323;粉;funフン;ko, konaこ、 こな;"flour; powder; dust"
+324;糸;shiシ;itoいと;thread
+325;綿;menメン;wataわた;cotton
+326;汗;kanカン;aseあせ;"sweat; perspire"
+327;銅;douドウ;akaganeあかがね;copper
+328;湿;shitsuシツ;shime(ru)しめ(る);"damp; wet; moist"
+329;瓶;binビン;kame, heiかめ、 へい;"bottle; jar; jug; urn"
+330;咲;shouショウ;sa(ku)さ(く);"blossom; bloom"
+331;召;shouショウ;me(su)め(す);"call; send for; wear; buy, to eat, to drink"
+332;缶;kanカン;kamaかま;"tin can; container"
+333;隻;sekiセキ; ;"vessels; counter for ships; fish; one of a pair"
+334;脂;shiシ;aburaあぶら;"fat; grease; lard"
+335;蒸;jou, seiジョウ、 セイ;mu(su)む(す);"steam; heat; foment"
+336;肌;kiキ;hadaはだ;"texture; skin; body; grain"
+337;耕;kouコウ;tagaya(su)たがや(す);"till; plow; cultivate"
+338;鈍;donドン;nibu(i), namaku(ra)にぶ(い)、 なまく(ら);"dull; slow; foolish; blunt"
+339;泥;deiデイ;doroどろ;"mud; adhere to; be attached to"
+340;隅;guuグウ;sumiすみ;"corner; nook"
+341;灯;touトウ;hi, tomo(su)ひ、とも(す);"lamp; a light; counter for lights"
+342;辛;shinシン;kara(i), tsura(i)から(い)、 つら(い);"spicy; hot"
+343;磨;maマ;miga(ku)みが(く);"grind; polish; improve; brush (teeth)"
+344;麦;bakuバク;mugiむぎ;"barley; wheat"
+345;姓;sei, shouセイ、 ショウ; ;surname
+346;筒;touトウ;tsutsuつつ;"cylinder; pipe; tube"
+347;鼻;biビ;hanaはな;"nose; snout"
+348;粒;ryuuリュウ;tsubuつぶ;"grains; drop; counter for tiny particles"
+349;詞;shiシ;kotobaことば;"part of speech; words"
+350;胃;iイ; ;"stomach; crop"
+351;畳;jou, chouジョウ、 チョウ;tatamiたたみ;"tatami mat; fold"
+352;机;kiキ;tsukueつくえ;"desk; table"
+353;膚;fuフ;hadaはだ;"skin; body; texture"
+354;濯;takuタク;susu(gu)すす(ぐ);"laundry; wash; rinse"
+355;塔;touトウ; ;"pagoda; tower; steeple"
+356;沸;futsuフツ;wa(ku)わ(く);"seethe; boil; ferment"
+357;灰;kaiカイ;haiはい;"ashes; cremate"
+358;菓;kaカ; ;"candy; cakes; fruit"
+359;帽;bouボウ;ずきん、 おお(う);"cap; headgear"
+360;枯;koコ;ka(reru)か(れる);"wither; die; dry up; be seasoned"
+361;涼;ryouリョウ;suzu(shii)すず(しい);"refreshing; nice and cool"
+362;舟;shuuシュウ;funeふね;"boat; ship"
+363;貝;baiバイ;kaiかい;shellfish
+364;符;fuフ; ;"token; sign; mark"
+365;憎;zouゾウ;niku(mu)にく(む);"hate; detest"
+366;皿;beiベイ;sara, zaraさら、 ざら;"dish; a helping; plate"
+367;肯;kouコウ;gaenji(ru)がえんじ(る);"agreement; consent; comply with"
+368;燥;souソウ;hasha(gu)はしゃ(ぐ);"parch; dry up"
+369;畜;chikuチク; ;"livestock; domestic fowl and animals"
+370;坊;bou, boボウ、 ボッ; ;boy, priest
+371;挟;kyouキョウ;hasa(mu)はさ(む);"pinch; between"
+372;曇;donドン;kumo(ru)くも(る);cloudy weather
+373;滴;tekiテキ;shizuku, shitata(ru)しずく、 したた(る);"drip; drop"
+374;伺;shiシ;ukaga(u)うかが(う);"visit; ask; inquire; question"
