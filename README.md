@@ -6,6 +6,38 @@ Application Android native en Kotlin, en français et en thème sombre. Compatib
 
 Le dépôt du projet est [ryosama/android-kanji-flashcard](https://github.com/ryosama/android-kanji-flashcard). Le code et les commentaires sont en français.
 
+## Captures d'écran
+
+### Page d'accueil
+
+La page d'accueil permet de choisir un niveau JLPT, de lancer une révision en mode normal ou facile et d'accéder aux statistiques de progression.
+
+<img src="screenshots/page_accueil.png" alt="Page d'accueil avec les niveaux JLPT et les boutons de révision" width="320" />
+
+### Mode normal
+
+Le mode normal affiche un kanji et deux champs pour saisir sa prononciation et une signification, avec un bouton de validation pour chaque réponse et le bouton « Je ne sais pas ».
+
+<img src="screenshots/mode_normal.png" alt="Mode normal avec les champs Prononciation et Signification" width="320" />
+
+### Mode facile
+
+Le mode facile propose quatre réponses à sélectionner, ici un mélange de rōmaji, de kana et de français, ainsi que le bouton « Je ne sais pas ».
+
+<img src="screenshots/mode_facile.png" alt="Mode facile avec quatre propositions de lecture ou de signification" width="320" />
+
+### Statistiques : lectures
+
+La première vue des statistiques présente les kanji et leurs lectures on et kun, avec une recherche et des options de filtre et de tri.
+
+<img src="screenshots/statistique1.png" alt="Tableau des statistiques montrant les kanji et leurs lectures" width="320" />
+
+### Statistiques : progression
+
+Après un défilement horizontal, le tableau affiche le niveau de maîtrise, le nombre de présentations et les compteurs de réponses correctes et incorrectes.
+
+<img src="screenshots/statistique2.png" alt="Tableau des statistiques montrant la maîtrise et les compteurs de réponses" width="320" />
+
 ## Installer l'application
 
 Télécharger l'APK depuis la [dernière release GitHub](https://github.com/ryosama/android-kanji-flashcard/releases/latest), puis l'ouvrir sur le téléphone Android. Autoriser l'installation depuis la source utilisée si Android le demande.
