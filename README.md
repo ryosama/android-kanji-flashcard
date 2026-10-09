@@ -6,6 +6,12 @@ Application Android native en Kotlin, en français et en thème sombre. Compatib
 
 Le dépôt du projet est [ryosama/android-kanji-flashcard](https://github.com/ryosama/android-kanji-flashcard). Le code et les commentaires sont en français.
 
+## Installer l'application
+
+Télécharger l'APK depuis la [dernière release GitHub](https://github.com/ryosama/android-kanji-flashcard/releases/latest), puis l'ouvrir sur le téléphone Android. Autoriser l'installation depuis la source utilisée si Android le demande.
+
+Pour remplacer une ancienne version de test, exporter d'abord la progression en TSV, désinstaller cette version, installer la release puis importer sa progression. Les signatures debug et release sont différentes.
+
 ## Fonctionnement
 
 - 2 495 kanji provenant des cinq CSV français fournis, du JLPT N5 au N1.
@@ -50,7 +56,9 @@ Le script accepte également `ANDROID_SDK_ROOT` et respecte `GRADLE_USER_HOME` s
 ./scripts/build.sh --offline :core:check :app:assembleDebug :app:lintDebug
 ```
 
-APK : `app/build/outputs/apk/debug/app-debug.apk`. Il s'agit d'une version de test signée avec une clé de développement, pas d'une publication finale.
+Pour préparer un APK signé destiné à une release, utiliser `./scripts/build-release.sh` avec la configuration privée décrite dans [PUBLICATION.md](PUBLICATION.md).
+
+APK de test : `app/build/outputs/apk/debug/app-debug.apk`. Il s'agit d'une version de test signée avec une clé de développement, pas d'une publication finale.
 
 Après avoir activé le débogage USB et autorisé l'ordinateur sur le téléphone :
 
@@ -72,6 +80,6 @@ Le workflow [Android](.github/workflows/android.yml) exécute les vérifications
 
 Les tests parcourent toutes les cartes et les quatre types de QCM, vérifient les collisions de réponses, les délais Leitner, les limites de correction et les sauvegardes invalides.
 
-La préparation du dépôt et les commandes de publication sont décrites dans [PUBLICATION.md](PUBLICATION.md). La provenance et les conditions de réutilisation des ressources sont recensées dans [CREDITS.md](CREDITS.md). Aucun compte GitHub, secret ou identité de développeur n'est nécessaire à la compilation.
+La préparation du dépôt et les commandes de publication sont décrites dans [PUBLICATION.md](PUBLICATION.md). Aucun compte GitHub, secret ou identité de développeur n'est nécessaire à la compilation.
 
 Le code est publié sans licence pour le moment, selon le choix du mainteneur.

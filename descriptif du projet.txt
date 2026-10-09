@@ -23,8 +23,8 @@ Ces design ne sont pas gravé dans le marbre, il s'agit d'une idée. Tu peux pro
 - Les kanjis sont au fur et à mesure sélectionné dans la liste du niveau en suivant l'algorthime du système de flashcard décrit ici : https://fr.wikipedia.org/wiki/Carte_m%C3%A9moire_(apprentissage)
 - Il y a deux modes de révisions :
     - mode "facile" :
-        4 responses de "signification", "prononcitation en romanji" ou "prononciation en hiragana/katakana" sont proposé. Ces types de réponses peuvent être mélangé au sein d'un même kanji. Un menu propose quand on lance lemode facile de choisir entre "Que signification", "Que kana", "Que romanji", "Mélangé"
-        Ces réponses sont prise au hasard parmis les valeurs du fichier du même niveau
+        4 responses de "signification", "prononcitation en romanji" ou "prononciation en hiragana/katakana" sont proposé. Ces types de réponses peuvent être mélangés au sein d'un même kanji. Un menu propose quand on lance le mode facile de choisir entre "Que signification", "Que kana", "Que romanji", "Mélangé"
+        Ces réponses sont prises au hasard parmis les valeurs du fichier du même niveau
         Il suffit de cliquer sur le bouton qui correspond pour valider la réponse.
         Si la réponse est bonne, on affiche en bas d'écran en vert un texte "bonne réponse ->".
             Il suffit de cliquer sur ce message pour aller au kanji suivant (tiré au hasard)
@@ -35,7 +35,7 @@ Ces design ne sont pas gravé dans le marbre, il s'agit d'une idée. Tu peux pro
         Il y a une case pour répondre sur la prononciation (on peut écrire en romanji ou en hiragana).
         Si on écrit en romanji, il faut autoriser que "oo", "ou" et "ô" soit la même prononciation. "tchi" et "chi" sont la même prononciation.
         On peut valider la réponse avec un bouton "OK" en face de la case
-        Il y a également une case pour répondre sur un des sens de la signification. Il suffit qu'un des snes soit bon pour valider la signification.
+        Il y a également une case pour répondre sur un des sens de la signification. Il suffit qu'un des sens soit bon pour valider la signification.
         On peut valider la réponse avec un bouton "OK" en face de la case
         Si les deux réponses sont valides, on affiche en bas d'écran en vert un texte "bonne réponse ->".
         Si l'une des deux réponses est fausse (ou les deux), on affiche en bas d'écran en rouge un texte "mauvaise réponse ->" et on écrit sous les cases de réponses les bonnes réponses en vert.

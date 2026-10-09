@@ -9,7 +9,7 @@ Destination : https://github.com/ryosama/android-kanji-flashcard
 - Sources, catalogue, maquettes, icône, wrapper Gradle et documentation suivis par Git.
 - Outils locaux, caches, APK, clés de signature, fichiers d'environnement et sauvegardes personnelles exclus du dépôt.
 - Compilation et vérifications automatisées dans `.github/workflows/android.yml`.
-- Code sans licence pour le moment, selon le choix du mainteneur. La provenance des ressources reste à compléter dans [CREDITS.md](CREDITS.md).
+- Code sans licence pour le moment, selon le choix du mainteneur.
 
 ## Premier envoi
 
@@ -44,6 +44,40 @@ Sujets suggérés : `android`, `kotlin`, `kanji`, `jlpt`, `flashcards`, `leitner
 
 ## Distribution de l'application
 
-L'envoi des sources et la distribution d'une version Android sont deux étapes distinctes. Les artefacts du workflow sont des APK de test signés avec la clé de développement du runner ; cette clé peut changer entre deux compilations. Pour distribuer des mises à jour installables durablement, préparer une version release avec une clé de signature stable conservée hors de Git, puis joindre son APK à une GitHub Release.
+La version `0.1.0` est préparée avec une signature release stable. Le script suivant compile l'APK, lance Android Lint, vérifie sa signature et prépare le téléchargement et sa somme SHA-256 :
+
+```bash
+./scripts/build-release.sh
+# Avec les dépendances déjà présentes :
+./scripts/build-release.sh --offline
+```
+
+Python 3 est nécessaire pour préparer le nom versionné et la somme de contrôle. Les fichiers destinés à GitHub se trouvent dans `app/build/outputs/github-release/`.
+
+### Conserver la clé de signature
+
+La clé privée est `.signing/release.jks`. Ses mots de passe sont dans `keystore.properties`. Ces deux fichiers sont exclus de Git et ne doivent jamais être joints à une release. **Sauvegarder les deux dans un emplacement privé et sûr** : les mises à jour doivent être signées avec la même clé.
+
+Sur un nouveau poste, restaurer ces deux fichiers pour continuer à publier les mises à jour. `keystore.properties.example` décrit la configuration attendue sans contenir de mot de passe. Les builds debug et le workflow de vérification GitHub fonctionnent sans clé release.
+
+### Publier une version
+
+Après compilation et commit des sources, créer et envoyer le tag de version, puis joindre les fichiers à la release avec GitHub CLI :
+
+```bash
+git push -u origin main
+git tag -a v0.1.0 -m 'Kanji Flashcards 0.1.0'
+git push origin v0.1.0
+gh release create v0.1.0 \
+  app/build/outputs/github-release/kanji-flashcards-0.1.0.apk \
+  app/build/outputs/github-release/kanji-flashcards-0.1.0.apk.sha256 \
+  --repo ryosama/android-kanji-flashcard \
+  --verify-tag --title 'Kanji Flashcards 0.1.0' \
+  --notes-file release/v0.1.0.md
+```
+
+Pour une nouvelle version, augmenter `versionCode` et `versionName` dans `app/build.gradle.kts`, rédiger ses notes et adapter le tag et les noms des fichiers. Ne pas remplacer une clé de signature déjà utilisée.
+
+Les APK debug fournis par le workflow de vérification restent des versions de test. Pour passer d'une version debug à la release, exporter la progression, désinstaller le debug, installer la release puis importer le TSV : les signatures sont différentes.
 
 La documentation des essais est dans [VALIDATION.md](VALIDATION.md). Le fonctionnement de l'application est présenté dans [README.md](README.md).

@@ -17,5 +17,6 @@ captures/
 *.pem
 *.p12
 keystore.properties
+.signing/
 kanji-progression*.tsv
 .DS_Store
