@@ -8,3 +8,14 @@ local.properties
 .idea/
 *.iml
 captures/
+
+# Configuration locale, secrets de signature et sauvegardes personnelles.
+.codex/
+.agents/
+.env
+.env.*
+*.pem
+*.p12
+keystore.properties
+kanji-progression*.tsv
+.DS_Store

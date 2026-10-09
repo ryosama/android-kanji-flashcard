@@ -1,6 +1,10 @@
 # Kanji Flashcards
 
+<img src="icon.png" alt="Icône de Kanji Flashcards" width="96" />
+
 Application Android native en Kotlin, en français et en thème sombre. Compatible avec Android 8 et versions suivantes, notamment Android 12. Elle fonctionne entièrement hors ligne, sans compte, publicité ni permission réseau.
+
+Le dépôt du projet est [ryosama/android-kanji-flashcard](https://github.com/ryosama/android-kanji-flashcard). Le code et les commentaires sont en français.
 
 ## Fonctionnement
 
@@ -23,9 +27,22 @@ L'import valide tout le fichier avant de proposer une confirmation. Il remplace 
 
 ## Compilation
 
+```bash
+git clone https://github.com/ryosama/android-kanji-flashcard.git
+cd android-kanji-flashcard
+```
+
 Outils : JDK 17, Gradle 8.11.1, Android SDK plateforme 36 et build-tools 35.0.0. Plugins Android 8.9.3 et Kotlin 2.1.20, versions fixes. Le projet utilise les composants natifs Android et n'exige pas de bibliothèque d'interface supplémentaire.
 
 Définir `JAVA_HOME` et `ANDROID_HOME`, ou installer les outils dans `.tools/jdk`, `.tools/android-sdk` et `.tools/gradle-8.11.1`. Le répertoire `.tools` et `local.properties` sont exclus de Git. Le wrapper Gradle permet aussi de télécharger Gradle sur un nouvel environnement.
+
+Installer les composants Android avec le gestionnaire de SDK d'Android Studio, ou avec les outils en ligne de commande du SDK :
+
+```bash
+sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
+```
+
+Le script accepte également `ANDROID_SDK_ROOT` et respecte `GRADLE_USER_HOME` si ces variables sont déjà définies.
 
 ```bash
 ./scripts/build.sh
@@ -34,6 +51,14 @@ Définir `JAVA_HOME` et `ANDROID_HOME`, ou installer les outils dans `.tools/jdk
 ```
 
 APK : `app/build/outputs/apk/debug/app-debug.apk`. Il s'agit d'une version de test signée avec une clé de développement, pas d'une publication finale.
+
+Après avoir activé le débogage USB et autorisé l'ordinateur sur le téléphone :
+
+```bash
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+```
+
+Le workflow [Android](.github/workflows/android.yml) exécute les vérifications du moteur, la compilation et Android Lint à chaque push sur `main` et à chaque pull request. Il fournit l'APK de test et les rapports dans les artefacts du lancement, accessibles depuis l'onglet **Actions**. Les étapes utilisent des versions d'actions fixées par leur identifiant de commit.
 
 ## Organisation
 
@@ -47,4 +72,6 @@ APK : `app/build/outputs/apk/debug/app-debug.apk`. Il s'agit d'une version de te
 
 Les tests parcourent toutes les cartes et les quatre types de QCM, vérifient les collisions de réponses, les délais Leitner, les limites de correction et les sauvegardes invalides.
 
-Avant une diffusion publique, documenter la provenance et les conditions de réutilisation des listes fournies. Aucun compte GitHub, secret ou identité de développeur n'est nécessaire à la compilation.
+La préparation du dépôt et les commandes de publication sont décrites dans [PUBLICATION.md](PUBLICATION.md). La provenance et les conditions de réutilisation des ressources sont recensées dans [CREDITS.md](CREDITS.md). Aucun compte GitHub, secret ou identité de développeur n'est nécessaire à la compilation.
+
+Le code est publié sans licence pour le moment, selon le choix du mainteneur.

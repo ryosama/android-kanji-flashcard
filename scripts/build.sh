@@ -7,9 +7,10 @@ cd "$project_dir"
 
 # Réutiliser les outils configurés, ou les installations locales exclues du dépôt Git.
 export JAVA_HOME="${JAVA_HOME:-$project_dir/.tools/jdk}"
-export ANDROID_HOME="${ANDROID_HOME:-$project_dir/.tools/android-sdk}"
-export ANDROID_USER_HOME="$project_dir/.tools/android-user"
-export GRADLE_USER_HOME="$project_dir/.tools/gradle-home"
+export ANDROID_HOME="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-$project_dir/.tools/android-sdk}}"
+# Respecter les répertoires configurés sur un autre poste ou par GitHub Actions.
+export ANDROID_USER_HOME="${ANDROID_USER_HOME:-$project_dir/.tools/android-user}"
+export GRADLE_USER_HOME="${GRADLE_USER_HOME:-$project_dir/.tools/gradle-home}"
 
 # Vérifier les prérequis avant de lancer Gradle, avec un message compréhensible en cas d'absence.
 if [[ ! -x "$JAVA_HOME/bin/java" ]]; then

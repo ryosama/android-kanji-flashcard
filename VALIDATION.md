@@ -8,10 +8,11 @@
 - Les cinq CSV français sont présents dans l'APK.
 - Après la réorganisation : compilation des cinq écrans séparés, tests du moteur et analyse Android réussis.
 - Documentation vérifiée sur les 95 fonctions Kotlin : chacune possède un commentaire expliquant son rôle. Le découpage est décrit dans [CODE_GUIDE.md](CODE_GUIDE.md).
+- Préparation GitHub : la commande du workflow a réussi localement (moteur, APK et Lint). La syntaxe YAML a été contrôlée ; le premier lancement sur un runner GitHub reste à effectuer après l'envoi du dépôt.
 
-## Essais sur téléphone à effectuer
+## Essais de non-régression sur téléphone
 
-Aucun appareil n'était connecté lors du développement et aucun émulateur n'était installé. Les tests du moteur et l'analyse Android automatisée ne remplacent pas ces essais sur le téléphone.
+Le fonctionnement de l'application sur téléphone a été confirmé par l'utilisateur avant la préparation de la publication. Aucun appareil ni émulateur n'a été utilisé pour les vérifications automatisées du développement. Les scénarios ci-dessous servent aux essais de non-régression lors des prochaines modifications.
 
 1. Installer l'APK de test. Ouvrir les cinq niveaux et vérifier que les pourcentages commencent à zéro.
 2. En mode normal, saisir une lecture en rōmaji, puis un sens. Valider dans les deux ordres. Vérifier les corrections après succès et erreur, et le passage à la carte suivante. Utiliser « Je ne sais pas » avant toute saisie, puis après la validation d’un seul champ : une seule erreur doit être comptée et les deux champs doivent être bloqués.
