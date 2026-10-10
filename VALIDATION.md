@@ -8,11 +8,11 @@
 - Les cinq CSV français sont présents dans l'APK.
 - Après la réorganisation : compilation des cinq écrans séparés, tests du moteur et analyse Android réussis.
 - Documentation vérifiée sur les 96 fonctions Kotlin : chacune possède un commentaire expliquant son rôle. Le découpage est décrit dans [CODE_GUIDE.md](CODE_GUIDE.md).
-- Vérification GitHub : moteur, APK debug et Android Lint ont réussi sur un runner GitHub. Le [lancement validé](https://github.com/ryosama/android-kanji-flashcard/actions/runs/37928490340) conserve l'APK de test et les rapports.
+- Vérification GitHub : moteur, APK debug et Android Lint ont réussi sur un runner GitHub. Le [lancement validé](https://github.com/ryosama/android-kanji-flashcard/actions/runs/38037999039) conserve l'APK de test et les rapports.
 - Release 0.1.0 : APK signé compilé, Lint release réussi et signature vérifiée avec `apksigner`. Le paquet n'est pas débogable ; la clé et les mots de passe restent hors de Git et de l'APK.
 - La [release publique 0.1.0](https://github.com/ryosama/android-kanji-flashcard/releases/tag/v0.1.0) contient l'APK signé et sa somme SHA-256. Le téléchargement depuis GitHub a été comparé à l'APK local : les fichiers sont identiques et la somme de contrôle est valide.
 
-- Release 0.1.1 : validation commune des deux champs, équivalences numériques testées, APK debug et release compilés, analyses Android réussies et signature identique à la release 0.1.0.
+- Release 0.1.1 : validation commune des deux champs, équivalences numériques testées, APK debug et release compilés, analyses Android réussies et signature identique à la release 0.1.0. La [release publique 0.1.1](https://github.com/ryosama/android-kanji-flashcard/releases/tag/v0.1.1) a été téléchargée et sa somme SHA-256 vérifiée.
 
 ## Essais de non-régression sur téléphone
 
