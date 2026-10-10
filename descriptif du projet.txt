@@ -34,9 +34,9 @@ Ces design ne sont pas gravé dans le marbre, il s'agit d'une idée. Tu peux pro
     - mode "normal" :
         Il y a une case pour répondre sur la prononciation (on peut écrire en romanji ou en hiragana).
         Si on écrit en romanji, il faut autoriser que "oo", "ou" et "ô" soit la même prononciation. "tchi" et "chi" sont la même prononciation.
-        On peut valider la réponse avec un bouton "OK" en face de la case
+        Pour le nombre, si on écrit le chiffre "2" il faut pouvoir accepter "deux" (idem pour 100, 1000, 10 000, ...)
         Il y a également une case pour répondre sur un des sens de la signification. Il suffit qu'un des sens soit bon pour valider la signification.
-        On peut valider la réponse avec un bouton "OK" en face de la case
+        On peut valider la réponse  signification et prnonciation avec un bouton "OK" en dessous des deux cases réponses.
         Si les deux réponses sont valides, on affiche en bas d'écran en vert un texte "bonne réponse ->".
         Si l'une des deux réponses est fausse (ou les deux), on affiche en bas d'écran en rouge un texte "mauvaise réponse ->" et on écrit sous les cases de réponses les bonnes réponses en vert.
         Dans les deux cas, on clique sur le message "bonne réponses ->" ou "mauvaise réponse ->" pour passer au kanji suivant.

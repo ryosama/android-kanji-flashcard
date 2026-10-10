@@ -205,7 +205,7 @@ class MainActivity : Activity() {
                 session = session,
                 layout = layout,
                 onTextChanged = { field, value -> updateAnswerText(field, value) },
-                onSubmit = { field, value -> validateField(field, value) },
+                onSubmit = { reading, meaning -> validateAnswers(reading, meaning) },
                 onUnknown = { completeAnswer(false) },
             ).show()
         }
@@ -219,21 +219,18 @@ class MainActivity : Activity() {
         }
     }
 
-    /** Corrige un champ ; la réponse globale n'est comptée qu'après validation des deux champs. */
-    private fun validateField(field: AnswerField, value: String) {
+    /** Corrige les deux saisies ensemble et enregistre une seule réponse pour la carte. */
+    private fun validateAnswers(reading: String, meaning: String) {
+        if (session.finished || reading.isBlank() || meaning.isBlank()) {
+            return
+        }
+
         val card = requireNotNull(session.card)
-
-        when (field) {
-            AnswerField.PRONUNCIATION -> session.readingResult = Answers.acceptsReading(value, card)
-            AnswerField.MEANING -> session.meaningResult = Answers.acceptsMeaning(value, card)
-        }
-        ui.hideKeyboard()
-
-        if (session.readingResult != null && session.meaningResult != null) {
-            completeAnswer(session.readingResult == true && session.meaningResult == true)
-        } else {
-            showReview()
-        }
+        session.readingText = reading
+        session.meaningText = meaning
+        session.readingResult = Answers.acceptsReading(reading, card)
+        session.meaningResult = Answers.acceptsMeaning(meaning, card)
+        completeAnswer(session.readingResult == true && session.meaningResult == true)
     }
 
     /** Enregistre une réponse une seule fois, applique Leitner et affiche la correction globale. */

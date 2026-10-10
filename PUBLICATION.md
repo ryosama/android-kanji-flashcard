@@ -2,7 +2,7 @@
 
 Destination : https://github.com/ryosama/android-kanji-flashcard
 
-Le dépôt est public. La [release 0.1.0](https://github.com/ryosama/android-kanji-flashcard/releases/tag/v0.1.0) est publiée avec l'APK signé et sa somme SHA-256.
+Le dépôt est public. La [dernière release](https://github.com/ryosama/android-kanji-flashcard/releases/latest) fournit l'APK signé et sa somme SHA-256.
 
 ## État du projet
 
@@ -46,7 +46,7 @@ Sujets suggérés : `android`, `kotlin`, `kanji`, `jlpt`, `flashcards`, `leitner
 
 ## Distribution de l'application
 
-La version `0.1.0` est préparée avec une signature release stable. Le script suivant compile l'APK, lance Android Lint, vérifie sa signature et prépare le téléchargement et sa somme SHA-256 :
+La version `0.1.1` est préparée avec une signature release stable. Le script suivant compile l'APK, lance Android Lint, vérifie sa signature et prépare le téléchargement et sa somme SHA-256 :
 
 ```bash
 ./scripts/build-release.sh
@@ -68,14 +68,14 @@ Après compilation et commit des sources, créer et envoyer le tag de version, p
 
 ```bash
 git push -u origin main
-git tag -a v0.1.0 -m 'Kanji Flashcards 0.1.0'
-git push origin v0.1.0
-gh release create v0.1.0 \
-  app/build/outputs/github-release/kanji-flashcards-0.1.0.apk \
-  app/build/outputs/github-release/kanji-flashcards-0.1.0.apk.sha256 \
+git tag -a v0.1.1 -m 'Kanji Flashcards 0.1.1'
+git push origin v0.1.1
+gh release create v0.1.1 \
+  app/build/outputs/github-release/kanji-flashcards-0.1.1.apk \
+  app/build/outputs/github-release/kanji-flashcards-0.1.1.apk.sha256 \
   --repo ryosama/android-kanji-flashcard \
-  --verify-tag --title 'Kanji Flashcards 0.1.0' \
-  --notes-file release/v0.1.0.md
+  --verify-tag --title 'Kanji Flashcards 0.1.1' \
+  --notes-file release/v0.1.1.md
 ```
 
 Pour une nouvelle version, augmenter `versionCode` et `versionName` dans `app/build.gradle.kts`, rédiger ses notes et adapter le tag et les noms des fichiers. Ne pas remplacer une clé de signature déjà utilisée.

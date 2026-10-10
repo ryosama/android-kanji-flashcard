@@ -9,12 +9,12 @@ Les fichiers sont dans `app/src/main/java/fr/kanjiflashcards/ui/screens/`.
 | Fichier | Partie visible | Fonctions à consulter |
 | --- | --- | --- |
 | `HomeScreen.kt` | Accueil et panneaux N5 → N1 | `show`, `levelPanel`, `levelButton` |
-| `NormalReviewScreen.kt` | Cases Prononciation et Signification, boutons OK et « Je ne sais pas » | `show`, `addAnswerField` |
+| `NormalReviewScreen.kt` | Cases Prononciation et Signification, bouton commun « Valider » et « Je ne sais pas » | `show`, `addAnswerField` |
 | `EasyReviewScreen.kt` | Consigne, quatre choix et bouton « Je ne sais pas » | `show` |
 | `StatisticsScreen.kt` | Recherche, filtre, tri, tableau et pagination | `show`, `addFilterControls`, `addTableRow`, `appendPage` |
 | `SettingsScreen.kt` | Export/import et boutons de réinitialisation | `show`, `confirmReset` |
 
-Chaque écran reçoit les données à afficher et des actions à appeler lorsqu'un bouton est utilisé. Par exemple, le bouton OK du mode normal appelle `onSubmit` ; l'activité transmet alors la saisie au moteur de correction. Dans les deux modes, « Je ne sais pas » appelle `completeAnswer(false)` pour enregistrer une erreur sur la carte entière. Les écrans ne lisent pas les CSV et n'enregistrent pas directement la progression.
+Chaque écran reçoit les données à afficher et des actions à appeler lorsqu'un bouton est utilisé. Par exemple, le bouton « Valider » du mode normal appelle `onSubmit` ; l'activité transmet alors les deux saisies au moteur de correction. Dans les deux modes, « Je ne sais pas » appelle `completeAnswer(false)` pour enregistrer une erreur sur la carte entière. Les écrans ne lisent pas les CSV et n'enregistrent pas directement la progression.
 
 ## Où modifier l'apparence commune ?
 
@@ -34,7 +34,7 @@ Les dimensions de mise en page sont exprimées en **dp**, converties par `UiComp
 
 Dans `app/src/main/java/fr/kanjiflashcards/` :
 
-- `MainActivity.kt` coordonne le chargement, la navigation et les réponses. `nextCard` choisit et compte une présentation ; `validateField` corrige un champ ; `completeAnswer` enregistre le résultat global ; `persist` actualise la mémoire uniquement après une écriture réussie.
+- `MainActivity.kt` coordonne le chargement, la navigation et les réponses. `nextCard` choisit et compte une présentation ; `validateAnswers` corrige les deux champs ensemble ; `completeAnswer` enregistre le résultat global ; `persist` actualise la mémoire uniquement après une écriture réussie.
 - `ReviewSession.kt` garde le kanji affiché, les saisies, le résultat de chaque champ et le bilan de séance. `saveInto` et `restoreFrom` conservent cet état lors d'une rotation, sans tirer une nouvelle carte ni recompter une réponse.
 - `ProgressStore.kt` charge/enregistre la progression dans un fichier privé avec écriture atomique.
 - `BackupDocuments.kt` ouvre le sélecteur Android et réalise les transferts sur un thread secondaire. Il valide l'import, demande confirmation puis appelle l'activité pour enregistrer les données.
@@ -50,6 +50,7 @@ Les fichiers sont dans `core/src/main/kotlin/fr/kanjiflashcards/core/`. Ce modul
 | `Kanji.kt` | Carte du catalogue, identifiant et variantes de lecture |
 | `Catalog.kt` | Lecture des cinq colonnes CSV et validation des listes |
 | `Answers.kt` | Équivalences des lectures, normalisation française et tolérance aux fautes |
+| `MeaningNumbers.kt` | Équivalences exactes entre les significations numériques en chiffres et en lettres |
 | `Progress.kt` | Paliers, échéances, compteurs et contrôle de leur cohérence |
 | `Leitner.kt` | Progression après une réponse et sélection des cartes dues |
 | `Quiz.kt` | Types de questions et données d'un QCM |

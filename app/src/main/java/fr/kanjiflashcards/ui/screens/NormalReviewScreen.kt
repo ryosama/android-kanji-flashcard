@@ -10,20 +10,41 @@ import fr.kanjiflashcards.ui.AppColors
 import fr.kanjiflashcards.ui.ReviewLayout
 import fr.kanjiflashcards.ui.UiComponents
 
-/** Écran du mode normal : une case de prononciation et une case de signification, chacune avec OK. */
+/** Écran du mode normal : deux cases de réponse et un seul bouton pour les valider ensemble. */
 class NormalReviewScreen(
     private val ui: UiComponents,
     private val session: ReviewSession,
     private val layout: ReviewLayout,
     private val onTextChanged: (AnswerField, String) -> Unit,
     private val onUnknown: () -> Unit,
-    private val onSubmit: (AnswerField, String) -> Unit,
+    private val onSubmit: (String, String) -> Unit,
 ) {
     /** Affiche les deux champs de réponse dans la structure commune des pages de révision. */
     fun show() {
         layout.show { content ->
-            addAnswerField(content, AnswerField.PRONUNCIATION, session.readingText, session.readingResult)
-            addAnswerField(content, AnswerField.MEANING, session.meaningText, session.meaningResult)
+            val readingInput = addAnswerField(
+                content, AnswerField.PRONUNCIATION, session.readingText, session.readingResult,
+            )
+            val meaningInput = addAnswerField(
+                content, AnswerField.MEANING, session.meaningText, session.meaningResult,
+            )
+
+            // Bouton unique placé sous les deux cases : aucune saisie n'est corrigée isolément.
+            content.addView(ui.button("Valider") {
+                val reading = readingInput.text.toString()
+                val meaning = meaningInput.text.toString()
+                if (reading.isBlank()) {
+                    readingInput.error = "Écris une prononciation"
+                }
+                if (meaning.isBlank()) {
+                    meaningInput.error = "Écris une signification"
+                }
+                if (reading.isNotBlank() && meaning.isNotBlank()) {
+                    onSubmit(reading, meaning)
+                }
+            }.apply {
+                isEnabled = !session.finished
+            })
 
             // Abandon de la carte entière : une erreur est enregistrée et la correction est révélée.
             content.addView(ui.button("Je ne sais pas", AppColors.secondaryText) {
@@ -35,15 +56,15 @@ class NormalReviewScreen(
     }
 
     /**
-     * Ajoute un libellé, une case de saisie et son bouton OK, puis le résultat du champ.
-     * Le champ devient non modifiable après sa validation, même si l'autre attend une réponse.
+     * Ajoute un libellé et sa case de saisie, puis son résultat après la validation commune.
+     * Renvoie la case pour lire les deux réponses lors du clic sur « Valider ».
      */
     private fun addAnswerField(
         content: LinearLayout,
         field: AnswerField,
         initialText: String,
         result: Boolean?,
-    ) {
+    ): EditText {
         val isReading = field == AnswerField.PRONUNCIATION
         val label = ui.text(if (isReading) "Prononciation" else "Signification", 18f, bold = true)
         content.addView(label)
@@ -60,32 +81,18 @@ class NormalReviewScreen(
             background = ui.roundedBackground(AppColors.surface)
             setPadding(ui.dp(12), ui.dp(12), ui.dp(12), ui.dp(12))
             inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
-            isEnabled = result == null && !session.finished
+            isEnabled = !session.finished
             minHeight = ui.dp(58)
         }
         label.labelFor = input.id
         ui.onTextChanged(input) { value -> onTextChanged(field, value) }
 
-        // Le champ occupe la place restante ; son bouton de validation garde une largeur fixe.
-        val answerRow = ui.row()
-        answerRow.addView(input, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f))
+        content.addView(input, LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+        ))
 
-        val validateButton = ui.button("OK") {
-            if (input.text.isNullOrBlank()) {
-                input.error = "Écris une réponse"
-            } else {
-                onSubmit(field, input.text.toString())
-            }
-        }.apply {
-            isEnabled = result == null && !session.finished
-            layoutParams = LinearLayout.LayoutParams(ui.dp(64), ui.dp(58)).apply {
-                setMargins(ui.dp(8), 0, 0, 0)
-            }
-        }
-        answerRow.addView(validateButton)
-        content.addView(answerRow)
-
-        // Retour local du champ ; le résultat global apparaît une fois les deux champs validés.
+        // Correction propre à chaque champ après la validation de la carte entière.
         if (result != null) {
             content.addView(ui.text(
                 value = if (result) "✓ Réponse correcte" else "✕ Réponse incorrecte",
@@ -93,5 +100,6 @@ class NormalReviewScreen(
                 color = if (result) AppColors.success else AppColors.error,
             ))
         }
+        return input
     }
 }

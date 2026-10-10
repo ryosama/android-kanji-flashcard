@@ -64,6 +64,49 @@ fun main(args: Array<String>) {
     val right = catalog.first { it.id == "5:右" }
     verify(Answers.acceptsMeaning("droite", right), "Précision entre parenthèses obligatoire")
 
+    // Nombres : les chiffres et les lettres désignent une même valeur, jamais une valeur proche.
+    val numberCards = mapOf(
+        "零" to 0L, "一" to 1L, "二" to 2L, "三" to 3L, "四" to 4L,
+        "五" to 5L, "六" to 6L, "七" to 7L, "八" to 8L, "九" to 9L,
+        "十" to 10L, "百" to 100L, "千" to 1_000L, "万" to 10_000L,
+        "億" to 100_000_000L,
+    )
+    for ((character, number) in numberCards) {
+        val card = catalog.first { it.character == character }
+        verify(Answers.acceptsMeaning(number.toString(), card), "Nombre en chiffres rejeté : $character")
+        verify(Answers.acceptsMeaning("00$number", card), "Zéros initiaux rejetés : $character")
+        verify(!Answers.acceptsMeaning((number + 1).toString(), card), "Nombre voisin accepté : $character")
+        verify(!Answers.acceptsMeaning("-$number", card), "Nombre signé accepté : $character")
+        verify(!Answers.acceptsMeaning("$number.0", card), "Décimale acceptée : $character")
+    }
+    // Les unités rares du catalogue dépassent parfois la capacité d'un entier Long.
+    val largeNumbers = mapOf(
+        "兆" to "1000000000000",
+        "抒" to "1000000000000000000000000",
+        "穣" to "10000000000000000000000000000",
+    )
+    for ((character, digits) in largeNumbers) {
+        val card = catalog.first { it.character == character }
+        verify(Answers.acceptsMeaning(digits, card), "Grand nombre rejeté : $character")
+        verify(!Answers.acceptsMeaning(digits.dropLast(1), card), "Ordre de grandeur incorrect : $character")
+    }
+
+    val tenThousand = catalog.first { it.id == "5:万" }
+    for (answer in listOf("10000", "10 000", "10\u00a0000", "10\u202f000", "dix mille", "dix-mille")) {
+        verify(Answers.acceptsMeaning(answer, tenThousand), "Dix mille rejeté : $answer")
+    }
+    val numericLiteral = catalog.first { it.character == "萬" }
+    for (answer in listOf("10000", "10 000", "dix mille")) {
+        verify(Answers.acceptsMeaning(answer, numericLiteral), "Sens chiffré rejeté : $answer")
+    }
+    for (answer in listOf("-10 000", "+10 000", "10.000", "10,000", "1 00", "10001", "99999999999999999999999")) {
+        verify(!Answers.acceptsMeaning(answer, numericLiteral), "Nombre incorrect accepté : $answer")
+    }
+    verify(Answers.acceptsMeaning("100 000 000", catalog.first { it.character == "億" }), "Cent millions rejeté")
+    verify(!Answers.acceptsMeaning("2", catalog.first { it.character == "両" }), "Un sens non numérique a été converti")
+    verify(!Answers.acceptsMeaning("2", right), "Chiffre accepté pour un sens non numérique")
+    verify(!Answers.acceptsReading("2", catalog.first { it.character == "二" }), "Chiffre accepté comme prononciation")
+
     // CSV : un séparateur ou un guillemet à l’intérieur d’un champ reste une donnée.
     val escaped = Catalog.parse(5, "1;試;shiシ;;\"essai; test, \"\"épreuve\"\"\"\r\n")
     verify(escaped.single().meanings == listOf("essai; test", "\"épreuve\""), "Guillemets CSV")

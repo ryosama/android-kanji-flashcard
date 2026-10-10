@@ -111,6 +111,16 @@ object Answers {
             listOf(value, value.replace(Regex("\\([^)]*\\)"), "").trim())
         }.filter(String::isNotBlank)
 
+        // Un nombre saisi et un sens numérique doivent désigner exactement la même valeur.
+        // « 10 000 » accepte « dix mille » ; « 101 » ne bénéficie pas des fautes tolérées sur les mots.
+        val numericAnswer = MeaningNumbers.value(input)
+        if (numericAnswer != null || (input.any(Char::isDigit) &&
+                acceptedMeanings.any { MeaningNumbers.value(it) != null })) {
+            return numericAnswer != null && acceptedMeanings.any {
+                MeaningNumbers.value(it) == numericAnswer
+            }
+        }
+
         return acceptedMeanings.any { value ->
             val expected = meaning(value)
             val letterCount = minOf(answer.count(Char::isLetter), expected.count(Char::isLetter))

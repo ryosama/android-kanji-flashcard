@@ -5,7 +5,7 @@ import fr.kanjiflashcards.core.Kanji
 import fr.kanjiflashcards.core.QuestionType
 import fr.kanjiflashcards.core.Quiz
 
-/** Identifie le champ validé dans le mode normal, sans utiliser un booléen ambigu. */
+/** Identifie le champ de saisie dans le mode normal, sans utiliser un booléen ambigu. */
 enum class AnswerField {
     PRONUNCIATION,
     MEANING,
@@ -39,7 +39,7 @@ class ReviewSession {
     var readingResult: Boolean? = null
     var meaningResult: Boolean? = null
 
-    /** Saisies conservées pendant la validation d'un champ ou la rotation du téléphone. */
+    /** Saisies conservées pendant une rotation du téléphone ou une tentative de validation. */
     var readingText = ""
     var meaningText = ""
 

@@ -16,9 +16,11 @@ La page d'accueil permet de choisir un niveau JLPT, de lancer une révision en m
 
 ### Mode normal
 
-Le mode normal affiche un kanji et deux champs pour saisir sa prononciation et une signification, avec un bouton de validation pour chaque réponse et le bouton « Je ne sais pas ».
+Le mode normal affiche un kanji et deux champs pour saisir sa prononciation et une signification, avec un bouton unique sous les deux cases pour les valider ensemble et le bouton « Je ne sais pas ».
 
 <img src="screenshots/mode_normal.png" alt="Mode normal avec les champs Prononciation et Signification" width="320" />
+
+*Cette capture de la version 0.1.0 montre encore les deux boutons « OK » ; depuis la version 0.1.1, un seul bouton « Valider » corrige les deux réponses.*
 
 ### Mode facile
 
@@ -47,9 +49,10 @@ Pour remplacer une ancienne version de test, exporter d'abord la progression en 
 ## Fonctionnement
 
 - 2 495 kanji provenant des cinq CSV français fournis, du JLPT N5 au N1.
-- Mode normal : saisir une lecture et un sens, puis valider chaque champ avec OK. Une lecture valide parmi les lectures on/kun suffit. Le bouton « Je ne sais pas » termine la carte comme une erreur et révèle la correction. Les formes complètes et les radicaux indiqués par les parenthèses sont acceptés, ainsi que les hiragana et katakana équivalents.
+- Mode normal : saisir une lecture et un sens, puis valider les deux réponses ensemble avec le bouton « Valider » placé sous les champs. Une lecture valide parmi les lectures on/kun suffit. Le bouton « Je ne sais pas » termine la carte comme une erreur et révèle la correction. Les formes complètes et les radicaux indiqués par les parenthèses sont acceptés, ainsi que les hiragana et katakana équivalents.
 - Mode facile : choisir signification, rōmaji, kana ou mélange. Chaque bouton regroupe toutes les lectures on/kun du format choisi, avec les parenthèses optionnelles conservées, ou toutes les significations françaises, séparées par « · ». Chaque question propose quatre réponses distinctes, sans distracteur qui serait une réponse valide pour la carte courante. Le mode Mélange combine français, rōmaji et kana au sein des quatre propositions, avec les trois formats présents et une seule bonne réponse. Le bouton supplémentaire « Je ne sais pas » compte comme une mauvaise réponse et affiche la correction avant le passage à la carte suivante.
 - Correction : insensible aux majuscules, accents français, ponctuation et espaces superflus. Une faute est tolérée à partir de cinq lettres, deux à partir de dix ; une transposition adjacente compte pour une faute. Les mots courts restent stricts. Seuls les sens présents dans le catalogue sont acceptés ; les précisions entre parenthèses sont facultatives (par exemple « droite » pour « droite (direction) »).
+- Significations numériques : les chiffres sont acceptés pour les nombres du catalogue, par exemple `2` pour « deux », `100` pour « cent », `1 000` pour « mille », `10 000` pour « dix mille » et `100 000 000` pour « cent millions ». Les espaces ordinaires et insécables sont acceptés ; les valeurs numériques restent exactes.
 - Équivalences de lecture : `oo`, `ou`, `ô`, `ō`, ainsi que `tchi` et `chi`. Aucune correction approximative générale des lectures, pour conserver les distinctions entre sons japonais.
 - Progression commune aux deux modes. Chaque carte commence à 0 %. Les réussites successives lors des révisions dues conduisent à 20, 40, 60, 80 puis 100 %, avec des intervalles de 1, 2, 4, 8 puis 16 jours. Une erreur ramène à 0 % et programme la carte pour le lendemain. À 100 %, la carte reste à revoir tous les 16 jours ; une erreur la ramène aussi à 0 %.
 - Les cartes dues sont tirées au hasard, avec évitement de la répétition immédiate lorsque plusieurs sont disponibles. Tous les nouveaux kanji sont immédiatement disponibles.
