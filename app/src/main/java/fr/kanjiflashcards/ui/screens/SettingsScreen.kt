@@ -1,6 +1,7 @@
 package fr.kanjiflashcards.ui.screens
 
 import android.app.AlertDialog
+import fr.kanjiflashcards.core.StudySelection
 import fr.kanjiflashcards.ui.AppColors
 import fr.kanjiflashcards.ui.UiComponents
 
@@ -35,8 +36,13 @@ class SettingsScreen(
             })
         }
 
+        content.addView(ui.button("Réinitialiser Marugoto", AppColors.error) {
+            confirmReset(StudySelection.MARUGOTO)
+        })
+
+        val version = ui.activity.packageManager.getPackageInfo(ui.activity.packageName, 0).versionName
         content.addView(ui.text(
-            "Kanji Flashcards · 0.1.0\nSans compte · Sans connexion · Sans publicité",
+            "Kanji Flashcards · $version\nSans compte · Sans connexion · Sans publicité",
             14f,
             AppColors.secondaryText,
         ))
@@ -45,7 +51,7 @@ class SettingsScreen(
     /** Demande confirmation dans l'application avant d'effacer les statistiques d'un niveau. */
     private fun confirmReset(level: Int) {
         AlertDialog.Builder(ui.activity)
-            .setTitle("Effacer la progression N$level ?")
+            .setTitle("Effacer la progression ${StudySelection(level).title} ?")
             .setMessage("Les paliers, les échéances et les compteurs de ce niveau seront supprimés. Pense à exporter une sauvegarde.")
             .setNegativeButton("Annuler", null)
             .setPositiveButton("Réinitialiser") { _, _ -> onReset(level) }

@@ -1,0 +1,668 @@
+1;魚;さかな;5;poisson
+2;肉;にく;5;viande
+3;卵;たまご;5;œuf, oeuf
+4;水;みず;5;eau
+5;食べます;たべます;6;manger
+6;飲みます;のみます;6;boire
+7;大きい;おおきい;8;grand, grande
+8;小さい;ちいさい;8;petit, petite
+9;新しい;あたらしい;8;nouveau, nouvelle, neuf, neuve
+10;古い;ふるい;8;ancien, ancienne, vieux, vieille
+11;～時(5時）;～じ;9;heure, heures
+12;～分（5時15分）;～ふん／ぷん;9;minute, minutes
+13;～半（7時半）;～はん;9;demi, demie, moitié, demi-heure
+14;月;げつ;10;lundi
+15;火;か;10;mardi
+16;水;すい;10;mercredi
+17;木;もく;10;jeudi
+18;金;きん;10;vendredi
+19;土;ど;10;samedi
+20;日;にち;10;dimanche
+21;～よう日(月よう日）;～ようび(げつようび);10;jour de la semaine
+22;言います;いいます;11;dire
+23;話します;はなします;11;parler
+24;読みます;よみます;11;lire
+25;見ます;みます;11;voir, regarder
+26;聞きます;ききます;11;écouter, entendre
+27;書きます;かきます;11;écrire
+28;一;いち;12;un
+29;二;に;12;deux
+30;三;さん;12;trois
+31;四;よん／し;12;quatre
+32;五;ご;12;cinq
+33;六;ろく;12;six
+34;七;なな／しち;12;sept
+35;八;はち;12;huit
+36;九;きゅう／く;12;neuf
+37;十;じゅう;12;dix
+38;～年;～ねん;12;année, an, ans
+39;～月;～がつ;12;mois
+40;～日;～にち;12;jour, jours
+41;東;ひがし;13;est
+42;西;にし;13;ouest
+43;南;みなみ;13;sud
+44;北;きた;13;nord
+45;～口;～ぐち;13;sortie, entrée
+46;東口;ひがしぐち;13;sortie est
+47;西口;にしぐち;13;sortie ouest
+48;南口;みなみぐち;13;sortie sud
+49;北口;きたぐち;13;sortie nord
+50;買います;かいます;16;acheter
+51;買いもの;かいもの;16;achats, courses, faire les courses
+52;お金;おかね;16;argent
+53;～円;～えん;16;yen, yens
+54;百;ひゃく;16;cent
+55;千;せん;16;mille
+56;万;まん;16;dix mille, 10 000
+57;百円;ひゃくえん;16;cent yens, 100 yens
+58;千円;せんえん;16;mille yens, 1000 yens
+59;一万円;いちまんえん;16;dix mille yens, 10 000 yens
+60;行きます;いきます;18;aller
+61;来ます;きます;18;venir
+62;会います;あいます;18;rencontrer, voir quelqu'un
+63;休みます;やすみます;18;se reposer, prendre congé
+64;日本;にほん／にっぽん;18;Japon
+65;東京;とうきょう;18;Tokyo
+66;私;わたし;1;je, moi
+67;父;ちち;1;père, mon père
+68;母;はは;1;mère, ma mère
+69;子ども;こども;1;enfant
+70;男;おとこ;1;homme
+71;女;おんな;1;femme
+72;人;ひと;1;personne, être humain
+73;お父さん;おとうさん;1;père, papa
+74;お母さん;おかあさん;1;mère, maman
+75;何人;なんにん;1;combien de personnes
+76;国;くに;2;pays
+77;外国;がいこく;2;pays étranger, étranger
+78;～語;～ご;2;langue
+79;日本語;にほんご;2;japonais, langue japonaise
+80;英語;えいご;2;anglais, langue anglaise
+81;中国語;ちゅうごくご;2;chinois, langue chinoise
+82;～人;～じん;2;personne de, nationalité
+83;日本人;にほんじん;2;Japonais, personne japonaise
+84;好き;すき;2;aimer, apprécié, préféré
+85;本;ほん;2;livre
+86;読書;どくしょ;2;lecture, lire des livres
+87;何;なに;2;quoi, que
+88;春;はる;3;printemps
+89;夏;なつ;3;été
+90;秋;あき;3;automne
+91;冬;ふゆ;3;hiver
+92;今;いま;3;maintenant
+93;花;はな;3;fleur
+94;海;うみ;3;mer
+95;山;やま;3;montagne
+96;川;かわ;3;rivière, fleuve
+97;今日;きょう;4;aujourd'hui
+98;天気;てんき;4;temps, météo
+99;晴れ;はれ;4;beau temps, temps ensoleillé
+100;雨;あめ;4;pluie
+101;雪;ゆき;4;neige
+102;雲;くも;4;nuage
+103;風;かぜ;4;vent
+104;空;そら;4;ciel
+105;町;まち;5;ville, quartier
+106;店;みせ;5;magasin, boutique
+107;人気;にんき;5;popularité, populaire
+108;多い;おおい;5;nombreux, beaucoup
+109;少ない;すくない;5;peu, peu nombreux
+110;高い;たかい;5;cher, haut, élevé
+111;安い;やすい;5;bon marché, pas cher
+112;広い;ひろい;5;vaste, spacieux, large
+113;道;みち;6;chemin, route
+114;通り;とおり;6;rue, avenue
+115;右;みぎ;6;droite
+116;左;ひだり;6;gauche
+117;一つ;ひとつ;6;un, une chose, un objet
+118;二つ;ふたつ;6;deux, deux choses, deux objets
+119;赤い;あかい;6;rouge
+120;青い;あおい;6;bleu, bleue
+121;黒い;くろい;6;noir, noire
+122;白い;しろい;6;blanc, blanche
+123;時間;じかん;7;temps, heure, durée
+124;場所;ばしょ;7;lieu, endroit
+125;駅;えき;7;gare
+126;日;ひ;7;jour, journée, soleil
+127;出かけます;でかけます;7;sortir
+128;待ちます;まちます;7;attendre
+129;止まります;とまります;7;s'arrêter
+130;食事;しょくじ;8;repas, prendre un repas
+131;仕事;しごと;8;travail, emploi
+132;前;まえ;8;avant, devant
+133;後;あと;8;après, derrière
+134;朝;あさ;8;matin
+135;昼;ひる;8;midi, journée
+136;夜;よる;8;nuit, soir
+137;乗ります;のります;8;monter dans, prendre un véhicule
+138;学校;がっこう;9;école
+139;小学校;しょうがっこう;9;école primaire
+140;中学校;ちゅうがっこう;9;collège
+141;高校;こうこう;9;lycée
+142;大学;だいがく;9;université
+143;先生;せんせい;9;professeur, enseignant, enseignante
+144;学生;がくせい;9;étudiant, étudiante, élève
+145;～年生（1年生）;～ねんせい（いちねんせい）;9;élève d'une année, année d'études
+146;勉強;べんきょう;9;étude, études, étudier
+147;文化;ぶんか;10;culture
+148;音楽;おんがく;10;musique
+149;旅行;りょこう;10;voyage, voyager
+150;留学;りゅうがく;10;études à l'étranger, étudier à l'étranger
+151;友だち;ともだち;10;ami, amie
+152;楽しい;たのしい;10;agréable, amusant, plaisant
+153;週;しゅう;10;semaine
+154;～回（２回）;かい（にかい）;10;fois
+155;食べ物;たべもの;11;nourriture, aliment, aliments
+156;飲み物;のみもの;11;boisson, boissons
+157;お茶;おちゃ;11;thé
+158;お酒;おさけ;11;alcool, saké
+159;作ります;つくります;11;faire, fabriquer, préparer
+160;持っていきます;もっていきます;11;emporter, apporter
+161;お願いします;おねがいします;11;s'il vous plaît, demander, prier
+162;料理;りょうり;12;cuisine, plat, cuisiner
+163;味;あじ;12;goût, saveur
+164;色;いろ;12;couleur
+165;野菜;やさい;12;légume, légumes
+166;少し;すこし;12;un peu, peu
+167;中;なか;12;intérieur, dedans, milieu
+168;入っています;はいっています;12;contenir, être dedans, être inclus
+169;会社;かいしゃ;13;entreprise, société
+170;本社;ほんしゃ;13;siège social, maison mère
+171;支社;ししゃ;13;succursale, agence
+172;出張;しゅっちょう;13;déplacement professionnel, voyage d'affaires
+173;空港;くうこう;13;aéroport
+174;出発;しゅっぱつ;13;départ, partir
+175;到着;とうちゃく;13;arrivée, arriver
+176;午前;ごぜん;13;matin, avant midi
+177;午後;ごご;13;après-midi, après midi
+178;自分;じぶん;14;soi, soi-même
+179;電話;でんわ;14;téléphone, appel téléphonique
+180;電気;でんき;14;électricité, lumière
+181;電車;でんしゃ;14;train, train électrique
+182;車;くるま;14;voiture, véhicule
+183;送ります;おくります;14;envoyer, accompagner
+184;使います;つかいます;14;utiliser, se servir de
+185;借ります;かります;14;emprunter, louer
+186;体;からだ;15;corps
+187;頭;あたま;15;tête
+188;目;め;15;œil, oeil, yeux
+189;口;くち;15;bouche
+190;耳;みみ;15;oreille
+191;手;て;15;main
+192;足;あし;15;pied, jambe
+193;上;うえ;15;haut, dessus, sur
+194;下;した;15;bas, dessous, sous
+195;毎～;まい～;16;chaque, tous les
+196;毎朝;まいあさ;16;chaque matin, tous les matins
+197;毎日;まいにち;16;chaque jour, tous les jours
+198;週末;しゅうまつ;16;week-end, fin de semaine
+199;元気;げんき;16;en forme, bonne santé, énergie
+200;外;そと;16;dehors, extérieur
+201;起きます;おきます;16;se lever, se réveiller
+202;歩きます;あるきます;16;marcher
+203;走ります;はしります;16;courir
+204;泳ぎます;およぎます;16;nager
+205;お祝い;おいわい;17;félicitations, célébration, cadeau de félicitations
+206;誕生日;たんじょうび;17;anniversaire
+207;結婚;けっこん;17;mariage, se marier
+208;絵;え;17;dessin, peinture, tableau
+209;写真;しゃしん;17;photo, photographie
+210;時計;とけい;17;horloge, montre
+211;着ます;きます;17;porter un vêtement, mettre un vêtement
+212;先～;せん～;18;précédent, dernier
+213;先週;せんしゅう;18;semaine dernière
+214;今～;こん～;18;ce, cette, actuel
+215;今月;こんげつ;18;ce mois-ci, ce mois
+216;来～;らい～;18;prochain, prochaine
+217;来年;らいねん;18;année prochaine, l'année prochaine
+218;今年;ことし;18;cette année
+219;去年;きょねん;18;année dernière, l'année dernière
+220;家;いえ;18;maison, chez soi
+221;思います;おもいます;18;penser, croire
+222;自己紹介;じこしょうかい;1;présentation de soi, se présenter
+223;名前;なまえ;1;nom, prénom
+224;意味;いみ;1;sens, signification
+225;本屋;ほんや;1;librairie
+226;近く;ちかく;1;près, à proximité, alentours
+227;住みます;すみます;1;habiter, vivre
+228;働きます;はたらきます;1;travailler
+229;～番目（１番目）;～ばんめ（いちばんめ）;1;rang, position dans un ordre, numéro d'ordre
+230;兄;あに;2;grand frère, frère aîné
+231;お兄さん;おにいさん;2;grand frère, frère aîné
+232;姉;あね;2;grande sœur, grande soeur, sœur aînée
+233;お姉さん;おねえさん;2;grande sœur, grande soeur, sœur aînée
+234;弟;おとうと;2;petit frère, frère cadet
+235;妹;いもうと;2;petite sœur, petite soeur, sœur cadette
+236;家族;かぞく;2;famille
+237;長い;ながい;2;long, longue
+238;短い;みじかい;2;court, courte
+239;低い;ひくい;2;bas, basse, peu élevé
+240;上手;じょうず;2;habile, doué, bon dans
+241;歌;うた;2;chanson, chant
+242;歌います;うたいます;2;chanter
+243;客;きゃく;3;client, cliente, invité
+244;注文;ちゅうもん;3;commande, commander
+245;洋食;ようしょく;3;cuisine occidentale, plat occidental
+246;和食;わしょく;3;cuisine japonaise, plat japonais
+247;牛肉;ぎゅうにく;3;bœuf, boeuf, viande de bœuf
+248;地方;ちほう;3;région, province
+249;有名;ゆうめい;3;célèbre, connu, connue
+250;生;なま;3;cru, crue, frais, fraîche
+251;冷たい;つめたい;3;froid, froide
+252;ご飯;ごはん;4;riz, riz cuit, repas
+253;塩;しお;4;sel
+254;全部;ぜんぶ;4;tout, totalité, ensemble
+255;～方;～かた;4;manière de, façon de
+256;食べ方;たべかた;4;manière de manger, façon de manger
+257;熱い;あつい;4;chaud, chaude
+258;苦手;にがて;4;pas doué, mal à l'aise, point faible
+259;入れます;いれます;4;mettre, introduire, ajouter
+260;木;き;5;arbre, bois
+261;森;もり;5;forêt
+262;島;しま;5;île
+263;自然;しぜん;5;nature, naturel
+264;船;ふね;5;bateau, navire
+265;暑い;あつい;5;chaud, chaleur
+266;帰ります;かえります;5;rentrer, retourner
+267;予約します;よやくします;5;réserver, faire une réservation
+268;運転します;うんてんします;5;conduire
+269;～中;～ちゅう;5;pendant, en cours de
+270;旅行中;りょこうちゅう;5;en voyage, pendant le voyage
+271;観光地;かんこうち;6;site touristique, lieu touristique
+272;女性;じょせい;6;femme, féminin
+273;男性;だんせい;6;homme, masculin
+274;動物;どうぶつ;6;animal, animaux
+275;空気;くうき;6;air
+276;料金;りょうきん;6;tarif, prix, frais
+277;無料;むりょう;6;gratuit, gratuitement
+278;明るい;あかるい;6;clair, lumineux, joyeux
+279;便利;べんり;6;pratique, commode
+280;～中;～じゅう;6;tout au long de, dans tout
+281;一年中;いちねんじゅう;6;toute l'année, pendant toute l'année
+282;受付;うけつけ;7;accueil, réception, guichet
+283;広場;ひろば;7;place, espace ouvert
+284;問題;もんだい;7;problème, question
+285;同じ;おなじ;7;même, identique
+286;集まります;あつまります;7;se réunir, se rassembler
+287;始まります;はじまります;7;commencer, débuter
+288;終わります;おわります;7;finir, se terminer
+289;中止します;ちゅうしします;7;annuler, interrompre
+290;教えます;おしえます;7;enseigner, apprendre à quelqu'un
+291;祭;まつり;8;fête, festival
+292;日本祭;にほんまつり;8;festival japonais, fête japonaise
+293;会場;かいじょう;8;lieu d'un événement, salle, site
+294;入場料;にゅうじょうりょう;8;prix d'entrée, frais d'entrée
+295;参加者;さんかしゃ;8;participant, participante
+296;急ぎます;いそぎます;8;se dépêcher, se hâter
+297;決めます;きめます;8;décider, fixer
+298;知ります;しります;8;savoir, connaître
+299;正月;しょうがつ;9;Nouvel An, début d'année
+300;年末;ねんまつ;9;fin d'année
+301;年始;ねんし;9;début d'année
+302;親;おや;9;parent, parents
+303;忙しい;いそがしい;9;occupé, occupée, très pris
+304;特別;とくべつ;9;spécial, spéciale, particulier
+305;帰国;きこく;9;retour au pays, rentrer dans son pays
+306;喜びます;よろこびます;9;se réjouir, être content
+307;幸せ;しあわせ;10;bonheur, heureux, heureuse
+308;成長;せいちょう;10;croissance, grandir
+309;長生き;ながいき;10;longévité, longue vie, vivre longtemps
+310;願い事;ねがいごと;10;souhait, vœu, voeu
+311;合格;ごうかく;10;réussite à un examen, admission
+312;試験;しけん;10;examen, épreuve
+313;大人;おとな;10;adulte
+314;～式（せいじん式）;～しき（せいじんしき）;10;cérémonie
+315;～市（さいたま市）;～し（さいたまし）;10;ville, municipalité
+316;商品;しょうひん;11;produit, marchandise, article
+317;電気製品;でんきせいひん;11;appareil électrique, produit électrique
+318;電子レンジ;でんしレンジ;11;four à micro-ondes, micro-ondes
+319;～機（そうじ機）;～き;11;machine, appareil
+320;店員;てんいん;11;vendeur, vendeuse, employé d'un magasin
+321;調子;ちょうし;11;état, condition, fonctionnement
+322;悪い;わるい;11;mauvais, mauvaise
+323;動きます;うごきます;11;bouger, fonctionner
+324;考えます;かんがえます;11;penser, réfléchir
+325;音;おと;11;son, bruit
+326;出ます;でます;11;sortir, apparaître
+327;機能;きのう;12;fonction, fonctionnalité
+328;省エネ;しょうエネ;12;économie d'énergie, économe en énergie
+329;日本製;にほんせい;12;fabriqué au Japon, fabrication japonaise
+330;重い;おもい;12;lourd, lourde
+331;軽い;かるい;12;léger, légère
+332;静か;しずか;12;calme, silencieux, silencieuse
+333;早く;はやく;12;tôt, vite, rapidement
+334;方（こっちの方）;ほう;12;côté, direction
+335;洗います;あらいます;12;laver
+336;満足します;まんぞくします;12;être satisfait, se satisfaire
+337;京都;きょうと;13;Kyoto
+338;神社;じんじゃ;13;sanctuaire shinto
+339;お寺;おてら;13;temple bouddhiste, temple
+340;仏教;ぶっきょう;13;bouddhisme
+341;歴史;れきし;13;histoire
+342;世界;せかい;13;monde
+343;中心;ちゅうしん;13;centre, cœur, coeur
+344;～世紀（８世紀）;～せいき;13;siècle
+345;～的;～てき;13;relatif à, de type, caractéristique de
+346;日本的;にほんてき;13;typiquement japonais, de style japonais
+347;歴史的;れきしてき;13;historique
+348;飲食;いんしょく;14;nourriture et boisson, manger et boire
+349;禁止;きんし;14;interdiction, interdit
+350;説明;せつめい;14;explication, expliquer
+351;道具;どうぐ;14;outil, ustensile
+352;博物館;はくぶつかん;14;musée
+353;必要;ひつよう;14;nécessaire, besoin
+354;～階（２階）;～かい;14;étage
+355;油;あぶら;15;huile
+356;紙;かみ;15;papier
+357;温度;おんど;15;température
+358;活動;かつどう;15;activité
+359;会議室;かいぎしつ;15;salle de réunion
+360;寒い;さむい;15;froid, froide, avoir froid
+361;出します;だします;15;sortir, mettre dehors, remettre
+362;～度（28度）;～ど（にじゅうはちど）;15;degré, degrés
+363;～点（100点）;～てん（ひゃくてん）;15;point, points, note
+364;服;ふく;16;vêtement, vêtements, habits
+365;自転車;じてんしゃ;16;vélo, bicyclette
+366;自動車;じどうしゃ;16;automobile, voiture
+367;売ります;うります;16;vendre
+368;貸します;かします;16;prêter, louer à quelqu'un
+369;返します;かえします;16;rendre, retourner un objet
+370;変わります;かわります;16;changer, se modifier
+371;～用;～よう;16;pour, destiné à
+372;子ども用;こどもよう;16;pour enfants, destiné aux enfants
+373;人生;じんせい;17;vie, existence
+374;歌手;かしゅ;17;chanteur, chanteuse
+375;選手;せんしゅ;17;athlète, joueur, joueuse
+376;画家;がか;17;peintre
+377;作家;さっか;17;écrivain, écrivaine, auteur
+378;入学;にゅうがく;17;entrée à l'école, inscription scolaire
+379;卒業;そつぎょう;17;fin d'études, diplôme, obtenir son diplôme
+380;病気;びょうき;17;maladie, malade
+381;若い;わかい;17;jeune
+382;生まれます;うまれます;17;naître
+383;思い出;おもいで;18;souvenir
+384;生活;せいかつ;18;vie quotidienne, mode de vie, vivre
+385;映画;えいが;18;film, cinéma
+386;夫;おっと;18;mari, époux
+387;妻;つま;18;femme, épouse
+388;両親;りょうしん;18;parents, père et mère
+389;不便;ふべん;18;peu pratique, incommode
+390;選びます;えらびます;18;choisir, sélectionner
+391;寝ます;ねます;18;dormir, se coucher
+392;サッカー場;サッカーじょう;1;terrain de football
+393;試合;しあい;1;match, rencontre sportive
+394;日曜日;にちようび;1;dimanche
+395;強い;つよい;1;fort, forte
+396;弱い;よわい;1;faible
+397;勝つ;かつ;1;gagner, vaincre
+398;負ける;まける;1;perdre, être vaincu
+399;～対～（２対１）;～たい～（にたいいち）;1;contre, à, rapport de score
+400;庭;にわ;2;jardin
+401;公園;こうえん;2;parc
+402;病院;びょういん;2;hôpital
+403;交通;こうつう;2;circulation, transports, trafic
+404;通勤;つうきん;2;trajet domicile-travail, aller au travail
+405;安全;あんぜん;2;sécurité, sûr, sûre
+406;危ない;あぶない;2;dangereux, dangereuse
+407;遠い;とおい;2;loin, lointain
+408;勤める;つとめる;2;travailler pour, être employé chez
+409;～以上（2時間以上）;～いじょう（にじかんいじょう）;2;au moins, supérieur ou égal à, et plus
+410;～以下（6万円以下）;～いか（ろくまんえんいか）;2;au plus, inférieur ou égal à, et moins
+411;海外;かいがい;3;étranger, outre-mer, à l'étranger
+412;食生活;しょくせいかつ;3;alimentation, habitudes alimentaires
+413;健康;けんこう;3;santé
+414;家庭料理;かていりょうり;3;cuisine familiale, plat fait maison
+415;材料;ざいりょう;3;ingrédient, matériau
+416;量;りょう;3;quantité
+417;米;こめ;3;riz non cuit, riz
+418;～食;～しょく;3;repas, compteur de repas
+419;朝食;ちょうしょく;3;petit-déjeuner, repas du matin
+420;昼食;ちゅうしょく;3;déjeuner, repas de midi
+421;夕食;ゆうしょく;3;dîner, repas du soir
+422;外食;がいしょく;3;repas au restaurant, manger dehors
+423;定食;ていしょく;3;menu fixe, repas complet
+424;住所;じゅうしょ;4;adresse
+425;訪問;ほうもん;4;visite, rendre visite
+426;経験;けいけん;4;expérience, avoir de l'expérience
+427;親切;しんせつ;4;gentil, gentille, serviable, aimable
+428;座る;すわる;4;s'asseoir
+429;立つ;たつ;4;se lever, être debout
+430;～観（人生観）;～かん（じんせいかん）;4;vision de, conception de
+431;約～（約６年間）;やく～（やくろくねんかん）;4;environ, à peu près
+432;計画;けいかく;5;plan, projet, prévoir
+433;自信;じしん;5;confiance en soi, assurance
+434;方法;ほうほう;5;méthode, manière, façon
+435;目的;もくてき;5;objectif, but
+436;難しい;むずかしい;5;difficile
+437;通じる;つうじる;5;être compris, communiquer, passer
+438;習う;ならう;5;apprendre, prendre des leçons
+439;学ぶ;まなぶ;5;apprendre, étudier
+440;～級;～きゅう;5;niveau, classe
+441;初級;しょきゅう;5;débutant, niveau débutant
+442;中級;ちゅうきゅう;5;intermédiaire, niveau intermédiaire
+443;上級;じょうきゅう;5;avancé, niveau avancé
+444;相手;あいて;6;partenaire, interlocuteur, autre personne
+445;気持ち;きもち;6;sentiment, sentiments, humeur
+446;恋人;こいびと;6;petit ami, petite amie, amoureux, amoureuse
+447;出会い;であい;6;rencontre
+448;最近;さいきん;6;récemment, ces derniers temps
+449;最高;さいこう;6;meilleur, excellente qualité, le plus élevé
+450;出席;しゅっせき;6;présence, participation, assister
+451;招待;しょうたい;6;invitation, inviter
+452;～合う（知り合う）;～あう（しりあう）;6;mutuellement, réciproquement, ensemble
+453;社会人;しゃかいじん;7;personne active, personne qui travaille
+454;職場;しょくば;7;lieu de travail, milieu professionnel
+455;給料;きゅうりょう;7;salaire, paie
+456;人間関係;にんげんかんけい;7;relations humaines, relations entre personnes
+457;親友;しんゆう;7;ami proche, amie proche, meilleur ami
+458;恋愛;れんあい;7;amour, relation amoureuse
+459;相談;そうだん;7;conseil, consultation, consulter
+460;心;こころ;7;cœur, coeur, esprit
+461;心配;しんぱい;7;inquiétude, souci, s'inquiéter
+462;不安;ふあん;7;anxiété, inquiétude, inquiet
+463;お客様;おきゃくさま;8;client, cliente, invité, invitée
+464;手続き;てつづき;8;formalités, procédure, démarches
+465;飛行機;ひこうき;8;avion
+466;変更;へんこう;8;modification, changement, modifier
+467;予定;よてい;8;prévision, programme, projets
+468;利用;りよう;8;utilisation, utiliser
+469;忘れ物;わすれもの;8;objet oublié, oubli d'un objet
+470;助ける;たすける;8;aider, secourir
+471;～航空（JF航空）;～こうくう（JFこうくう）;8;compagnie aérienne, aviation
+472;～便（115便）;～びん（いちいちごびん）;8;vol, service de transport
+473;体力;たいりょく;9;endurance, condition physique, force physique
+474;協力;きょうりょく;9;coopération, collaborer
+475;担当;たんとう;9;responsable de, être chargé de
+476;報告;ほうこく;9;rapport, compte rendu, rendre compte
+477;連絡;れんらく;9;contact, communication, contacter
+478;募集;ぼしゅう;9;recrutement, appel à candidatures
+479;輸出;ゆしゅつ;9;exportation, exporter
+480;輸入;ゆにゅう;9;importation, importer
+481;会話;かいわ;18;conversation
+482;形;かたち;18;forme
+483;漢字;かんじ;18;kanji, caractère chinois
+484;答え;こたえ;18;réponse
+485;質問;しつもん;18;question
+486;正しい;ただしい;18;correct, juste, exact
+487;読解;どっかい;18;compréhension écrite, lecture et compréhension
+488;表現;ひょうげん;18;expression, manière de s'exprimer
+489;文;ぶん;18;phrase
+490;文型;ぶんけい;18;structure de phrase, modèle de phrase
+491;文法;ぶんぽう;18;grammaire
+492;もう一度;もういちど;18;encore une fois, une fois de plus
+493;例;れい;18;exemple
+494;練習;れんしゅう;18;entraînement, exercice, pratique
+495;主婦;しゅふ;4;femme au foyer
+496;在住;ざいじゅう;4;résider, habiter, résidence
+497;～歳（7歳）;～さい（7さい）;4;âge en années, ans
+498;娘;むすめ;4;fille, sa fille
+499;教師;きょうし;4;enseignant, enseignante, professeur
+500;専門;せんもん;4;spécialité, domaine de spécialisation
+501;音声;おんせい;4;voix, sons de la parole, audio
+502;食堂;しょくどう;4;cantine, réfectoire, restaurant
+503;出身;しゅっしん;4;origine, lieu d'origine
+504;情報交換;じょうほうこうかん;4;échange d'informations
+505;～個（1個）;～こ（1こ）;4;pièce, unité, compteur d'objets
+506;適量;てきりょう;4;quantité appropriée, quantité nécessaire
+507;皮;かわ;4;peau, écorce, pelure
+508;鉄板;てっぱん;4;plaque de fer, plaque de cuisson
+509;面;めん;4;face, surface, côté
+510;固まる;かたまる;4;durcir, se solidifier, se fixer
+511;裏返す;うらがえす;4;retourner, mettre à l'envers
+512;焼く;やく;4;cuire, griller, brûler
+513;簡単;かんたん;4;simple, facile
+514;友達;ともだち;4;ami, amie
+515;誘う;さそう;4;inviter, proposer de venir
+516;～県（埼玉県）;～けん（さいたまけん）;4;préfecture, département japonais
+517;曲;きょく;4;morceau de musique, chanson, composition
+518;感じ;かんじ;4;impression, sensation
+519;泣く;なく;4;pleurer
+520;笑う;わらう;4;rire, sourire
+521;許す;ゆるす;4;pardonner, autoriser, permettre
+522;開く;ひらく;4;ouvrir
+523;取る;とる;4;prendre, attraper
+524;温泉;おんせん;4;source thermale, sources chaudes, onsen
+525;過ごす;すごす;4;passer du temps, passer
+526;お湯;おゆ;4;eau chaude
+527;風呂;ふろ;4;bain, baignoire
+528;接客;せっきゃく;4;accueil des clients, service aux clients
+529;泊まる;とまる;4;passer la nuit, séjourner
+530;値段;ねだん;4;prix
+531;宿泊;しゅくはく;4;hébergement, séjour, nuitée
+532;申し上げます;もうしあげます;4;dire humblement, dire, exprimer respectueusement
+533;暮らす;くらす;4;vivre, mener sa vie
+534;洗濯（する）;せんたく（する）;4;lessive, laver le linge, faire la lessive
+535;準備（する）;じゅんび（する）;4;préparation, préparer
+536;退職（する）;たいしょく（する）;4;retraite, départ d'un emploi, quitter son emploi
+537;自由;じゆう;4;liberté, libre
+538;美術展;びじゅつてん;4;exposition d'art
+539;次;つぎ;4;suivant, prochaine fois, suite
+540;連絡（する）;れんらく（する）;4;contact, contacter, communiquer
+541;比べる;くらべる;4;comparer
+542;内容;ないよう;4;contenu, teneur
+543;浅い;あさい;4;peu profond, superficiel
+544;想像力;そうぞうりょく;4;imagination, capacité d'imagination
+545;文章;ぶんしょう;4;texte, rédaction
+546;実際;じっさい;4;réalité, en réalité, effectivement
+547;深い;ふかい;4;profond, profonde
+548;違う;ちがう;4;différer, être différent, se tromper
+549;対象;たいしょう;4;objet concerné, cible, sujet
+550;武道;ぶどう;4;arts martiaux
+551;柔道;じゅうどう;4;judo
+552;～倍（４倍）;～ばい（４ばい）;4;fois, multiplicateur, double ou multiple
+553;伝える;つたえる;4;transmettre, raconter, communiquer
+554;進出（する）;しんしゅつ（する）;4;expansion, s'implanter, avancer
+555;失う;うしなう;4;perdre
+556;尊敬（する）;そんけい（する）;4;respect, respecter, admirer
+557;礼;れい;4;salutation, politesse, salut, remerciement
+558;精神;せいしん;4;esprit, mental, spiritualité
+559;未来;みらい;4;avenir, futur
+560;夢;ゆめ;4;rêve
+561;移動（する）;いどう（する）;4;déplacement, se déplacer, mouvement
+562;昔;むかし;4;autrefois, passé, jadis
+563;建設;けんせつ;4;construction, construire
+564;時代;じだい;4;époque, période
+565;番号;ばんごう;4;numéro, nombre
+566;第～位（第1位）;だい～い（だい1い）;4;rang, position dans un classement
+567;向かう;むかう;4;se diriger vers, faire face à
+568;日記;にっき;4;journal intime
+569;～州（ケンタッキー州）;～しゅう（ケンタッキーしゅう）;4;État, province
+570;伝統的;でんとうてき;4;traditionnel, traditionnelle
+571;～湖（山中湖）;～こ（やまなかこ）;4;lac
+572;風景;ふうけい;4;paysage
+573;根元;ねもと;4;base, pied, racine
+574;順番;じゅんばん;4;ordre, tour, numéro d'ordre
+575;君;きみ;4;tu, toi
+576;親戚;しんせき;4;parenté, famille, parent
+577;解散;かいさん;4;dissolution, séparation, se séparer
+578;果てしない;はてしない;4;sans fin, infini, interminable
+579;取得;しゅとく;4;obtention, acquisition, obtenir, acquérir
+580;自宅;じたく;4;son domicile, chez soi, sa maison
+581;短期;たんき;4;courte durée, court terme
+582;経験;けいけん;4;expérience
+583;印象的;いんしょうてき;4;impressionnant, marquant
+584;交流;こうりゅう;4;échange, échanges, relations
+585;見直す;みなおす;4;réexaminer, revoir, réévaluer
+586;並ぶ;ならぶ;4;s'aligner, faire la queue, être côte à côte
+587;優しい;やさしい;4;gentil, gentille, doux, douce
+588;意欲的;いよくてき;4;motivé, motivée, enthousiaste
+589;吸い込む;すいこむ;4;aspirer, absorber, inhaler
+590;紅葉（する）;こうよう（する）;4;feuillage d'automne, changement de couleur des feuilles
+591;可能;かのう;4;possible, possibilité
+592;花畑;はなばたけ;4;champ de fleurs, parterre de fleurs
+593;背景;はいけい;4;arrière-plan, contexte, décor
+594;熱帯;ねったい;4;région tropicale, tropiques, zone tropicale
+595;植物;しょくぶつ;4;plante, plantes, végétal
+596;遊具;ゆうぐ;4;équipement de jeu, jeux pour enfants
+597;氷柱;ひょうちゅう;4;colonne de glace, pilier de glace, stalactite de glace
+598;冷蔵庫;れいぞうこ;4;réfrigérateur, frigo
+599;効く;きく;4;être efficace, faire effet, agir
+600;疲れ;つかれ;4;fatigue
+601;研究所;けんきゅうじょ;4;institut de recherche, laboratoire
+602;本当;ほんとう;4;vrai, vérité, réellement
+603;迷う;まよう;4;hésiter, se perdre, être indécis
+604;治る;なおる;4;guérir, se rétablir
+605;頼る;たよる;4;compter sur, s'appuyer sur, dépendre de
+606;成分;せいぶん;4;composant, constituant, ingrédient
+607;原因;げんいん;4;cause, origine
+608;医者;いしゃ;4;médecin, docteur
+609;主役;しゅやく;4;rôle principal, personnage principal
+610;応募;おうぼ;4;candidature, postuler, se porter candidat
+611;無理;むり;4;impossible, déraisonnable, excessif
+612;舞台;ぶたい;4;scène, théâtre
+613;呼ぶ;よぶ;4;appeler, inviter
+614;組;くみ;4;groupe, équipe, classe
+615;公演;こうえん;4;représentation, spectacle, donner un spectacle
+616;各～（各組）;かく～（かくくみ）;4;chaque, chacun
+617;普通;ふつう;4;normal, ordinaire, habituel
+618;努力（する）;どりょく（する）;4;effort, faire des efforts, s'efforcer
+619;穴場;あなば;4;lieu peu connu, bonne adresse, endroit méconnu
+620;数;かず;4;nombre, quantité
+621;増加（する）;ぞうか（する）;4;augmentation, augmenter
+622;対応（する）;たいおう（する）;4;réaction adaptée, prise en charge, faire face, répondre
+623;分析（する）;ぶんせき（する）;4;analyse, analyser
+624;一般;いっぱん;4;général, ordinaire, public
+625;種類;しゅるい;4;type, sorte, catégorie
+626;届く;とどく;4;arriver, parvenir, être livré
+627;～区（23区）;～く（23く）;4;arrondissement, quartier, district
+628;拡大（する）;かくだい（する）;4;agrandissement, extension, élargir, agrandir
+629;たこ焼き器;たこやきき;4;appareil à takoyaki, appareil pour boulettes de poulpe
+630;税込;ぜいこみ;4;taxes comprises, toutes taxes comprises, TTC
+631;調整;ちょうせい;4;ajustement, réglage, ajuster
+632;着脱;ちゃくだつ;4;mettre et enlever, fixation et retrait, pose et dépose
+633;消費;しょうひ;4;consommation, consommer
+634;落ちる;おちる;4;tomber, chuter
+635;製品;せいひん;4;produit, article manufacturé
+636;払う;はらう;4;payer, régler
+637;価値;かち;4;valeur
+638;包装（する）;ほうそう（する）;4;emballage, emballer
+639;石炭;せきたん;4;charbon
+640;必死;ひっし;4;désespéré, désespoir, acharné, de toutes ses forces
+641;引き止める;ひきとめる;4;retenir, arrêter quelqu'un
+642;涙;なみだ;4;larme, larmes
+643;笑顔;えがお;4;visage souriant, sourire
+644;演技;えんぎ;4;jeu d'acteur, interprétation, jouer un rôle
+645;評判;ひょうばん;4;réputation, renommée
+646;確かに;たしかに;4;certainement, effectivement, assurément
+647;苦労（する）;くろう（する）;4;difficulté, peine, avoir du mal
+648;恥ずかしい;はずかしい;4;gêné, gênée, embarrassant, avoir honte
+649;停車;ていしゃ;4;arrêt d'un véhicule, arrêt du train
+650;位置;いち;4;position, emplacement
+651;遅れる;おくれる;4;être en retard, retarder
+652;押し込む;おしこむ;4;pousser à l'intérieur, enfoncer
+653;反応;はんのう;4;réaction, réponse
+654;整列乗車;せいれつじょうしゃ;4;monter en faisant la queue, embarquement en file ordonnée
+655;割り込む;わりこむ;4;couper la file, s'intercaler, s'interposer
+656;降りる;おりる;4;descendre d'un véhicule, débarquer
+657;公共;こうきょう;4;public, collectif
+658;不快;ふかい;4;désagréable, déplaisant, inconfortable
+659;戦う;たたかう;4;combattre, se battre
+660;残す;のこす;4;laisser, garder, conserver
+661;戦;いくさ;4;guerre, bataille, combat
+662;言葉;ことば;4;mot, parole, langue
+663;完全;かんぜん;4;complet, complète, parfait
+664;常に;つねに;4;toujours, constamment
+665;亡くなる;なくなる;4;mourir, décéder
+666;周辺国;しゅうへんこく;4;pays voisins, pays environnants
+667;困る;こまる;4;être embarrassé, être en difficulté, ne pas savoir quoi faire
+668;戦乱;せんらん;4;guerre, troubles dus à la guerre, chaos de la guerre

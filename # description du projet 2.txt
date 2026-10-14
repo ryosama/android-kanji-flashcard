@@ -1,0 +1,18 @@
+# description du projet 2
+
+Maintenant j'aimerai la compléter un peu avec de nouveaux kanjis vu dans la méthode Marugoto.
+J'ai mis dans le répertoire "listes/francais" un fichier MarugotoIntermediate2KanjiList.pdf qui contient une liste de 668 kanjis répartis par lesson (de 1 à 18).
+La structures du fichier PDF est une suite de tableau avec :
+    - en colonne 1 le numéro du kanji
+    - en colonne 2 le kanji
+    - en colonne 3 sa ou ses prononciations en hiragana
+    - en colonne 4 la lesson à laquel il est rataché
+
+## Travail a réaliser
+- Commence par extraire ce PDF en un fichier CSV de 668 kanjis
+- Rajoute dans ce fichier CSV une colonne 5 pour la significations en francais du kanji
+- Dans l'application il faut rajouter une entrée "Marugoto" en plus des JLPTx
+- Cette entrée est paramétrable, elle demande jusqu'à quelle lesson il faut inclure les kanji. Un cursor se déplace de 1 à 18. Si je choisis juqu'à la lesson 5, il faut que les kanjis des lessons de 1 à 5 soit intégré dans les flashcards.
+- Il faut que d'un lancement à l'autre le dernier niveau de lesson soit proposé par défaut (le sauvegarder entre deux lancement)
+- Chaque kanji à sa propre stats (comme c'est deja le cas dans les JLPTx)
+- On propose toujours le mode facile ou le mode normal comme avant. Si on choisit le mode facile, les propositions doivent être prise dans les lessons de 1 à la lesson choisi (de 1 à 5 dans notre exemple)

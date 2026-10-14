@@ -36,6 +36,17 @@ object MeaningNumbers {
     /** Séparateurs retirés après vérification du regroupement des chiffres par milliers. */
     private val spacing = Regex("[\\s\\u00a0\\u202f]+")
 
+    /** Caractères numériques de neuf ; le sens adjectival de 新 / 新しい n'est pas un chiffre. */
+    private val nineCharacters = setOf("九", "玖")
+
+    /** Interprète un sens de carte en tenant compte de l'homonyme français « neuf » / « nouveau ». */
+    fun meaningValue(raw: String, card: Kanji): BigInteger? {
+        if (Answers.meaning(raw) == "neuf" && card.character !in nineCharacters) {
+            return null
+        }
+        return value(raw)
+    }
+
     /**
      * Reconnaît un nombre exact, sans arrondi ni correction approximative de ses chiffres.
      * BigInteger conserve les valeurs exactes au-delà des limites de Long.

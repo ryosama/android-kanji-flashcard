@@ -10,6 +10,7 @@ import android.widget.Spinner
 import fr.kanjiflashcards.core.Answers
 import fr.kanjiflashcards.core.Kanji
 import fr.kanjiflashcards.core.Progress
+import fr.kanjiflashcards.core.StudySelection
 import fr.kanjiflashcards.ui.AppColors
 import fr.kanjiflashcards.ui.UiComponents
 
@@ -22,12 +23,20 @@ class StatisticsScreen(
     private val level: Int,
     private val catalog: List<Kanji>,
     private val progress: Map<String, Progress>,
+    lessonLimit: Int = 18,
 ) {
+    /** Même filtre que celui utilisé pour la séance et ses distracteurs. */
+    private val selection = StudySelection(level, lessonLimit)
+
     /** Nombre de nouvelles lignes ajoutées par appui sur « Afficher la suite ». */
     private val pageSize = 50
 
     /** Largeurs en dp, dans l'ordre des huit colonnes de showTableHeader. */
-    private val columnWidths = listOf(72, 200, 240, 300, 110, 95, 95, 95)
+    private val columnWidths = if (level == StudySelection.MARUGOTO) {
+        listOf(220, 320, 85, 300, 110, 95, 95, 95)
+    } else {
+        listOf(72, 200, 240, 300, 110, 95, 95, 95)
+    }
 
     /** Recherche, filtre et tri qui déterminent les cartes affichées. */
     private lateinit var search: EditText
@@ -45,7 +54,10 @@ class StatisticsScreen(
 
     /** Installe la recherche et les commandes, puis affiche les premières lignes du niveau. */
     fun show() {
-        val content = ui.screen("Statistiques N$level")
+        val content = ui.screen("Statistiques ${selection.title}")
+        if (selection.subtitle.isNotBlank()) {
+            content.addView(ui.text(selection.subtitle, 14f, AppColors.accent))
+        }
         content.addView(ui.text(
             "100 % = cinq réussites espacées. Les compteurs incluent l'entraînement libre.",
             14f,
@@ -97,7 +109,7 @@ class StatisticsScreen(
         tableHolder.removeAllViews()
         visibleCards = filteredCards()
         displayedCount = 0
-        tableHolder.addView(ui.text("${visibleCards.size} kanji", 14f, AppColors.secondaryText))
+        tableHolder.addView(ui.text("${visibleCards.size} cartes", 14f, AppColors.secondaryText))
 
         // Défilement horizontal pour lire les huit colonnes sur un écran de téléphone.
         val horizontalScroll = HorizontalScrollView(ui.activity)
@@ -115,7 +127,7 @@ class StatisticsScreen(
     /** Sélectionne les cartes du niveau, applique la recherche, puis le filtre et le tri. */
     private fun filteredCards(): List<Kanji> {
         val query = Answers.meaning(search.text.toString())
-        var cards = catalog.filter { it.level == level }.filter { card ->
+        var cards = selection.cards(catalog).filter { card ->
             val searchableText = "${card.character} ${card.on} ${card.kun} ${card.meanings.joinToString(" ")}"
             query.isBlank() || Answers.meaning(searchableText).contains(query)
         }.filter { card ->
@@ -138,8 +150,10 @@ class StatisticsScreen(
     private fun showTableHeader() {
         addTableRow(
             values = listOf(
-                "Kanji", "Lecture on", "Lecture kun", "Significations",
-                "Maîtrise", "Proposé", "Correct", "Incorrect",
+                if (level == StudySelection.MARUGOTO) "Mot" else "Kanji",
+                if (level == StudySelection.MARUGOTO) "Lectures kana / rōmaji" else "Lecture on",
+                if (level == StudySelection.MARUGOTO) "Leçon" else "Lecture kun",
+                "Significations", "Maîtrise", "Proposé", "Correct", "Incorrect",
             ),
             heading = true,
         )
@@ -152,8 +166,8 @@ class StatisticsScreen(
             addTableRow(
                 values = listOf(
                     card.character,
-                    card.on.ifBlank { "—" },
-                    card.kun.ifBlank { "—" },
+                    if (level == StudySelection.MARUGOTO) "${card.kun} · ${card.on}" else card.on.ifBlank { "—" },
+                    if (level == StudySelection.MARUGOTO) "${card.lesson}" else card.kun.ifBlank { "—" },
                     card.meanings.joinToString(", "),
                     "${stats.mastery} %",
                     "${stats.shown}",

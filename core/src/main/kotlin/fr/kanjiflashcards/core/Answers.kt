@@ -114,10 +114,15 @@ object Answers {
         // Un nombre saisi et un sens numérique doivent désigner exactement la même valeur.
         // « 10 000 » accepte « dix mille » ; « 101 » ne bénéficie pas des fautes tolérées sur les mots.
         val numericAnswer = MeaningNumbers.value(input)
-        if (numericAnswer != null || (input.any(Char::isDigit) &&
-                acceptedMeanings.any { MeaningNumbers.value(it) != null })) {
-            return numericAnswer != null && acceptedMeanings.any {
-                MeaningNumbers.value(it) == numericAnswer
+        val hasDigits = input.any(Char::isDigit)
+        if (numericAnswer != null || hasDigits) {
+            val expectedNumbers = acceptedMeanings.mapNotNull { MeaningNumbers.meaningValue(it, kanji) }
+            if (expectedNumbers.isNotEmpty()) {
+                return numericAnswer != null && numericAnswer in expectedNumbers
+            }
+            // « neuf » reste un adjectif valide pour 新しい ; le chiffre 9 ne l'est pas.
+            if (hasDigits && numericAnswer != null) {
+                return false
             }
         }
 

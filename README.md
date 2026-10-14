@@ -49,6 +49,7 @@ Pour remplacer une ancienne version de test, exporter d'abord la progression en 
 ## Fonctionnement
 
 - 2 495 kanji provenant des cinq CSV français fournis, du JLPT N5 au N1.
+- Marugoto : 668 cartes supplémentaires issues du PDF fourni, avec leurs lectures et significations françaises. Un curseur sélectionne toutes les leçons de 1 à la limite choisie (1..18), mémorisée entre les lancements. Les entrées sans leçon sont classées en 18. Les statistiques Marugoto sont indépendantes des JLPT et de chaque autre ligne du PDF. Les modes normal et facile, y compris les quatre types de QCM, utilisent seulement les leçons sélectionnées. Les verbes acceptent la lecture du PDF et celle de leur forme du dictionnaire.
 - Mode normal : saisir une lecture et un sens, puis valider les deux réponses ensemble avec le bouton « Valider » placé sous les champs. Une lecture valide parmi les lectures on/kun suffit. Le bouton « Je ne sais pas » termine la carte comme une erreur et révèle la correction. Les formes complètes et les radicaux indiqués par les parenthèses sont acceptés, ainsi que les hiragana et katakana équivalents.
 - Mode facile : choisir signification, rōmaji, kana ou mélange. Chaque bouton regroupe toutes les lectures on/kun du format choisi, avec les parenthèses optionnelles conservées, ou toutes les significations françaises, séparées par « · ». Chaque question propose quatre réponses distinctes, sans distracteur qui serait une réponse valide pour la carte courante. Le mode Mélange combine français, rōmaji et kana au sein des quatre propositions, avec les trois formats présents et une seule bonne réponse. Le bouton supplémentaire « Je ne sais pas » compte comme une mauvaise réponse et affiche la correction avant le passage à la carte suivante.
 - Correction : insensible aux majuscules, accents français, ponctuation et espaces superflus. Une faute est tolérée à partir de cinq lettres, deux à partir de dix ; une transposition adjacente compte pour une faute. Les mots courts restent stricts. Seuls les sens présents dans le catalogue sont acceptés ; les précisions entre parenthèses sont facultatives (par exemple « droite » pour « droite (direction) »).
@@ -105,6 +106,7 @@ Le workflow [Android](.github/workflows/android.yml) exécute les vérifications
 
 ## Organisation
 
+- [Catalogue Marugoto et extraction du PDF](MARUGOTO.md) : colonnes du CSV, lectures supplémentaires, filtre et conservation de la progression.
 - [Guide de lecture et de modification du code](CODE_GUIDE.md) : rôle de chaque fichier, composants graphiques et circulation des données.
 - `core` : import CSV, correction, moteur Leitner, QCM et format de sauvegarde ; vérifications indépendantes d'Android.
 - `app` : activité de coordination, état de séance, fichiers privés et export/import.
@@ -113,7 +115,7 @@ Le workflow [Android](.github/workflows/android.yml) exécute les vérifications
 - `listes/francais` : CSV sources, intégrés directement aux ressources de l'application.
 - `design UI` : maquettes SVG d'origine.
 
-Les tests parcourent toutes les cartes et les quatre types de QCM, vérifient les collisions de réponses, les délais Leitner, les limites de correction et les sauvegardes invalides.
+Les tests parcourent les catalogues JLPT et Marugoto et les quatre types de QCM, vérifient les collisions de réponses, les délais Leitner, les limites de correction et les sauvegardes invalides.
 
 La préparation du dépôt et les commandes de publication sont décrites dans [PUBLICATION.md](PUBLICATION.md). Aucun compte GitHub, secret ou identité de développeur n'est nécessaire à la compilation.
 

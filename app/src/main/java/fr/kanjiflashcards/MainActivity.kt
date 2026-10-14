@@ -10,6 +10,7 @@ import fr.kanjiflashcards.core.Leitner
 import fr.kanjiflashcards.core.Progress
 import fr.kanjiflashcards.core.QuestionType
 import fr.kanjiflashcards.core.Quizzes
+import fr.kanjiflashcards.core.StudySelection
 import fr.kanjiflashcards.ui.ReviewLayout
 import fr.kanjiflashcards.ui.UiComponents
 import fr.kanjiflashcards.ui.screens.EasyReviewScreen
@@ -23,10 +24,10 @@ import fr.kanjiflashcards.ui.screens.StatisticsScreen
  * Les vues sont dans ui/screens, les règles pédagogiques dans core et la séance dans ReviewSession.
  */
 class MainActivity : Activity() {
-    /** Catalogue des cinq niveaux, chargé depuis les CSV embarqués. */
+    /** Catalogues JLPT et Marugoto, chargés depuis les CSV embarqués. */
     private lateinit var catalog: List<Kanji>
 
-    /** Stockage privé et progression durable, indexée par « niveau:kanji ». */
+    /** Stockage privé et progression durable, indexée par les identifiants durables des cartes. */
     private lateinit var store: ProgressStore
     private var progress = mutableMapOf<String, Progress>()
 
@@ -68,6 +69,7 @@ class MainActivity : Activity() {
 
         val preferredType = getPreferences(MODE_PRIVATE).getString("questionType", "MIXED") ?: "MIXED"
         session.questionType = QuestionType.valueOf(preferredType)
+        session.marugotoLesson = getPreferences(MODE_PRIVATE).getInt("marugotoLesson", 1).coerceIn(1, 18)
 
         if (savedInstanceState != null) {
             page = savedInstanceState.getString("page") ?: "home"
@@ -83,11 +85,15 @@ class MainActivity : Activity() {
         }
     }
 
-    /** Lit les cinq CSV français sans modifier les fichiers sources ni leur ordre. */
+    /** Lit les cinq listes JLPT et le CSV Marugoto, avec ses variantes de lecture. */
     private fun loadCatalog(): List<Kanji> {
         return (1..5).flatMap { level ->
             assets.open("JLPT $level francais.csv").bufferedReader().use { reader ->
                 Catalog.parse(level, reader.readText())
+            }
+        } + assets.open("Marugoto.csv").bufferedReader().use { source ->
+            assets.open("Marugoto variantes.tsv").bufferedReader().use { variants ->
+                Catalog.parseMarugoto(source.readText(), variants.readText())
             }
         }
     }
@@ -113,6 +119,11 @@ class MainActivity : Activity() {
             catalog = catalog,
             progress = progress,
             questionType = session.questionType,
+            marugotoLesson = session.marugotoLesson,
+            onLessonChanged = { lesson ->
+                session.marugotoLesson = lesson
+                getPreferences(MODE_PRIVATE).edit().putInt("marugotoLesson", lesson).apply()
+            },
             onNormal = { level -> beginReview(level, easy = false) },
             onEasy = { level, type -> beginEasyReview(level, type) },
             onStatistics = { level -> showStatistics(level) },
@@ -148,7 +159,7 @@ class MainActivity : Activity() {
     /** Tire une carte admissible, compte sa présentation et prépare le QCM si nécessaire. */
     private fun nextCard() {
         ui.hideKeyboard()
-        val levelCards = catalog.filter { it.level == session.level }
+        val levelCards = session.selection.cards(catalog)
         val selected = Leitner.pick(
             cards = levelCards,
             progress = progress,
@@ -181,7 +192,7 @@ class MainActivity : Activity() {
 
     /** Choisit l'écran de révision et lui fournit la présentation commune et ses actions. */
     private fun showReview() {
-        val nextDue = catalog.filter { it.level == session.level }
+        val nextDue = session.selection.cards(catalog)
             .mapNotNull { progress[it.id]?.due }
             .minOrNull()
         val mastery = session.card?.let { progress[it.id]?.mastery } ?: 0
@@ -260,7 +271,7 @@ class MainActivity : Activity() {
     private fun showStatistics(level: Int) {
         page = "stats"
         session.level = level
-        StatisticsScreen(ui, level, catalog, progress).show()
+        StatisticsScreen(ui, level, catalog, progress, session.marugotoLesson).show()
     }
 
     /** Affiche les commandes de sauvegarde et de réinitialisation par niveau. */
@@ -276,8 +287,9 @@ class MainActivity : Activity() {
 
     /** Efface uniquement le niveau confirmé, puis rafraîchit les réglages. */
     private fun resetLevel(level: Int) {
-        if (persist(progress.filterKeys { !it.startsWith("$level:") })) {
-            ui.message("Niveau réinitialisé")
+        val ids = catalog.filter { it.level == level }.map { it.id }.toSet()
+        if (persist(progress.filterKeys { it !in ids })) {
+            ui.message("${StudySelection(level).title} réinitialisé")
             showSettings()
         }
     }

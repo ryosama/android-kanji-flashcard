@@ -241,5 +241,6 @@ fun main(args: Array<String>) {
         }
     }
 
-    println("$checks vérifications réussies sur ${catalog.size} kanji.")
+    checks += MarugotoChecks.verifyCatalog(directory)
+    println("$checks vérifications réussies sur ${catalog.size} kanji JLPT et 668 cartes Marugoto.")
 }

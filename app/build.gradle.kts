@@ -10,6 +10,15 @@ val releaseSigning = Properties().apply {
     }
 }
 
+// Seules les listes de travail sont embarquées ; les PDF restent des documents sources.
+val catalogAssets = layout.buildDirectory.dir("generated/catalog-assets")
+val prepareCatalogAssets = tasks.register<Sync>("prepareCatalogAssets") {
+    from(rootProject.file("listes/francais")) {
+        include("*.csv", "*.tsv")
+    }
+    into(catalogAssets)
+}
+
 android {
     namespace = "fr.kanjiflashcards"
     compileSdk = 36
@@ -17,8 +26,8 @@ android {
         applicationId = "fr.kanjiflashcards"
         minSdk = 26
         targetSdk = 35
-        versionCode = 2
-        versionName = "0.1.1"
+        versionCode = 3
+        versionName = "0.2.0"
     }
 
     // Aucune clé ni aucun mot de passe n'est intégré au code ou au dépôt publié.
@@ -44,7 +53,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions { jvmTarget = "17" }
-    sourceSets["main"].assets.srcDir(rootProject.file("listes/francais"))
+    sourceSets["main"].assets.srcDir(catalogAssets)
     lint { abortOnError = true }
 }
 dependencies { implementation(project(":core")) }
@@ -67,4 +76,9 @@ val validateReleaseSigning = tasks.register("validateReleaseSigning") {
 }
 tasks.matching { it.name == "preReleaseBuild" }.configureEach {
     dependsOn(validateReleaseSigning)
+}
+
+// Préparer les mêmes CSV et variantes pour toutes les versions de l'application.
+tasks.named("preBuild").configure {
+    dependsOn(prepareCatalogAssets)
 }

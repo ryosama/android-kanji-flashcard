@@ -3,6 +3,7 @@ package fr.kanjiflashcards.ui
 import android.view.Gravity
 import android.widget.LinearLayout
 import fr.kanjiflashcards.ReviewSession
+import fr.kanjiflashcards.core.StudySelection
 
 /**
  * Présentation commune aux deux écrans de révision : en-tête, kanji et résultat global.
@@ -18,7 +19,10 @@ class ReviewLayout(
 ) {
     /** Assemble la page de révision et insère les contrôles propres au mode au centre. */
     fun show(answerContent: (LinearLayout) -> Unit) {
-        val content = ui.screen("JLPT N${session.level}")
+        val content = ui.screen(session.selection.title)
+        if (session.selection.subtitle.isNotBlank()) {
+            content.addView(ui.text(session.selection.subtitle, 14f, AppColors.secondaryText))
+        }
         val modeLabel = if (session.easy) "Mode facile" else "Mode normal"
         val scheduleLabel = if (session.practice) "Entraînement libre" else "Révision espacée"
 
@@ -36,11 +40,17 @@ class ReviewLayout(
         }
 
         // Carte centrale : le caractère à reconnaître, affiché en grand sur un fond sombre.
-        val kanjiView = ui.text(card.character, 108f, bold = true).apply {
+        val wordSize = when {
+            card.character.length <= 1 -> 108f
+            card.character.length <= 4 -> 64f
+            card.character.length <= 8 -> 44f
+            else -> 32f
+        }
+        val kanjiView = ui.text(card.character, wordSize, bold = true).apply {
             gravity = Gravity.CENTER
             background = ui.roundedBackground(AppColors.surface)
             setPadding(0, ui.dp(12), 0, ui.dp(12))
-            contentDescription = "Kanji ${card.character}"
+            contentDescription = if (card.level == StudySelection.MARUGOTO) "Mot ${card.character}" else "Kanji ${card.character}"
         }
         content.addView(kanjiView)
         answerContent(content)
@@ -52,7 +62,7 @@ class ReviewLayout(
 
     /** Affiche la prochaine échéance et le bouton d'entraînement quand le niveau est à jour. */
     private fun showCompletedLevel(content: LinearLayout) {
-        content.addView(ui.text("À jour pour ce niveau", 26f, bold = true))
+        content.addView(ui.text("À jour pour cette sélection", 26f, bold = true))
         content.addView(ui.text(
             "Prochaine révision : ${nextDue?.let { ui.date(it) } ?: "maintenant"}",
             color = AppColors.secondaryText,

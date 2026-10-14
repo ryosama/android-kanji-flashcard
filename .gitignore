@@ -20,3 +20,7 @@ keystore.properties
 .signing/
 kanji-progression*.tsv
 .DS_Store
+
+# Fichiers de travail produits par les outils Python d’extraction.
+__pycache__/
+*.pyc

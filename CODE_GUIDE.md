@@ -9,6 +9,7 @@ Les fichiers sont dans `app/src/main/java/fr/kanjiflashcards/ui/screens/`.
 | Fichier | Partie visible | Fonctions à consulter |
 | --- | --- | --- |
 | `HomeScreen.kt` | Accueil et panneaux N5 → N1 | `show`, `levelPanel`, `levelButton` |
+| `MarugotoPanel.kt` | Panneau d’accueil Marugoto, curseur 1..18 et actions Normal/Statistiques/Facile | `create`, `actionButton` |
 | `NormalReviewScreen.kt` | Cases Prononciation et Signification, bouton commun « Valider » et « Je ne sais pas » | `show`, `addAnswerField` |
 | `EasyReviewScreen.kt` | Consigne, quatre choix et bouton « Je ne sais pas » | `show` |
 | `StatisticsScreen.kt` | Recherche, filtre, tri, tableau et pagination | `show`, `addFilterControls`, `addTableRow`, `appendPage` |
@@ -47,7 +48,10 @@ Les fichiers sont dans `core/src/main/kotlin/fr/kanjiflashcards/core/`. Ce modul
 
 | Fichier | Responsabilité |
 | --- | --- |
-| `Kanji.kt` | Carte du catalogue, identifiant et variantes de lecture |
+| `Kanji.kt` | Carte du catalogue, identifiant JLPT ou numéro Marugoto et variantes de lecture |
+| `StudySelection.kt` | Filtre commun du tirage, des distracteurs et des statistiques |
+| `MarugotoReadings.kt` | Lectures du PDF, annotations, variantes verbales et rōmaji |
+| `KanaRomaji.kt` | Transcription kana → rōmaji hors ligne |
 | `Catalog.kt` | Lecture des cinq colonnes CSV et validation des listes |
 | `Answers.kt` | Équivalences des lectures, normalisation française et tolérance aux fautes |
 | `MeaningNumbers.kt` | Équivalences exactes entre les significations numériques en chiffres et en lettres |
@@ -59,4 +63,6 @@ Les fichiers sont dans `core/src/main/kotlin/fr/kanjiflashcards/core/`. Ce modul
 
 Exemples : les délais sont dans `Leitner.days`, les seuils de fautes dans `Answers.acceptsMeaning`, et les exclusions des distracteurs dans `Quizzes.make`.
 
-Les vérifications existantes sont dans `core/src/test/kotlin/fr/kanjiflashcards/core/EngineChecks.kt`. Elles restent organisées par catalogue, lectures, sens, CSV, Leitner, sauvegardes et QCM. La commande `./scripts/build.sh` exécute ces vérifications, compile l'APK et lance l'analyse Android Lint.
+Le CSV Marugoto et les lectures additionnelles sont décrits dans [MARUGOTO.md](MARUGOTO.md). La sélection passe par `ReviewSession.selection`, et la préférence `marugotoLesson` est enregistrée par l’activité. La remise à zéro utilise les identifiants du catalogue concerné pour préserver les autres sources.
+
+Les vérifications existantes sont dans `core/src/test/kotlin/fr/kanjiflashcards/core/EngineChecks.kt`. `MarugotoChecks.kt` couvre aussi les 668 lignes, les 18 limites de leçon, les formes verbales et la compatibilité des sauvegardes. Les contrôles JLPT restent organisés par catalogue, lectures, sens, CSV, Leitner, sauvegardes et QCM. La commande `./scripts/build.sh` exécute ces vérifications, compile l'APK et lance l'analyse Android Lint.

@@ -4,6 +4,7 @@ import android.os.Bundle
 import fr.kanjiflashcards.core.Kanji
 import fr.kanjiflashcards.core.QuestionType
 import fr.kanjiflashcards.core.Quiz
+import fr.kanjiflashcards.core.StudySelection
 
 /** Identifie le champ de saisie dans le mode normal, sans utiliser un booléen ambigu. */
 enum class AnswerField {
@@ -19,6 +20,13 @@ enum class AnswerField {
 class ReviewSession {
     /** Niveau JLPT courant, de N1 à N5. */
     var level = 5
+
+    /** Limite cumulative Marugoto ; changer cette limite ne supprime aucune statistique. */
+    var marugotoLesson = 1
+
+    /** Périmètre commun du tirage, des distracteurs et du tableau de progression. */
+    val selection: StudySelection
+        get() = StudySelection(level, marugotoLesson)
 
     /** true pour les quatre choix du QCM, false pour les deux champs du mode normal. */
     var easy = false
@@ -86,6 +94,7 @@ class ReviewSession {
     /** Copie la séance dans le Bundle Android, sans recompter la présentation de la carte. */
     fun saveInto(state: Bundle) {
         state.putInt("level", level)
+        state.putInt("marugotoLesson", marugotoLesson)
         state.putBoolean("easy", easy)
         state.putBoolean("practice", practice)
         state.putString("card", card?.id)
@@ -110,6 +119,7 @@ class ReviewSession {
     /** Restaure les saisies, la carte et les options exactes après une rotation de l'écran. */
     fun restoreFrom(state: Bundle, catalog: List<Kanji>) {
         level = state.getInt("level", 5)
+        marugotoLesson = state.getInt("marugotoLesson", marugotoLesson).coerceIn(1, 18)
         easy = state.getBoolean("easy")
         practice = state.getBoolean("practice")
         card = catalog.find { it.id == state.getString("card") }

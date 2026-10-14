@@ -12,6 +12,60 @@ object Catalog {
      * La première colonne numérique est ignorée ; les fichiers n'ont pas de ligne d'en-tête.
      */
     fun parse(level: Int, text: String): List<Kanji> {
+        return records(text).map { columns ->
+            require(columns.size == 5 && columns[1].isNotBlank()) { "Entrée CSV invalide" }
+
+            Kanji(
+                level = level,
+                character = columns[1].trim(),
+                on = columns[2].trim(),
+                kun = columns[3].trim(),
+                meanings = columns[4].split(',').map(String::trim).filter(String::isNotEmpty),
+            )
+        }.also { cards ->
+            require(cards.map { it.id }.distinct().size == cards.size) { "Kanji dupliqué" }
+        }
+    }
+
+    /** Lit les cinq colonnes Marugoto et complète les lectures à l'aide des variantes contrôlées. */
+    fun parseMarugoto(text: String, variantsText: String): List<Kanji> {
+        val variants = linkedMapOf<Int, List<String>>()
+        for (line in variantsText.lineSequence().filter { it.isNotBlank() && !it.startsWith("#") }) {
+            val fields = line.split('\t')
+            require(fields.size == 2) { "Variantes Marugoto invalides" }
+            val number = fields[0].toInt()
+            require(number > 0 && number !in variants) { "Numéro de variante invalide ou dupliqué" }
+            variants[number] = fields[1].split('|').filter(String::isNotBlank)
+        }
+
+        val cards = records(text).map { columns ->
+            require(columns.size == 5) { "Entrée Marugoto invalide" }
+            val number = columns[0].toInt()
+            val lesson = columns[3].toInt()
+            require(number > 0 && lesson in 1..18) { "Numéro ou leçon Marugoto invalide" }
+            require(columns[1].isNotBlank() && columns[2].isNotBlank() && columns[4].isNotBlank()) {
+                "Carte Marugoto incomplète"
+            }
+            val readings = MarugotoReadings.make(columns[2], variants[number].orEmpty())
+            Kanji(
+                level = StudySelection.MARUGOTO,
+                character = columns[1].trim(),
+                on = readings.romaji.joinToString(", "),
+                kun = readings.kana.joinToString(", "),
+                meanings = columns[4].split(',').map(String::trim).filter(String::isNotEmpty),
+                entryNumber = number,
+                lesson = lesson,
+            )
+        }
+        require(cards.map { it.id }.distinct().size == cards.size) { "Numéro Marugoto dupliqué" }
+        require(variants.keys.all { number -> cards.any { it.entryNumber == number } }) {
+            "Variante sans carte Marugoto correspondante"
+        }
+        return cards
+    }
+
+    /** Découpe un CSV à points-virgules en cellules, en respectant les guillemets et retours de ligne. */
+    private fun records(text: String): List<List<String>> {
         val records = mutableListOf<List<String>>()
         var row = mutableListOf<String>()
         val field = StringBuilder()
@@ -65,18 +119,7 @@ object Catalog {
             records.add(row)
         }
 
-        return records.map { columns ->
-            require(columns.size == 5 && columns[1].isNotBlank()) { "Entrée CSV invalide" }
-
-            Kanji(
-                level = level,
-                character = columns[1].trim(),
-                on = columns[2].trim(),
-                kun = columns[3].trim(),
-                meanings = columns[4].split(',').map(String::trim).filter(String::isNotEmpty),
-            )
-        }.also { cards ->
-            require(cards.map { it.id }.distinct().size == cards.size) { "Kanji dupliqué" }
-        }
+        return records
     }
+
 }
