@@ -42,6 +42,8 @@ Après un défilement horizontal, le tableau affiche le niveau de maîtrise, le 
 
 ## Installer l'application
 
+La branche `main` contient la version **0.3.0**, avec les deux sections Marugoto. Les APK des releases sont publiés séparément et peuvent correspondre à une version antérieure ; pour tester le code actuel, utiliser la compilation locale ou les artefacts du workflow Android décrits plus bas.
+
 Télécharger l'APK depuis la [dernière release GitHub](https://github.com/ryosama/android-kanji-flashcard/releases/latest), puis l'ouvrir sur le téléphone Android. Autoriser l'installation depuis la source utilisée si Android le demande.
 
 Pour remplacer une ancienne version de test, exporter d'abord la progression en TSV, désinstaller cette version, installer la release puis importer sa progression. Les signatures debug et release sont différentes.
@@ -49,11 +51,9 @@ Pour remplacer une ancienne version de test, exporter d'abord la progression en 
 ## Fonctionnement
 
 - 2 495 kanji provenant des cinq CSV français fournis, du JLPT N5 au N1.
-- Marugoto : 668 cartes supplémentaires issues du PDF fourni, avec leurs lectures et significations françaises. Deux listes permettent de choisir le livre puis le topic maximum (3..9 pour にゅうもん, 1..9 pour les autres livres) : tous les livres précédents sont inclus entièrement. Ces choix sont mémorisés entre les lancements. Les entrées annexes du quatrième livre rejoignent son topic 9. En mode normal, les lectures et sens des cartes JLPT ayant le même caractère sont également acceptés. Les statistiques Marugoto sont indépendantes des JLPT et de chaque autre ligne du PDF. Les modes normal et facile, y compris les quatre types de QCM, utilisent seulement les leçons sélectionnées. Les verbes acceptent la lecture du PDF et celle de leur forme du dictionnaire.
-- Marugoto vocabulaire : 1 746 cartes extraites des trois PDF français, avec fusion des doublons et provenance. Choix indépendant du livre et du topic 1..9, cumul des livres précédents, QCM japonais → français ou français → japonais, kana et kanji affichés ensemble. Statistiques, Leitner et sauvegardes indépendants. Voir [VOCABULAIRE.md](VOCABULAIRE.md).
-
-- Mode normal : saisir une lecture et un sens, puis valider les deux réponses ensemble avec le bouton « Valider » placé sous les champs. Une lecture valide parmi les lectures on/kun suffit. Le bouton « Je ne sais pas » termine la carte comme une erreur et révèle la correction. Les formes complètes et les radicaux indiqués par les parenthèses sont acceptés, ainsi que les hiragana et katakana équivalents.
-- Mode facile : choisir signification, rōmaji, kana ou mélange. Chaque bouton regroupe toutes les lectures on/kun du format choisi, avec les parenthèses optionnelles conservées, ou toutes les significations françaises, séparées par « · ». Chaque question propose quatre réponses distinctes, sans distracteur qui serait une réponse valide pour la carte courante. Le mode Mélange combine français, rōmaji et kana au sein des quatre propositions, avec les trois formats présents et une seule bonne réponse. Le bouton supplémentaire « Je ne sais pas » compte comme une mauvaise réponse et affiche la correction avant le passage à la carte suivante.
+- Deux catalogues Marugoto supplémentaires : **668 cartes de kanji** et **1 746 cartes de vocabulaire**, décrits ci-dessous.
+- Mode normal des kanji : saisir une lecture et un sens, puis valider les deux réponses ensemble avec le bouton « Valider » placé sous les champs. Une lecture valide parmi les lectures on/kun suffit. Le bouton « Je ne sais pas » termine la carte comme une erreur et révèle la correction. Les formes complètes et les radicaux indiqués par les parenthèses sont acceptés, ainsi que les hiragana et katakana équivalents.
+- Mode facile des kanji : choisir signification, rōmaji, kana ou mélange. Chaque bouton regroupe toutes les lectures on/kun du format choisi, avec les parenthèses optionnelles conservées, ou toutes les significations françaises, séparées par « · ». Chaque question propose quatre réponses distinctes, sans distracteur qui serait une réponse valide pour la carte courante. Le mode Mélange combine français, rōmaji et kana au sein des quatre propositions, avec les trois formats présents et une seule bonne réponse. Le bouton supplémentaire « Je ne sais pas » compte comme une mauvaise réponse et affiche la correction avant le passage à la carte suivante.
 - Correction : insensible aux majuscules, accents français, ponctuation et espaces superflus. Une faute est tolérée à partir de cinq lettres, deux à partir de dix ; une transposition adjacente compte pour une faute. Les mots courts restent stricts. Seuls les sens présents dans le catalogue sont acceptés ; les précisions entre parenthèses sont facultatives (par exemple « droite » pour « droite (direction) »).
 - Significations numériques : les chiffres sont acceptés pour les nombres du catalogue, par exemple `2` pour « deux », `100` pour « cent », `1 000` pour « mille », `10 000` pour « dix mille » et `100 000 000` pour « cent millions ». Les espaces ordinaires et insécables sont acceptés ; les valeurs numériques restent exactes.
 - Équivalences de lecture : `oo`, `ou`, `ô`, `ō`, ainsi que `tchi` et `chi`. Aucune correction approximative générale des lectures, pour conserver les distinctions entre sons japonais.
@@ -62,6 +62,57 @@ Pour remplacer une ancienne version de test, exporter d'abord la progression en 
 - Séance sans limite. Lorsque les cartes sont à jour, l'entraînement libre reste disponible. Il affecte les compteurs mais conserve le palier et l'échéance.
 - Le pourcentage d'accueil représente la proportion de kanji à 100 %, arrondie à l'entier inférieur. Le tableau montre aussi les lectures, sens, maîtrise, présentations, succès et erreurs. Recherche, filtres et tri sont disponibles ; les lignes sont chargées par groupes de 50.
 - Une présentation est comptée dès qu'une carte s'affiche. Une réponse n'est comptée qu'une fois la question complètement validée. Quitter une carte ne compte pas comme une erreur. Une rotation conserve la carte et les saisies sans doubler les compteurs.
+
+## Marugoto
+
+L'accueil propose deux sections distinctes : **Marugoto kanji** et **Marugoto vocabulaire**. Chacune mémorise son livre et son topic maximum. La sélection comprend tous les livres précédents, puis les topics du livre choisi jusqu'à la limite incluse. Réduire cette limite conserve la progression des cartes masquées.
+
+### Marugoto kanji
+
+Les **668 cartes** reprennent les lignes du PDF `MarugotoIntermediate2KanjiList.pdf` : une carte peut présenter un kanji, un mot complet ou une expression. Les lectures et significations françaises figurent dans le [CSV des kanji](listes/francais/Marugoto.csv).
+
+| Livre | Topics disponibles |
+| --- | --- |
+| にゅうもん | 3 à 9 |
+| しょきゅう 1 | 1 à 9 |
+| しょきゅう 2 | 1 à 9 |
+| しょちゅうきゅう | 1 à 9 |
+| ちゅうきゅう 1 | 1 à 9 |
+| ちゅうきゅう 2 | 1 à 9 |
+
+Par exemple, **しょきゅう 1 · topic 2** inclut les 65 cartes de にゅうもん et les 39 premières du livre choisi, soit **104 cartes**. Les termes sans leçon de しょちゅうきゅう sont intégrés à son topic 9.
+
+- **Mode normal** : saisir une prononciation et une signification, puis les valider ensemble. Pour un caractère également présent dans les listes JLPT, toutes ses lectures et significations JLPT sont acceptées en complément du sens Marugoto. Ainsi, 月 accepte notamment `tsuki`, `getsu`, `gatsu`, leurs kana, et « lune », « mois » ou « lundi ». Les verbes renseignés acceptent leurs formes polie et du dictionnaire.
+- **Mode facile** : quatre propositions, avec les exercices Signification, Rōmaji, Kana et Mélange. Les distracteurs proviennent uniquement de la sélection étudiée.
+
+Les lignes distinctes du PDF gardent leurs propres statistiques, y compris lorsqu'elles présentent le même caractère. Le [guide du catalogue kanji](MARUGOTO.md) détaille les données et les lectures acceptées.
+
+### Marugoto vocabulaire
+
+Les **1 746 cartes** réunissent le vocabulaire des trois documents français fournis :
+
+- `MarugotoStarterCompetencesVocabularyIndex2_FR.pdf` ;
+- `MarugotoElementary1CompetencesVocabularyIndex2_FR.pdf` ;
+- `MarugotoStarterWordbook_FR.pdf`, pages 6 à 81 incluses.
+
+Les mots identiques partageant un sens sont fusionnés à leur première apparition, avec leurs traductions complémentaires. Les sens distincts restent séparés : かきます possède ainsi une carte pour « écrire » et une autre pour « dessiner / peindre ». Le [CSV du vocabulaire](<listes/francais/Marugoto vocabulaire.csv>) conserve les pages d'origine pour permettre la vérification des entrées.
+
+Deux livres sont disponibles, **にゅうもん** et **しょきゅう 1**, avec les **topics 1 à 9**. Choisir しょきゅう 1 inclut entièrement le vocabulaire de にゅうもん. Les pages « divers » sont rattachées au topic 9 de にゅうもん.
+
+Cette section propose uniquement le **mode facile**, avec deux sens de traduction :
+
+- **Japonais → français** : le mot et ses kana sont affichés ; choisir une signification française parmi quatre propositions.
+- **Français → japonais** : les significations sont affichées ; choisir le mot japonais parmi quatre propositions présentant les kana et les kanji disponibles.
+
+Les mots en kana seuls s'affichent une seule fois. Les propositions viennent du périmètre choisi ; les homophones, variantes et traductions équivalentes sont écartés des distracteurs. Le bouton **« Je ne sais pas »** affiche la correction et compte une erreur.
+
+Le [guide du vocabulaire](VOCABULAIRE.md) décrit l'extraction, la fusion des doublons et les fichiers sources.
+
+### Progression Marugoto
+
+Les deux sections utilisent les paliers Leitner, les révisions espacées et l'entraînement libre. Leurs statistiques sont indépendantes entre elles et des niveaux JLPT. Les choix de livre, de topic et de sens de traduction sont mémorisés sur le téléphone.
+
+L'export TSV inclut toutes les progressions, même celles des cartes masquées. Chaque section peut être réinitialisée séparément après confirmation ; les anciennes sauvegardes restent importables.
 
 ## Sauvegardes
 
@@ -108,6 +159,7 @@ Le workflow [Android](.github/workflows/android.yml) exécute les vérifications
 
 ## Organisation
 
+- [Vocabulaire Marugoto et extraction des trois PDF](VOCABULAIRE.md) : fusion des doublons, provenance, QCM et progression.
 - [Catalogue Marugoto et extraction du PDF](MARUGOTO.md) : colonnes du CSV, lectures supplémentaires, filtre et conservation de la progression.
 - [Guide de lecture et de modification du code](CODE_GUIDE.md) : rôle de chaque fichier, composants graphiques et circulation des données.
 - `core` : import CSV, correction, moteur Leitner, QCM et format de sauvegarde ; vérifications indépendantes d'Android.
@@ -117,7 +169,7 @@ Le workflow [Android](.github/workflows/android.yml) exécute les vérifications
 - `listes/francais` : CSV sources, intégrés directement aux ressources de l'application.
 - `design UI` : maquettes SVG d'origine.
 
-Les tests parcourent les catalogues JLPT et Marugoto et les quatre types de QCM, vérifient les collisions de réponses, les délais Leitner, les limites de correction et les sauvegardes invalides.
+Les tests parcourent les catalogues JLPT, les kanji et le vocabulaire Marugoto, les quatre types de QCM kanji et les deux sens de traduction du vocabulaire ; ils vérifient les collisions de réponses, les délais Leitner, les limites de correction et les sauvegardes invalides.
 
 La préparation du dépôt et les commandes de publication sont décrites dans [PUBLICATION.md](PUBLICATION.md). Aucun compte GitHub, secret ou identité de développeur n'est nécessaire à la compilation.
 
