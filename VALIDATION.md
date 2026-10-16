@@ -44,6 +44,13 @@
 - APK debug 0.3.0 (code 6) compilé, Android Lint réussi, CSV embarqués comparés aux sources et signature debug conservée. Aucun PDF embarqué.
 - Les essais d'interface sur téléphone restent à effectuer : voir [VOCABULAIRE.md](VOCABULAIRE.md). Aucun push ni publication GitHub.
 
+## Release 0.3.0
+
+- Vérifications GitHub des sources réussies : [workflow Android](https://github.com/ryosama/android-kanji-flashcard/actions/runs/38875414917).
+- APK release 0.3.0 (code 6) compilé et Android Lint release réussi ; application non débogable.
+- Signature vérifiée : même certificat que les releases précédentes. Les deux catalogues Marugoto embarqués correspondent aux sources ; aucun PDF embarqué.
+- APK versionné et somme SHA-256 préparés pour la [release 0.3.0](https://github.com/ryosama/android-kanji-flashcard/releases/tag/v0.3.0).
+
 ## Essais de non-régression sur téléphone
 
 Le fonctionnement de l'application sur téléphone a été confirmé par l'utilisateur avant la préparation de la publication. Aucun appareil ni émulateur n'a été utilisé pour les vérifications automatisées du développement. Les scénarios ci-dessous servent aux essais de non-régression lors des prochaines modifications.

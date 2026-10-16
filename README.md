@@ -42,7 +42,7 @@ Après un défilement horizontal, le tableau affiche le niveau de maîtrise, le 
 
 ## Installer l'application
 
-La branche `main` contient la version **0.3.0**, avec les deux sections Marugoto. Les APK des releases sont publiés séparément et peuvent correspondre à une version antérieure ; pour tester le code actuel, utiliser la compilation locale ou les artefacts du workflow Android décrits plus bas.
+La version **0.3.0** comprend les sections Marugoto kanji et vocabulaire. Pour compiler l'application ou utiliser un APK de test, consulter la section Compilation ci-dessous.
 
 Télécharger l'APK depuis la [dernière release GitHub](https://github.com/ryosama/android-kanji-flashcard/releases/latest), puis l'ouvrir sur le téléphone Android. Autoriser l'installation depuis la source utilisée si Android le demande.
 
