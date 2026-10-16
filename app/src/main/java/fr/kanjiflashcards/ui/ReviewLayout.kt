@@ -4,6 +4,7 @@ import android.view.Gravity
 import android.widget.LinearLayout
 import fr.kanjiflashcards.ReviewSession
 import fr.kanjiflashcards.core.StudySelection
+import fr.kanjiflashcards.core.Kanji
 
 /**
  * Présentation commune aux deux écrans de révision : en-tête, kanji et résultat global.
@@ -16,6 +17,8 @@ class ReviewLayout(
     private val nextDue: Long?,
     private val onNext: () -> Unit,
     private val onPractice: () -> Unit,
+    /** Réponses élargies en mode normal ; la carte de séance garde son identité et sa progression. */
+    private val answerCard: Kanji? = session.card,
 ) {
     /** Assemble la page de révision et insère les contrôles propres au mode au centre. */
     fun show(answerContent: (LinearLayout) -> Unit) {
@@ -75,7 +78,7 @@ class ReviewLayout(
 
     /** Affiche les bonnes réponses puis le bouton coloré qui permet de passer au kanji suivant. */
     private fun showResult(content: LinearLayout) {
-        val card = requireNotNull(session.card)
+        val card = requireNotNull(answerCard)
         content.addView(ui.text("Lectures : ${card.readings.joinToString(" · ")}", color = AppColors.success))
         content.addView(ui.text("Sens : ${card.meanings.joinToString(", ")}", color = AppColors.success))
 

@@ -4,15 +4,16 @@ Une carte correspond à une ligne du fichier `MarugotoIntermediate2KanjiList.pdf
 
 ## Liste utilisée par l'application
 
-`listes/francais/Marugoto.csv` contient exactement cinq colonnes, sans en-tête, séparées par des points-virgules :
+`listes/francais/Marugoto.csv` contient exactement six colonnes, sans en-tête, séparées par des points-virgules :
 
 1. Numéro original du PDF, de 1 à 668.
 2. Mot ou expression écrit dans le PDF.
 3. Lecture originale en kana, avec ses variantes ou exemples.
-4. Numéro de la colonne de leçon du PDF ; une cellule vide devient 18.
+4. Topic : de 3 à 9 pour le premier livre, de 1 à 9 pour les autres. Les termes annexes du livre 4 rejoignent le topic 9.
 5. Significations françaises, séparées par des virgules.
+6. Numéro du livre, de 1 à 6, dans l’ordre du PDF.
 
-Les numéros sont utilisés tels quels, sans notion de livre ou de thème dans l'application. En particulier, la valeur 4 des sections intermédiaires reste la leçon 4, conformément au périmètre demandé. Les 14 termes sans numéro, lignes 481 à 494, sont affectés à la leçon 18.
+Dans les trois premiers livres, les deux leçons d’un même topic sont réunies : les leçons 5/6 du PDF deviennent le topic 3, les leçons 17/18 le topic 9. Le livre 4 utilise directement les topics de la colonne du PDF ; ses 14 termes annexes, lignes 481 à 494, rejoignent le topic 9. Dans les livres 5 et 6, la colonne « 4 » désigne Part 4 : le CSV reprend les numéros des en-têtes de topic, de 1 à 9. Les frontières des livres et des topics intermédiaires sont documentées dans le script d’extraction.
 
 Les traductions tiennent compte du mot et de son usage dans la méthode : les deux lignes `水` correspondent respectivement à « eau » (`みず`) et « mercredi » (`すい`). Elles ont deux identifiants et deux progressions distinctes.
 
@@ -38,33 +39,31 @@ Exemple : la carte 5 affiche `食べます`, accepte `たべます` et `たべ�
 
 `MarugotoReadings.kt` prépare ces lectures, et `KanaRomaji.kt` produit les rōmaji hors ligne. Les formes Marugoto usuelles comme `gakusei` / `gakusee` et les variantes de consonnes doublées sont acceptées. Les autres règles de correction de l'application restent communes aux deux catalogues.
 
+## Réponses complémentaires en mode normal
+
+`NormalAnswers.expand` ajoute les lectures et significations des cartes JLPT dont le caractère correspond exactement à la carte Marugoto. La carte 月 accepte ainsi `tsuki`, `getsu`, `gatsu`, leurs kana, ainsi que « lune », « mois » et « lundi ». Les réponses supplémentaires sont aussi affichées dans la correction après validation ou « Je ne sais pas ».
+
+Le rapprochement porte sur le texte entier : un composé ou un verbe ne reçoit pas les réponses des kanji pris séparément. Les variantes du PDF et les formes verbales déjà acceptées sont conservées. Cette extension concerne le mode normal ; le catalogue des propositions du QCM et les CSV JLPT restent inchangés. Les paliers des cartes Marugoto restent indépendants de ceux des cartes JLPT.
+
 ## Filtre et progression
 
-Le panneau d'accueil contient un curseur de 1 à 18. La limite est mémorisée sur le téléphone et sert simultanément au tirage des cartes, aux distracteurs du QCM et aux statistiques. La leçon 1 est proposée lors de la première utilisation.
+Le panneau d'accueil propose d'abord le livre, puis le dernier topic à inclure. Les deux choix sont mémorisés sur le téléphone et servent au tirage des cartes, aux distracteurs du QCM et aux statistiques. Tous les livres précédents sont inclus entièrement, y compris les termes anciennement placés en annexe.
 
-| Jusqu'à la leçon | Cartes incluses |
-| --- | ---: |
-| 1 | 26 |
-| 2 | 62 |
-| 3 | 93 |
-| 4 | 291 |
-| 5 | 326 |
-| 6 | 358 |
-| 7 | 384 |
-| 8 | 414 |
-| 9 | 442 |
-| 10 | 467 |
-| 11 | 491 |
-| 12 | 521 |
-| 13 | 550 |
-| 14 | 565 |
-| 15 | 583 |
-| 16 | 612 |
-| 17 | 629 |
-| 18 | 668 |
+| Livre | Numéro CSV | Lignes PDF | Cartes du livre | Total avec les précédents |
+| --- | ---: | --- | ---: | ---: |
+| にゅうもん | 1 | 1–65 | 65 | 65 |
+| しょきゅう 1 | 2 | 66–221 | 156 | 221 |
+| しょきゅう 2 | 3 | 222–391 | 170 | 391 |
+| しょちゅうきゅう | 4 | 392–494 | 103 | 494 |
+| ちゅうきゅう 1 | 5 | 495–578 | 84 | 578 |
+| ちゅうきゅう 2 | 6 | 579–668 | 90 | 668 |
 
-Les identifiants Marugoto ont la forme `marugoto:5`. Les identifiants JLPT conservent leur forme `5:水`. Modifier le curseur masque ou révèle des cartes sans modifier leurs paliers, dates et compteurs. L'export TSV inclut les progressions des deux catalogues, même pour les leçons masquées ; les anciennes sauvegardes JLPT restent importables.
+Exemple : `しょきゅう 1 · Topic 2` inclut les 65 cartes du premier livre et les lignes 66 à 104 du second, soit 104 cartes. Le tableau des statistiques suit le numéro original du PDF et affiche le livre avec le topic. Le tirage de révision conserve son fonctionnement Leitner.
 
-Le bouton « Réinitialiser Marugoto » remet à zéro les 668 cartes après confirmation, sans toucher aux JLPT. La limite de leçon mémorisée reste inchangée.
+Le sous-menu propose les topics 3 à 9 pour にゅうもん et 1 à 9 pour les cinq autres livres. À la mise à jour, les anciens choix de leçon sont convertis une seule fois en topics. Par exemple, une limite de leçon 4 dans しょきゅう 1 devient le topic 2, avec le même ensemble de cartes.
+
+Les identifiants Marugoto ont la forme `marugoto:5`. Les identifiants JLPT conservent leur forme `5:水`. Modifier le livre ou la limite masque ou révèle des cartes sans modifier leurs paliers, dates et compteurs. L'export TSV inclut les progressions des deux catalogues, même pour les topics masqués ; les anciennes sauvegardes JLPT restent importables.
+
+Le bouton « Réinitialiser Marugoto » remet à zéro les 668 cartes après confirmation, sans toucher aux JLPT. Les choix de livre et de topic mémorisés restent inchangés.
 
 Seuls les CSV et les variantes TSV sont embarqués dans l'APK. Les PDF restent dans le dépôt comme documents sources et de référence.

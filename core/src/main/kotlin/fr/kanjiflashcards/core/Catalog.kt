@@ -27,7 +27,7 @@ object Catalog {
         }
     }
 
-    /** Lit les cinq colonnes Marugoto et complète les lectures à l'aide des variantes contrôlées. */
+    /** Lit les six colonnes Marugoto (livre en dernière colonne) et complète les lectures à l'aide des variantes contrôlées. */
     fun parseMarugoto(text: String, variantsText: String): List<Kanji> {
         val variants = linkedMapOf<Int, List<String>>()
         for (line in variantsText.lineSequence().filter { it.isNotBlank() && !it.startsWith("#") }) {
@@ -39,10 +39,11 @@ object Catalog {
         }
 
         val cards = records(text).map { columns ->
-            require(columns.size == 5) { "Entrée Marugoto invalide" }
+            require(columns.size == 6) { "Entrée Marugoto invalide" }
             val number = columns[0].toInt()
             val lesson = columns[3].toInt()
-            require(number > 0 && lesson in 1..18) { "Numéro ou leçon Marugoto invalide" }
+            val book = columns[5].toInt()
+            require(number > 0 && book in 1..6 && lesson in MarugotoBooks.lessons(book)) { "Numéro ou leçon Marugoto invalide" }
             require(columns[1].isNotBlank() && columns[2].isNotBlank() && columns[4].isNotBlank()) {
                 "Carte Marugoto incomplète"
             }
@@ -55,6 +56,7 @@ object Catalog {
                 meanings = columns[4].split(',').map(String::trim).filter(String::isNotEmpty),
                 entryNumber = number,
                 lesson = lesson,
+                book = book,
             )
         }
         require(cards.map { it.id }.distinct().size == cards.size) { "Numéro Marugoto dupliqué" }

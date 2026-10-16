@@ -23,17 +23,18 @@ class StatisticsScreen(
     private val level: Int,
     private val catalog: List<Kanji>,
     private val progress: Map<String, Progress>,
-    lessonLimit: Int = 18,
+    lessonLimit: Int = 9,
+    bookLimit: Int = 6,
 ) {
     /** Même filtre que celui utilisé pour la séance et ses distracteurs. */
-    private val selection = StudySelection(level, lessonLimit)
+    private val selection = StudySelection(level, lessonLimit, bookLimit)
 
     /** Nombre de nouvelles lignes ajoutées par appui sur « Afficher la suite ». */
     private val pageSize = 50
 
     /** Largeurs en dp, dans l'ordre des huit colonnes de showTableHeader. */
     private val columnWidths = if (level == StudySelection.MARUGOTO) {
-        listOf(220, 320, 85, 300, 110, 95, 95, 95)
+        listOf(220, 320, 220, 300, 110, 95, 95, 95)
     } else {
         listOf(72, 200, 240, 300, 110, 95, 95, 95)
     }
@@ -152,7 +153,7 @@ class StatisticsScreen(
             values = listOf(
                 if (level == StudySelection.MARUGOTO) "Mot" else "Kanji",
                 if (level == StudySelection.MARUGOTO) "Lectures kana / rōmaji" else "Lecture on",
-                if (level == StudySelection.MARUGOTO) "Leçon" else "Lecture kun",
+                if (level == StudySelection.MARUGOTO) "Livre · topic" else "Lecture kun",
                 "Significations", "Maîtrise", "Proposé", "Correct", "Incorrect",
             ),
             heading = true,
@@ -167,7 +168,7 @@ class StatisticsScreen(
                 values = listOf(
                     card.character,
                     if (level == StudySelection.MARUGOTO) "${card.kun} · ${card.on}" else card.on.ifBlank { "—" },
-                    if (level == StudySelection.MARUGOTO) "${card.lesson}" else card.kun.ifBlank { "—" },
+                    if (level == StudySelection.MARUGOTO) "${fr.kanjiflashcards.core.MarugotoBooks.name(requireNotNull(card.book))} · ${card.lesson}" else card.kun.ifBlank { "—" },
                     card.meanings.joinToString(", "),
                     "${stats.mastery} %",
                     "${stats.shown}",

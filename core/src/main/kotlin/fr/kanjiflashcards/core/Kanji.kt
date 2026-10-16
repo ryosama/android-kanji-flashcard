@@ -17,8 +17,10 @@ data class Kanji(
     val meanings: List<String>,
     /** Numéro de ligne du PDF Marugoto ; absent pour les cartes JLPT. */
     val entryNumber: Int? = null,
-    /** Leçon Marugoto, de 1 à 18 ; indépendante des niveaux JLPT. */
+    /** Topic Marugoto, de 3 à 9 pour le premier livre, de 1 à 9 pour les autres ; indépendante des niveaux JLPT. */
     val lesson: Int? = null,
+    /** Livre Marugoto, de 1 (にゅうもん) à 6 (ちゅうきゅう 2), sans changer l'identifiant. */
+    val book: Int? = null,
 ) {
     /** Identifiant durable : niveau/caractère pour JLPT, numéro du PDF pour Marugoto. */
     val id: String

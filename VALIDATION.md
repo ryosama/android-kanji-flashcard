@@ -3,11 +3,11 @@
 ## Vérifications automatisées
 
 - Compilation de l'APK de test réussie.
-- 240 187 vérifications du moteur réussies sur les 2 495 kanji JLPT et les 668 cartes Marugoto : QCM, filtres des 18 leçons, lectures, nombres et compatibilité des sauvegardes.
+- Version 0.2.0 : 240 187 vérifications du moteur réussies sur les 2 495 kanji JLPT et les 668 cartes Marugoto : QCM, filtres des 18 leçons, lectures, nombres et compatibilité des sauvegardes.
 - Analyse Android Lint : aucune erreur bloquante.
 - Les six CSV français et les variantes Marugoto sont présents dans l'APK ; les PDF sources ne sont pas embarqués.
 - Après la réorganisation : compilation des cinq écrans séparés, tests du moteur et analyse Android réussis.
-- Documentation vérifiée sur les 112 fonctions Kotlin : chacune possède un commentaire expliquant son rôle. Le découpage est décrit dans [CODE_GUIDE.md](CODE_GUIDE.md).
+- Les fonctions Kotlin possèdent un commentaire expliquant leur rôle. Le découpage est décrit dans [CODE_GUIDE.md](CODE_GUIDE.md).
 - Vérification GitHub : moteur, APK debug et Android Lint ont réussi sur un runner GitHub. Le [lancement validé](https://github.com/ryosama/android-kanji-flashcard/actions/runs/38619660891) conserve l'APK de test et les rapports.
 - Release 0.1.0 : APK signé compilé, Lint release réussi et signature vérifiée avec `apksigner`. Le paquet n'est pas débogable ; la clé et les mots de passe restent hors de Git et de l'APK.
 - La [release publique 0.1.0](https://github.com/ryosama/android-kanji-flashcard/releases/tag/v0.1.0) contient l'APK signé et sa somme SHA-256. Le téléchargement depuis GitHub a été comparé à l'APK local : les fichiers sont identiques et la somme de contrôle est valide.
@@ -15,6 +15,24 @@
 - Release 0.1.1 : validation commune des deux champs, équivalences numériques testées, APK debug et release compilés, analyses Android réussies et signature identique à la release 0.1.0. La [release publique 0.1.1](https://github.com/ryosama/android-kanji-flashcard/releases/tag/v0.1.1) a été téléchargée et sa somme SHA-256 vérifiée.
 
 - Version 0.2.0 : extraction des 668 lignes contrôlée contre le PDF, 14 entrées sans leçon affectées à 18, traductions présentes, builds debug/release et analyses Android réussis. Les contrôles GitHub ont réussi ; l’APK de la [release 0.2.0](https://github.com/ryosama/android-kanji-flashcard/releases/tag/v0.2.0) a été téléchargé et sa somme SHA-256 vérifiée. Les essais d’interface Marugoto sur téléphone restent à effectuer.
+
+## Version 0.2.1 — sélection Marugoto par livre
+
+- 242 659 vérifications du moteur réussies : six livres, toutes les limites réelles, cumul des livres précédents, QCM et sauvegardes.
+- Exemple contrôlé : しょきゅう 1, leçon 4 inclut exactement les lignes 1 à 104 du PDF.
+- Les 668 numéros, mots, lectures originales et traductions sont conservés ; six colonnes dans le CSV. La réextraction produit un fichier identique.
+- APK debug 0.2.1 (code 4) compilé et Android Lint réussi. Le CSV embarqué est identique à celui du projet ; les PDF sont exclus de l’APK.
+- Signature debug vérifiée : même certificat que l’APK installé sur le téléphone. La mise à jour avec `adb install -r app/build/outputs/apk/debug/app-debug.apk` conserve les données.
+- Les nouveaux sélecteurs et leur mémorisation restent à vérifier sur téléphone. Cette version n’a pas été publiée sur GitHub.
+
+## Version 0.2.2 — réponses du mode normal et topics
+
+- 247 153 vérifications du moteur réussies sur les 2 495 cartes JLPT et les 668 cartes Marugoto.
+- En mode normal Marugoto, les lectures et sens JLPT du même caractère sont acceptés et affichés dans la correction. Le contrôle vérifie toutes les correspondances, le cas 月, les réponses sans rapport et l'absence de rapprochement par simple sous-caractère.
+- Topics disponibles : 3..9 pour にゅうもん, 1..9 pour les autres livres. Les anciennes leçons 1..18 sont regroupées par paire dans les trois premiers livres ; les 14 termes annexes du livre 4 rejoignent le topic 9.
+- APK debug 0.2.2 (code 5) compilé, Android Lint réussi, CSV embarqué contrôlé et signature identique à la version debug précédente.
+- Migration des préférences testée ; identifiants et format de sauvegarde conservés. Réextraction PDF identique au CSV ; mots, lectures et traductions des 668 cartes inchangés.
+- Les scénarios d'interface ci-dessous restent à vérifier sur téléphone. Version conservée en local, sans push ni publication GitHub.
 
 ## Essais de non-régression sur téléphone
 
@@ -33,11 +51,11 @@ Le fonctionnement de l'application sur téléphone a été confirmé par l'utili
 ## Essais Marugoto sur téléphone
 
 1. Mettre à jour la release, vérifier la conservation des statistiques JLPT et ouvrir le panneau Marugoto.
-2. Choisir la leçon 1 : 26 cartes doivent être incluses ; choisir 5 : 326 ; choisir 18 : 668.
-3. Fermer et rouvrir l’application, puis tourner l’écran : la limite choisie doit rester identique.
-4. En mode normal, répondre à un verbe avec sa forme polie, puis avec sa forme du dictionnaire, en kana et en rōmaji.
+2. Choisir にゅうもん, topic 9 : 65 cartes ; しょきゅう 1, topic 2 : 104 ; しょきゅう 2, topic 9 : 391 ; ちゅうきゅう 2, topic 9 : 668. Vérifier que にゅうもん propose seulement les topics 3 à 9 et les autres livres 1 à 9 ; le topic 9 du livre 4 inclut ses 14 anciens termes annexes.
+3. Fermer et rouvrir l’application, puis tourner l’écran : le livre et la limite choisis doivent rester identiques.
+4. En mode normal, vérifier que 月 accepte tsuki/getsu/gatsu et lune/mois/lundi. Répondre aussi à un verbe avec sa forme polie, puis avec sa forme du dictionnaire, en kana et en rōmaji.
 5. Dans chaque type du mode facile, vérifier que les réponses viennent seulement des leçons incluses et que les mots longs restent lisibles.
-6. Dans les statistiques, contrôler la colonne de leçon et la séparation entre les deux cartes 水, eau et mercredi.
-7. Répondre à une carte de leçon élevée, réduire le curseur puis le réaugmenter : retrouver ses progrès et compteurs.
+6. Dans les statistiques, contrôler la colonne livre et leçon/topic et la séparation entre les deux cartes 水, eau et mercredi.
+7. Répondre à une carte de leçon élevée, choisir un livre ou une limite antérieure puis rétablir la sélection : retrouver ses progrès et compteurs.
 8. Exporter et importer une progression contenant JLPT et Marugoto ; vérifier aussi l’import d’un ancien TSV JLPT.
 9. Réinitialiser Marugoto après confirmation : ses 668 progressions doivent disparaître sans modifier les JLPT.

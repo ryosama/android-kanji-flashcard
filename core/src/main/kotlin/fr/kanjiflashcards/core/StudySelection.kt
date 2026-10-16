@@ -1,29 +1,39 @@
 package fr.kanjiflashcards.core
 
-/** Périmètre d'une séance : un niveau JLPT, ou les leçons Marugoto de 1 à lessonLimit. */
-data class StudySelection(val level: Int, val lessonLimit: Int = 18) {
+/** Périmètre JLPT ou cumul Marugoto : livres précédents et limite dans le livre choisi. */
+data class StudySelection(val level: Int, val lessonLimit: Int = 9, val bookLimit: Int = 6) {
     companion object {
-        /** Valeur réservée au catalogue Marugoto ; les niveaux JLPT gardent leurs valeurs 1..5. */
+        /** Valeur réservée à Marugoto ; les niveaux JLPT restent 1..5. */
         const val MARUGOTO = 0
     }
 
     init {
-        require(level in 0..5 && lessonLimit in 1..18) { "Sélection de révision invalide" }
+        require(level in 0..5 && bookLimit in 1..6) { "Sélection de révision invalide" }
+        require(if (level == MARUGOTO) lessonLimit in MarugotoBooks.lessons(bookLimit) else lessonLimit in 1..9) {
+            "Topic de révision invalide"
+        }
     }
 
-    /** Libellé affiché dans les en-têtes, sans notion de livre pour Marugoto. */
+    /** Nom du catalogue affiché dans les en-têtes. */
     val title: String
         get() = if (level == MARUGOTO) "Marugoto" else "JLPT N$level"
 
-    /** Indique les leçons incluses ; le niveau JLPT se suffit à lui-même. */
+    /** Rappelle le livre et la limite ; les livres précédents sont toujours inclus. */
     val subtitle: String
-        get() = if (level == MARUGOTO) "Leçons 1 à $lessonLimit" else ""
+        get() = if (level == MARUGOTO) "${MarugotoBooks.name(bookLimit)} · ${MarugotoBooks.lessonLabel(bookLimit, lessonLimit)} · cumul des livres précédents" else ""
 
-    /** Vérifie l'appartenance d'une carte au périmètre ; changer le filtre ne modifie pas ses statistiques. */
+    /** Masque les cartes futures sans modifier leurs identifiants ni leur progression. */
     fun contains(card: Kanji): Boolean {
-        return card.level == level && (level != MARUGOTO || requireNotNull(card.lesson) <= lessonLimit)
+        if (card.level != level) return false
+        if (level != MARUGOTO) return true
+
+        val book = requireNotNull(card.book)
+        return book < bookLimit || (book == bookLimit && requireNotNull(card.lesson) <= lessonLimit)
     }
 
-    /** Renvoie le même ensemble de cartes pour le tirage, les distracteurs et les statistiques. */
-    fun cards(catalog: List<Kanji>): List<Kanji> = catalog.filter(::contains)
+    /** Partage le même ensemble ordonné par numéro PDF entre révision, QCM et statistiques. */
+    fun cards(catalog: List<Kanji>): List<Kanji> {
+        val selected = catalog.filter(::contains)
+        return if (level == MARUGOTO) selected.sortedBy { it.entryNumber } else selected
+    }
 }

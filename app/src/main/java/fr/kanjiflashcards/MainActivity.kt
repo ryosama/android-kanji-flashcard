@@ -6,6 +6,8 @@ import android.os.Bundle
 import fr.kanjiflashcards.core.Answers
 import fr.kanjiflashcards.core.Catalog
 import fr.kanjiflashcards.core.Kanji
+import fr.kanjiflashcards.core.MarugotoBooks
+import fr.kanjiflashcards.core.NormalAnswers
 import fr.kanjiflashcards.core.Leitner
 import fr.kanjiflashcards.core.Progress
 import fr.kanjiflashcards.core.QuestionType
@@ -69,7 +71,17 @@ class MainActivity : Activity() {
 
         val preferredType = getPreferences(MODE_PRIVATE).getString("questionType", "MIXED") ?: "MIXED"
         session.questionType = QuestionType.valueOf(preferredType)
-        session.marugotoLesson = getPreferences(MODE_PRIVATE).getInt("marugotoLesson", 1).coerceIn(1, 18)
+        // Migration unique de l'ancienne limite 1..18 vers les topics, sans toucher aux cartes.
+        val preferences = getPreferences(MODE_PRIVATE)
+        session.marugotoBook = preferences.getInt("marugotoBook", 1).coerceIn(1, 6)
+        val storedLesson = preferences.getInt("marugotoLesson", 5)
+        session.marugotoLesson = if (preferences.getBoolean("marugotoTopics", false)) {
+            MarugotoBooks.normalizeLesson(session.marugotoBook, storedLesson)
+        } else {
+            MarugotoBooks.migrateLesson(session.marugotoBook, storedLesson)
+        }
+        preferences.edit().putBoolean("marugotoTopics", true)
+            .putInt("marugotoLesson", session.marugotoLesson).apply()
 
         if (savedInstanceState != null) {
             page = savedInstanceState.getString("page") ?: "home"
@@ -120,9 +132,14 @@ class MainActivity : Activity() {
             progress = progress,
             questionType = session.questionType,
             marugotoLesson = session.marugotoLesson,
-            onLessonChanged = { lesson ->
+            marugotoBook = session.marugotoBook,
+            onSelectionChanged = { book, lesson ->
+                session.marugotoBook = book
                 session.marugotoLesson = lesson
-                getPreferences(MODE_PRIVATE).edit().putInt("marugotoLesson", lesson).apply()
+                getPreferences(MODE_PRIVATE).edit()
+                    .putInt("marugotoBook", book)
+                    .putInt("marugotoLesson", lesson)
+                    .apply()
             },
             onNormal = { level -> beginReview(level, easy = false) },
             onEasy = { level, type -> beginEasyReview(level, type) },
@@ -198,6 +215,7 @@ class MainActivity : Activity() {
         val mastery = session.card?.let { progress[it.id]?.mastery } ?: 0
         val layout = ReviewLayout(
             ui = ui,
+            answerCard = session.card?.let { card -> if (session.easy) card else NormalAnswers.expand(card, catalog) },
             session = session,
             mastery = mastery,
             nextDue = nextDue,
@@ -236,7 +254,7 @@ class MainActivity : Activity() {
             return
         }
 
-        val card = requireNotNull(session.card)
+        val card = NormalAnswers.expand(requireNotNull(session.card), catalog)
         session.readingText = reading
         session.meaningText = meaning
         session.readingResult = Answers.acceptsReading(reading, card)
@@ -271,7 +289,7 @@ class MainActivity : Activity() {
     private fun showStatistics(level: Int) {
         page = "stats"
         session.level = level
-        StatisticsScreen(ui, level, catalog, progress, session.marugotoLesson).show()
+        StatisticsScreen(ui, level, catalog, progress, session.marugotoLesson, session.marugotoBook).show()
     }
 
     /** Affiche les commandes de sauvegarde et de réinitialisation par niveau. */

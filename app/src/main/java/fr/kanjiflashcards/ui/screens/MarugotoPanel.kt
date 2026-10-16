@@ -1,80 +1,98 @@
 package fr.kanjiflashcards.ui.screens
 
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.LinearLayout
-import android.widget.SeekBar
+import android.widget.Spinner
 import fr.kanjiflashcards.core.Kanji
+import fr.kanjiflashcards.core.MarugotoBooks
 import fr.kanjiflashcards.core.Progress
 import fr.kanjiflashcards.core.StudySelection
 import fr.kanjiflashcards.ui.AppColors
 import fr.kanjiflashcards.ui.UiComponents
 
-/** Panneau Marugoto de l'accueil : curseur de leçon, progression et trois actions de révision. */
+/** Panneau d'accueil Marugoto : choix du livre puis de la dernière leçon/topic incluse. */
 class MarugotoPanel(
     private val ui: UiComponents,
     private val catalog: List<Kanji>,
     private val progress: Map<String, Progress>,
     private var lesson: Int,
-    private val onLessonChanged: (Int) -> Unit,
+    private var book: Int,
+    private val onSelectionChanged: (Int, Int) -> Unit,
     private val onNormal: () -> Unit,
     private val onEasy: () -> Unit,
     private val onStatistics: () -> Unit,
 ) {
-    /** Construit le curseur 1..18 et actualise le périmètre sans effacer les statistiques masquées. */
+    /** Installe les deux listes déroulantes et les compteurs du périmètre cumulatif. */
     fun create(): LinearLayout {
         val panel = ui.panel()
         panel.addView(ui.text("Marugoto", 23f, bold = true))
-        val lessonLabel = ui.text("", 16f, AppColors.accent)
-        val totals = ui.text("", 14f, AppColors.secondaryText)
-        panel.addView(lessonLabel)
 
-        // Le SeekBar commence à zéro : la valeur visible correspond à progress + 1.
-        val slider = SeekBar(ui.activity).apply {
-            id = View.generateViewId()
-            max = 17
-            progress = lesson - 1
-            contentDescription = "Dernière leçon Marugoto incluse"
-        }
-        lessonLabel.labelFor = slider.id
-        panel.addView(slider)
+        // Premier choix : les six livres, dans leur ordre d'apprentissage.
+        val bookChoice = selector(MarugotoBooks.names, "Livre Marugoto")
+        bookChoice.setSelection(book - 1)
+        panel.addView(ui.text("Livre", 16f).apply { labelFor = bookChoice.id })
+        panel.addView(bookChoice)
+
+        // Second choix : les leçons/topics réels du livre ; l'annexe reste disponible en 18.
+        var lessons = MarugotoBooks.lessons(book)
+        lesson = lessons.lastOrNull { it <= lesson } ?: lessons.first()
+        val lessonChoice = selector(lessons.map { MarugotoBooks.lessonLabel(book, it) }, "Dernière leçon ou topic inclus")
+        lessonChoice.setSelection(lessons.indexOf(lesson))
+        panel.addView(ui.text("Jusqu'à", 16f).apply { labelFor = lessonChoice.id })
+        panel.addView(lessonChoice)
+        val scope = ui.text("", 14f, AppColors.secondaryText)
+        panel.addView(scope)
+        val totals = ui.text("", 14f, AppColors.secondaryText)
         panel.addView(totals)
         val actions = ui.row()
-        val normal = actionButton("Normal", AppColors.accent, onNormal)
         val statistics = actionButton("", AppColors.secondaryAction, onStatistics)
-        val easy = actionButton("Facile", AppColors.accent, onEasy)
-        actions.addView(normal)
+        actions.addView(actionButton("Normal", AppColors.accent, onNormal))
         actions.addView(statistics)
-        actions.addView(easy)
+        actions.addView(actionButton("Facile", AppColors.accent, onEasy))
         panel.addView(actions)
 
-        /** Recalcule les libellés pour les seules leçons incluses, en conservant les autres progrès. */
+        /** Actualise les compteurs et mémorise les deux choix sans modifier les progrès. */
         fun updateLabels() {
-            val cards = StudySelection(StudySelection.MARUGOTO, lesson).cards(catalog)
+            val cards = StudySelection(StudySelection.MARUGOTO, lesson, book).cards(catalog)
             val mastered = cards.count { (progress[it.id]?.stage ?: 0) == 5 }
             val percent = if (cards.isEmpty()) 0 else mastered * 100 / cards.size
-            lessonLabel.text = "Leçons 1 à $lesson"
-            slider.contentDescription = "Marugoto : leçons 1 à $lesson"
+            scope.text = if (book == 1) "Le livre choisi jusqu'à la limite incluse." else "Les ${book - 1} livres précédents sont inclus entièrement."
             totals.text = "${cards.size} cartes · $mastered maîtrisées"
             statistics.text = "$percent %"
-            statistics.contentDescription = "Statistiques Marugoto, leçons 1 à $lesson : $percent pour cent maîtrisés"
+            statistics.contentDescription = "Statistiques Marugoto : ${MarugotoBooks.name(book)}, ${MarugotoBooks.lessonLabel(book, lesson)} : $percent pour cent maîtrisés"
+            onSelectionChanged(book, lesson)
         }
 
-        slider.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            /** Enregistre immédiatement la leçon choisie et adapte les compteurs visibles. */
-            override fun onProgressChanged(seekBar: SeekBar?, value: Int, fromUser: Boolean) {
-                lesson = value + 1
-                onLessonChanged(lesson)
+        ui.onSelectionChanged(bookChoice) {
+            val selectedBook = bookChoice.selectedItemPosition + 1
+            if (selectedBook != book) {
+                book = selectedBook
+                lessons = MarugotoBooks.lessons(book)
+                lesson = lessons.lastOrNull { it <= lesson } ?: lessons.first()
+                lessonChoice.adapter = ArrayAdapter(ui.activity, android.R.layout.simple_spinner_dropdown_item,
+                    lessons.map { MarugotoBooks.lessonLabel(book, it) })
+                lessonChoice.setSelection(lessons.indexOf(lesson))
                 updateLabels()
             }
-
-            /** Le début du geste ne change pas les données de progression. */
-            override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit
-
-            /** La valeur finale a déjà été enregistrée par onProgressChanged. */
-            override fun onStopTrackingTouch(seekBar: SeekBar?) = Unit
-        })
+        }
+        ui.onSelectionChanged(lessonChoice) {
+            lessons.getOrNull(lessonChoice.selectedItemPosition)?.let { selectedLesson ->
+                lesson = selectedLesson
+                updateLabels()
+            }
+        }
         updateLabels()
         return panel
+    }
+
+    /** Crée une liste Android native dont le libellé est accessible au lecteur d'écran. */
+    private fun selector(labels: List<String>, description: String): Spinner {
+        return Spinner(ui.activity).apply {
+            id = View.generateViewId()
+            contentDescription = description
+            adapter = ArrayAdapter(ui.activity, android.R.layout.simple_spinner_dropdown_item, labels)
+        }
     }
 
     /** Crée un bouton occupant un tiers de la ligne d'actions du panneau. */

@@ -2,6 +2,7 @@ package fr.kanjiflashcards
 
 import android.os.Bundle
 import fr.kanjiflashcards.core.Kanji
+import fr.kanjiflashcards.core.MarugotoBooks
 import fr.kanjiflashcards.core.QuestionType
 import fr.kanjiflashcards.core.Quiz
 import fr.kanjiflashcards.core.StudySelection
@@ -22,11 +23,14 @@ class ReviewSession {
     var level = 5
 
     /** Limite cumulative Marugoto ; changer cette limite ne supprime aucune statistique. */
-    var marugotoLesson = 1
+    var marugotoLesson = 3
+
+    /** Livre courant ; les livres précédents sont inclus entièrement dans la séance. */
+    var marugotoBook = 1
 
     /** Périmètre commun du tirage, des distracteurs et du tableau de progression. */
     val selection: StudySelection
-        get() = StudySelection(level, marugotoLesson)
+        get() = StudySelection(level, marugotoLesson, marugotoBook)
 
     /** true pour les quatre choix du QCM, false pour les deux champs du mode normal. */
     var easy = false
@@ -95,6 +99,8 @@ class ReviewSession {
     fun saveInto(state: Bundle) {
         state.putInt("level", level)
         state.putInt("marugotoLesson", marugotoLesson)
+        state.putInt("marugotoBook", marugotoBook)
+        state.putBoolean("marugotoTopics", true)
         state.putBoolean("easy", easy)
         state.putBoolean("practice", practice)
         state.putString("card", card?.id)
@@ -119,7 +125,13 @@ class ReviewSession {
     /** Restaure les saisies, la carte et les options exactes après une rotation de l'écran. */
     fun restoreFrom(state: Bundle, catalog: List<Kanji>) {
         level = state.getInt("level", 5)
-        marugotoLesson = state.getInt("marugotoLesson", marugotoLesson).coerceIn(1, 18)
+        marugotoBook = state.getInt("marugotoBook", marugotoBook).coerceIn(1, 6)
+        val restoredLesson = state.getInt("marugotoLesson", marugotoLesson)
+        marugotoLesson = if (state.getBoolean("marugotoTopics")) {
+            MarugotoBooks.normalizeLesson(marugotoBook, restoredLesson)
+        } else {
+            MarugotoBooks.migrateLesson(marugotoBook, restoredLesson)
+        }
         easy = state.getBoolean("easy")
         practice = state.getBoolean("practice")
         card = catalog.find { it.id == state.getString("card") }

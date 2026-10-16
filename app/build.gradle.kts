@@ -26,8 +26,8 @@ android {
         applicationId = "fr.kanjiflashcards"
         minSdk = 26
         targetSdk = 35
-        versionCode = 3
-        versionName = "0.2.0"
+        versionCode = 5
+        versionName = "0.2.2"
     }
 
     // Aucune clé ni aucun mot de passe n'est intégré au code ou au dépôt publié.

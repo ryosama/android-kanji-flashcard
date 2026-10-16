@@ -11,6 +11,27 @@ import xml.etree.ElementTree as ET
 # Positions des quatre colonnes dans chacun des deux tableaux du document A4.
 TABLES = ((34, 62, 159, 264, 285), (300, 332, 428, 534, 555))
 NS = {'pdf': 'http://www.w3.org/1999/xhtml'}
+# Débuts des six livres, relevés dans les en-têtes du PDF fourni.
+BOOK_STARTS = (1, 66, 222, 392, 495, 579)
+# Dans les deux livres intermédiaires, « 4 » est une partie, pas une leçon.
+# Chaque numéro ci-dessous est la première carte du topic correspondant, de 1 à 9.
+TOPIC_STARTS = {
+    5: (495, 505, 514, 524, 533, 541, 550, 559, 569),
+    6: (579, 589, 599, 609, 619, 629, 639, 649, 659),
+}
+
+
+def book_and_lesson(number, source_lesson):
+    """Associe la ligne au livre ; utilise les topics lorsque la colonne désigne Part 4."""
+    book = sum(number >= start for start in BOOK_STARTS)
+    if book <= 3:
+        # Un topic regroupe deux leçons : 5/6 -> topic 3, 17/18 -> topic 9.
+        lesson = (source_lesson + 1) // 2
+    elif book == 4:
+        lesson = min(source_lesson, 9)
+    else:
+        lesson = sum(number >= start for start in TOPIC_STARTS[book])
+    return book, lesson
 
 
 def extract(pdf):
@@ -51,7 +72,7 @@ def extract(pdf):
 
 
 def main():
-    """Produit le CSV à cinq colonnes en préservant les traductions déjà renseignées lors d'une réextraction."""
+    """Produit le CSV à six colonnes en préservant les traductions déjà renseignées lors d'une réextraction."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('pdf', type=Path)
     parser.add_argument('csv', type=Path)
@@ -64,8 +85,10 @@ def main():
     args.csv.parent.mkdir(parents=True, exist_ok=True)
     with args.csv.open('w', encoding='utf-8', newline='') as target:
         writer = csv.writer(target, delimiter=';', lineterminator='\n')
-        writer.writerows([*row, meanings.get(row[0], '')] for row in rows)
-    print(f'{len(rows)} lignes extraites ; les cellules sans leçon sont affectées à 18.')
+        for number, written, reading, source_lesson in rows:
+            book, lesson = book_and_lesson(number, source_lesson)
+            writer.writerow([number, written, reading, lesson, meanings.get(number, ''), book])
+    print(f'{len(rows)} lignes extraites ; topics 3..9 pour le livre 1, 1..9 pour les autres.')
 
 
 if __name__ == '__main__':
