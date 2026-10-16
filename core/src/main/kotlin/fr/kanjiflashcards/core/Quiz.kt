@@ -22,4 +22,7 @@ data class Quiz(
     val options: List<String>,
     val correctIndex: Int,
     val optionTypes: List<QuestionType> = List(options.size) { type },
+    /** En vocabulaire, consigne et carte dépendent du sens japonais/français choisi. */
+    val prompt: String? = null,
+    val instruction: String? = null,
 )

@@ -6,6 +6,7 @@ import fr.kanjiflashcards.core.Kanji
 import fr.kanjiflashcards.core.Progress
 import fr.kanjiflashcards.core.QuestionType
 import fr.kanjiflashcards.core.StudySelection
+import fr.kanjiflashcards.core.VocabularyDirection
 import fr.kanjiflashcards.ui.AppColors
 import fr.kanjiflashcards.ui.UiComponents
 
@@ -21,6 +22,11 @@ class HomeScreen(
     private val marugotoLesson: Int,
     private val marugotoBook: Int,
     private val onSelectionChanged: (Int, Int) -> Unit,
+    private val vocabularyBook: Int,
+    private val vocabularyLesson: Int,
+    private val vocabularyDirection: VocabularyDirection,
+    private val onVocabularyChanged: (Int, Int) -> Unit,
+    private val onVocabularyReview: (VocabularyDirection) -> Unit,
     private val onNormal: (Int) -> Unit,
     private val onEasy: (Int, QuestionType) -> Unit,
     private val onStatistics: (Int) -> Unit,
@@ -31,7 +37,7 @@ class HomeScreen(
         val content = ui.screen("Kanji\nFlashcards", showHomeButton = false)
         content.addView(ui.text("Un caractère à la fois.", 17f, AppColors.secondaryText))
 
-        val dueCount = catalog.filter { it.level != StudySelection.MARUGOTO }.count { (progress[it.id]?.due ?: 0) <= System.currentTimeMillis() }
+        val dueCount = catalog.filter { it.level > StudySelection.MARUGOTO }.count { (progress[it.id]?.due ?: 0) <= System.currentTimeMillis() }
         content.addView(ui.text("$dueCount cartes disponibles · 5 niveaux JLPT", 14f, AppColors.accent))
 
         // Les débutants trouvent le niveau N5 en premier, le niveau N1 étant le plus avancé.
@@ -50,6 +56,19 @@ class HomeScreen(
             onNormal = { onNormal(StudySelection.MARUGOTO) },
             onEasy = { chooseQuiz(StudySelection.MARUGOTO) },
             onStatistics = { onStatistics(StudySelection.MARUGOTO) },
+        ).create())
+
+        content.addView(MarugotoPanel(
+            ui = ui,
+            catalog = catalog,
+            progress = progress,
+            lesson = vocabularyLesson,
+            book = vocabularyBook,
+            level = StudySelection.VOCABULARY,
+            onSelectionChanged = onVocabularyChanged,
+            onNormal = {},
+            onEasy = { chooseVocabularyQuiz() },
+            onStatistics = { onStatistics(StudySelection.VOCABULARY) },
         ).create())
 
         content.addView(ui.button("Sauvegarde et réglages", AppColors.secondaryAction, onSettings))
@@ -89,6 +108,19 @@ class HomeScreen(
         layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).apply {
             setMargins(ui.dp(3), ui.dp(8), ui.dp(3), 0)
         }
+    }
+
+    /** Choisit le sens de traduction, sans proposer de recopier les kana déjà visibles. */
+    private fun chooseVocabularyQuiz() {
+        val directions = VocabularyDirection.entries
+        AlertDialog.Builder(ui.activity)
+            .setTitle("Quel exercice de vocabulaire ?")
+            .setSingleChoiceItems(directions.map { it.title }.toTypedArray(), directions.indexOf(vocabularyDirection)) { dialog, index ->
+                dialog.dismiss()
+                onVocabularyReview(directions[index])
+            }
+            .setNegativeButton("Annuler", null)
+            .show()
     }
 
     /** Ouvre le choix Signification/Rōmaji/Kana/Mélange avant de démarrer le mode facile. */

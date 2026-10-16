@@ -17,7 +17,7 @@ class EasyReviewScreen(
     fun show() {
         layout.show { content ->
             val quiz = requireNotNull(session.quiz)
-            val instruction = if (quiz.type == QuestionType.MIXED) {
+            val instruction = quiz.instruction ?: if (quiz.type == QuestionType.MIXED) {
                 "Lecture ou signification"
             } else {
                 quiz.type.title

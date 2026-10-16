@@ -49,11 +49,18 @@ class ReviewLayout(
             card.character.length <= 8 -> 44f
             else -> 32f
         }
-        val kanjiView = ui.text(card.character, wordSize, bold = true).apply {
+        // En vocabulaire, le sens du QCM détermine si la carte montre le français ou le japonais.
+        val prompt = session.quiz?.prompt ?: card.character
+        val displaySize = if (card.level == StudySelection.VOCABULARY) 28f else wordSize
+        val kanjiView = ui.text(prompt, displaySize, bold = true).apply {
             gravity = Gravity.CENTER
             background = ui.roundedBackground(AppColors.surface)
             setPadding(0, ui.dp(12), 0, ui.dp(12))
-            contentDescription = if (card.level == StudySelection.MARUGOTO) "Mot ${card.character}" else "Kanji ${card.character}"
+            contentDescription = when {
+                card.level == StudySelection.VOCABULARY -> prompt
+                card.level == StudySelection.MARUGOTO -> "Mot ${card.character}"
+                else -> "Kanji ${card.character}"
+            }
         }
         content.addView(kanjiView)
         answerContent(content)

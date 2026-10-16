@@ -34,6 +34,16 @@
 - Migration des préférences testée ; identifiants et format de sauvegarde conservés. Réextraction PDF identique au CSV ; mots, lectures et traductions des 668 cartes inchangés.
 - Les scénarios d'interface ci-dessous restent à vérifier sur téléphone. Version conservée en local, sans push ni publication GitHub.
 
+## Version 0.3.0 — Marugoto vocabulaire
+
+- 331 019 vérifications réussies : JLPT, kanji Marugoto, 1 746 cartes de vocabulaire, deux sens de QCM et deux périmètres par carte.
+- 2 656 entrées sources extraites des trois PDF, pages 6 à 81 incluses pour le lexique illustré. Les onze pages images et les tableaux de calendrier/compteurs ont une transcription contrôlée avec provenance.
+- Doublons fusionnés à leur première apparition ; traductions complémentaires conservées et sens disjoints séparés. La réextraction produit le même CSV et les 1 746 identifiants sont uniques.
+- Les tests contrôlent toutes les entrées partageant le même bouton : une proposition est écartée si un de ses propriétaires peut répondre à la question. Variantes kana et différences d'articles français contrôlées.
+- Sauvegardes anciennes et complètes, séparation des progressions et cumul livre/topic vérifiés. Les identifiants des 2 495 kanji JLPT et des 668 cartes Marugoto restent inchangés.
+- APK debug 0.3.0 (code 6) compilé, Android Lint réussi, CSV embarqués comparés aux sources et signature debug conservée. Aucun PDF embarqué.
+- Les essais d'interface sur téléphone restent à effectuer : voir [VOCABULAIRE.md](VOCABULAIRE.md). Aucun push ni publication GitHub.
+
 ## Essais de non-régression sur téléphone
 
 Le fonctionnement de l'application sur téléphone a été confirmé par l'utilisateur avant la préparation de la publication. Aucun appareil ni émulateur n'a été utilisé pour les vérifications automatisées du développement. Les scénarios ci-dessous servent aux essais de non-régression lors des prochaines modifications.

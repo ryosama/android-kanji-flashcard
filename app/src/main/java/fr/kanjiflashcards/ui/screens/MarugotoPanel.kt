@@ -22,22 +22,23 @@ class MarugotoPanel(
     private val onNormal: () -> Unit,
     private val onEasy: () -> Unit,
     private val onStatistics: () -> Unit,
+    private val level: Int = StudySelection.MARUGOTO,
 ) {
     /** Installe les deux listes déroulantes et les compteurs du périmètre cumulatif. */
     fun create(): LinearLayout {
         val panel = ui.panel()
-        panel.addView(ui.text("Marugoto", 23f, bold = true))
+        panel.addView(ui.text(StudySelection(level).title, 23f, bold = true))
 
         // Premier choix : les six livres, dans leur ordre d'apprentissage.
-        val bookChoice = selector(MarugotoBooks.names, "Livre Marugoto")
+        val bookChoice = selector(if (level == StudySelection.VOCABULARY) MarugotoBooks.names.take(2) else MarugotoBooks.names, "Livre Marugoto")
         bookChoice.setSelection(book - 1)
         panel.addView(ui.text("Livre", 16f).apply { labelFor = bookChoice.id })
         panel.addView(bookChoice)
 
-        // Second choix : les leçons/topics réels du livre ; l'annexe reste disponible en 18.
-        var lessons = MarugotoBooks.lessons(book)
+        // Second choix : les topics disponibles pour le livre et le catalogue choisis.
+        var lessons = availableLessons()
         lesson = lessons.lastOrNull { it <= lesson } ?: lessons.first()
-        val lessonChoice = selector(lessons.map { MarugotoBooks.lessonLabel(book, it) }, "Dernière leçon ou topic inclus")
+        val lessonChoice = selector(lessons.map { "Topic $it" }, "Dernière leçon ou topic inclus")
         lessonChoice.setSelection(lessons.indexOf(lesson))
         panel.addView(ui.text("Jusqu'à", 16f).apply { labelFor = lessonChoice.id })
         panel.addView(lessonChoice)
@@ -47,20 +48,22 @@ class MarugotoPanel(
         panel.addView(totals)
         val actions = ui.row()
         val statistics = actionButton("", AppColors.secondaryAction, onStatistics)
-        actions.addView(actionButton("Normal", AppColors.accent, onNormal))
+        if (level != StudySelection.VOCABULARY) {
+            actions.addView(actionButton("Normal", AppColors.accent, onNormal))
+        }
         actions.addView(statistics)
         actions.addView(actionButton("Facile", AppColors.accent, onEasy))
         panel.addView(actions)
 
         /** Actualise les compteurs et mémorise les deux choix sans modifier les progrès. */
         fun updateLabels() {
-            val cards = StudySelection(StudySelection.MARUGOTO, lesson, book).cards(catalog)
+            val cards = StudySelection(level, lesson, book).cards(catalog)
             val mastered = cards.count { (progress[it.id]?.stage ?: 0) == 5 }
             val percent = if (cards.isEmpty()) 0 else mastered * 100 / cards.size
             scope.text = if (book == 1) "Le livre choisi jusqu'à la limite incluse." else "Les ${book - 1} livres précédents sont inclus entièrement."
             totals.text = "${cards.size} cartes · $mastered maîtrisées"
             statistics.text = "$percent %"
-            statistics.contentDescription = "Statistiques Marugoto : ${MarugotoBooks.name(book)}, ${MarugotoBooks.lessonLabel(book, lesson)} : $percent pour cent maîtrisés"
+            statistics.contentDescription = "Statistiques Marugoto : ${MarugotoBooks.name(book)}, ${"Topic $lesson"} : $percent pour cent maîtrisés"
             onSelectionChanged(book, lesson)
         }
 
@@ -68,10 +71,10 @@ class MarugotoPanel(
             val selectedBook = bookChoice.selectedItemPosition + 1
             if (selectedBook != book) {
                 book = selectedBook
-                lessons = MarugotoBooks.lessons(book)
+                lessons = availableLessons()
                 lesson = lessons.lastOrNull { it <= lesson } ?: lessons.first()
                 lessonChoice.adapter = ArrayAdapter(ui.activity, android.R.layout.simple_spinner_dropdown_item,
-                    lessons.map { MarugotoBooks.lessonLabel(book, it) })
+                    lessons.map { "Topic $it" })
                 lessonChoice.setSelection(lessons.indexOf(lesson))
                 updateLabels()
             }
@@ -84,6 +87,11 @@ class MarugotoPanel(
         }
         updateLabels()
         return panel
+    }
+
+    /** Le vocabulaire commence au topic 1 ; les kanji du premier livre commencent au topic 3. */
+    private fun availableLessons(): List<Int> {
+        return if (level == StudySelection.VOCABULARY) (1..9).toList() else MarugotoBooks.lessons(book)
     }
 
     /** Crée une liste Android native dont le libellé est accessible au lecteur d'écran. */

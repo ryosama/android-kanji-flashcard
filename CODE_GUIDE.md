@@ -51,6 +51,7 @@ Les fichiers sont dans `core/src/main/kotlin/fr/kanjiflashcards/core/`. Ce modul
 | `Kanji.kt` | Carte du catalogue, identifiant JLPT ou numéro Marugoto et variantes de lecture |
 | `StudySelection.kt` | Filtre commun du tirage, des distracteurs et des statistiques |
 | `MarugotoBooks.kt` | Ordre et noms des six livres, topics disponibles et migration des anciennes limites |
+| `VocabularyQuizzes.kt` | Deux sens de traduction du vocabulaire et élimination des propositions ambiguës |
 | `NormalAnswers.kt` | Réponses JLPT supplémentaires en mode normal Marugoto et correspondance exacte |
 | `MarugotoReadings.kt` | Lectures du PDF, annotations, variantes verbales et rōmaji |
 | `KanaRomaji.kt` | Transcription kana → rōmaji hors ligne |
@@ -68,3 +69,5 @@ Exemples : les délais sont dans `Leitner.days`, les seuils de fautes dans `Answ
 Le CSV Marugoto et les lectures additionnelles sont décrits dans [MARUGOTO.md](MARUGOTO.md). La sélection passe par `ReviewSession.selection`, et les préférences `marugotoBook` et `marugotoLesson` sont enregistrées par l’activité. La remise à zéro utilise les identifiants du catalogue concerné pour préserver les autres sources.
 
 Les vérifications existantes sont dans `core/src/test/kotlin/fr/kanjiflashcards/core/EngineChecks.kt`. `MarugotoChecks.kt` couvre aussi les 668 lignes, toutes les limites par livre et leçon/topic, les formes verbales et la compatibilité des sauvegardes. Les contrôles JLPT restent organisés par catalogue, lectures, sens, CSV, Leitner, sauvegardes et QCM. La commande `./scripts/build.sh` exécute ces vérifications, compile l'APK et lance l'analyse Android Lint.
+
+Le vocabulaire est décrit dans [VOCABULAIRE.md](VOCABULAIRE.md). `Catalog.parseVocabulary` lit le CSV fusionné ; `StudySelection.VOCABULARY` définit son périmètre. `ReviewSession` conserve ses propres livre/topic et sens de traduction, ainsi que le texte exact du QCM lors des rotations. Le panneau `MarugotoPanel` est commun aux deux sections, avec deux livres et deux actions seulement pour le vocabulaire. `VocabularyChecks` contrôle chaque carte dans les deux sens et dans deux périmètres.

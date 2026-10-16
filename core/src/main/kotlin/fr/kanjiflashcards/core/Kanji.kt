@@ -21,14 +21,25 @@ data class Kanji(
     val lesson: Int? = null,
     /** Livre Marugoto, de 1 (にゅうもん) à 6 (ちゅうきゅう 2), sans changer l'identifiant. */
     val book: Int? = null,
+    /** Empreinte stable du mot et de ses sens ; absente pour les autres catalogues. */
+    val vocabularyId: String? = null,
 ) {
     /** Identifiant durable : niveau/caractère pour JLPT, numéro du PDF pour Marugoto. */
     val id: String
-        get() = if (level == StudySelection.MARUGOTO) "marugoto:${requireNotNull(entryNumber)}" else "$level:$character"
+        get() = when (level) {
+            StudySelection.VOCABULARY -> "vocabulary:${requireNotNull(vocabularyId)}"
+            StudySelection.MARUGOTO -> "marugoto:${requireNotNull(entryNumber)}"
+            else -> "$level:$character"
+        }
+
+    /** Mot et kana réunis pour les cartes et propositions de vocabulaire. */
+    val japaneseLabel: String
+        get() = listOf(character, kun).filter(String::isNotBlank)
+            .distinctBy { value -> value.filterNot(Char::isWhitespace) }.joinToString("\n")
 
     /** Toutes les formes de lecture acceptées, sans doublons, issues des deux colonnes. */
     val readings: Set<String>
-        get() = if (level == StudySelection.MARUGOTO) {
+        get() = if (level <= StudySelection.MARUGOTO) {
             // Les colonnes Marugoto sont déjà séparées ; un exemple « 7さい » reste entier.
             displayReadings.toSet()
         } else {
@@ -37,7 +48,7 @@ data class Kanji(
 
     /** Lectures prêtes pour l'affichage, sans découper les préfixes numériques des exemples. */
     private val displayReadings: List<String>
-        get() = if (level == StudySelection.MARUGOTO) {
+        get() = if (level <= StudySelection.MARUGOTO) {
             (on.split(',') + kun.split(',')).map(String::trim).filter(String::isNotBlank).distinct()
         } else {
             (Answers.displayReadings(on) + Answers.displayReadings(kun)).distinct()

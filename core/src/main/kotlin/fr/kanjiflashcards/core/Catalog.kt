@@ -66,6 +66,32 @@ object Catalog {
         return cards
     }
 
+    /** Lit le vocabulaire fusionné, ses identifiants stables et son rattachement livre/topic. */
+    fun parseVocabulary(text: String): List<Kanji> {
+        val cards = records(text).mapIndexed { index, columns ->
+            require(columns.size == 8) { "Entrée de vocabulaire invalide" }
+            val book = columns[1].toInt()
+            val topic = columns[2].toInt()
+            require(book in 1..2 && topic in 1..9 && listOf(0, 3, 4, 6, 7).all { columns[it].isNotBlank() }) {
+                "Vocabulaire incomplet ou périmètre invalide"
+            }
+            require(columns[0].matches(Regex("[0-9a-f]{20}"))) { "Identifiant de vocabulaire invalide" }
+            Kanji(
+                level = StudySelection.VOCABULARY,
+                character = columns[3],
+                kun = columns[4],
+                on = columns[5].ifBlank { KanaRomaji.convert(columns[4]) },
+                meanings = columns[6].split('|').map(String::trim).filter(String::isNotEmpty),
+                entryNumber = index + 1,
+                lesson = topic,
+                book = book,
+                vocabularyId = columns[0],
+            )
+        }
+        require(cards.map { it.id }.distinct().size == cards.size) { "Vocabulaire dupliqué" }
+        return cards
+    }
+
     /** Découpe un CSV à points-virgules en cellules, en respectant les guillemets et retours de ligne. */
     private fun records(text: String): List<List<String>> {
         val records = mutableListOf<List<String>>()

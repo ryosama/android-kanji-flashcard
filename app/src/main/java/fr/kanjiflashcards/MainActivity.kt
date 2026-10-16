@@ -8,6 +8,8 @@ import fr.kanjiflashcards.core.Catalog
 import fr.kanjiflashcards.core.Kanji
 import fr.kanjiflashcards.core.MarugotoBooks
 import fr.kanjiflashcards.core.NormalAnswers
+import fr.kanjiflashcards.core.VocabularyQuizzes
+import fr.kanjiflashcards.core.VocabularyDirection
 import fr.kanjiflashcards.core.Leitner
 import fr.kanjiflashcards.core.Progress
 import fr.kanjiflashcards.core.QuestionType
@@ -74,6 +76,12 @@ class MainActivity : Activity() {
         // Migration unique de l'ancienne limite 1..18 vers les topics, sans toucher aux cartes.
         val preferences = getPreferences(MODE_PRIVATE)
         session.marugotoBook = preferences.getInt("marugotoBook", 1).coerceIn(1, 6)
+        session.vocabularyBook = preferences.getInt("vocabularyBook", 1).coerceIn(1, 2)
+        session.vocabularyLesson = preferences.getInt("vocabularyLesson", 1).coerceIn(1, 9)
+        session.vocabularyDirection = VocabularyDirection.valueOf(
+            preferences.getString("vocabularyDirection", VocabularyDirection.JAPANESE_TO_FRENCH.name)
+                ?: VocabularyDirection.JAPANESE_TO_FRENCH.name,
+        )
         val storedLesson = preferences.getInt("marugotoLesson", 5)
         session.marugotoLesson = if (preferences.getBoolean("marugotoTopics", false)) {
             MarugotoBooks.normalizeLesson(session.marugotoBook, storedLesson)
@@ -97,7 +105,7 @@ class MainActivity : Activity() {
         }
     }
 
-    /** Lit les cinq listes JLPT et le CSV Marugoto, avec ses variantes de lecture. */
+    /** Lit les cinq listes JLPT, les kanji Marugoto avec leurs variantes, puis le vocabulaire. */
     private fun loadCatalog(): List<Kanji> {
         return (1..5).flatMap { level ->
             assets.open("JLPT $level francais.csv").bufferedReader().use { reader ->
@@ -107,6 +115,8 @@ class MainActivity : Activity() {
             assets.open("Marugoto variantes.tsv").bufferedReader().use { variants ->
                 Catalog.parseMarugoto(source.readText(), variants.readText())
             }
+        } + assets.open("Marugoto vocabulaire.csv").bufferedReader().use { source ->
+            Catalog.parseVocabulary(source.readText())
         }
     }
 
@@ -140,6 +150,20 @@ class MainActivity : Activity() {
                     .putInt("marugotoBook", book)
                     .putInt("marugotoLesson", lesson)
                     .apply()
+            },
+            vocabularyBook = session.vocabularyBook,
+            vocabularyLesson = session.vocabularyLesson,
+            vocabularyDirection = session.vocabularyDirection,
+            onVocabularyChanged = { book, lesson ->
+                session.vocabularyBook = book
+                session.vocabularyLesson = lesson
+                getPreferences(MODE_PRIVATE).edit().putInt("vocabularyBook", book)
+                    .putInt("vocabularyLesson", lesson).apply()
+            },
+            onVocabularyReview = { direction ->
+                session.vocabularyDirection = direction
+                getPreferences(MODE_PRIVATE).edit().putString("vocabularyDirection", direction.name).apply()
+                beginReview(StudySelection.VOCABULARY, easy = true)
             },
             onNormal = { level -> beginReview(level, easy = false) },
             onEasy = { level, type -> beginEasyReview(level, type) },
@@ -200,7 +224,11 @@ class MainActivity : Activity() {
         }
 
         session.quiz = if (session.easy) {
-            Quizzes.make(selected, levelCards, session.questionType)
+            if (session.level == StudySelection.VOCABULARY) {
+                VocabularyQuizzes.make(selected, levelCards, session.vocabularyDirection)
+            } else {
+                Quizzes.make(selected, levelCards, session.questionType)
+            }
         } else {
             null
         }
@@ -289,7 +317,7 @@ class MainActivity : Activity() {
     private fun showStatistics(level: Int) {
         page = "stats"
         session.level = level
-        StatisticsScreen(ui, level, catalog, progress, session.marugotoLesson, session.marugotoBook).show()
+        StatisticsScreen(ui, level, catalog, progress, session.selection.lessonLimit, session.selection.bookLimit).show()
     }
 
     /** Affiche les commandes de sauvegarde et de réinitialisation par niveau. */

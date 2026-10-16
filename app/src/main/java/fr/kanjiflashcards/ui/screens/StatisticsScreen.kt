@@ -33,7 +33,7 @@ class StatisticsScreen(
     private val pageSize = 50
 
     /** Largeurs en dp, dans l'ordre des huit colonnes de showTableHeader. */
-    private val columnWidths = if (level == StudySelection.MARUGOTO) {
+    private val columnWidths = if (level <= StudySelection.MARUGOTO) {
         listOf(220, 320, 220, 300, 110, 95, 95, 95)
     } else {
         listOf(72, 200, 240, 300, 110, 95, 95, 95)
@@ -151,9 +151,9 @@ class StatisticsScreen(
     private fun showTableHeader() {
         addTableRow(
             values = listOf(
-                if (level == StudySelection.MARUGOTO) "Mot" else "Kanji",
-                if (level == StudySelection.MARUGOTO) "Lectures kana / rōmaji" else "Lecture on",
-                if (level == StudySelection.MARUGOTO) "Livre · topic" else "Lecture kun",
+                if (level <= StudySelection.MARUGOTO) "Mot" else "Kanji",
+                if (level <= StudySelection.MARUGOTO) "Lectures kana / rōmaji" else "Lecture on",
+                if (level <= StudySelection.MARUGOTO) "Livre · topic" else "Lecture kun",
                 "Significations", "Maîtrise", "Proposé", "Correct", "Incorrect",
             ),
             heading = true,
@@ -167,8 +167,8 @@ class StatisticsScreen(
             addTableRow(
                 values = listOf(
                     card.character,
-                    if (level == StudySelection.MARUGOTO) "${card.kun} · ${card.on}" else card.on.ifBlank { "—" },
-                    if (level == StudySelection.MARUGOTO) "${fr.kanjiflashcards.core.MarugotoBooks.name(requireNotNull(card.book))} · ${card.lesson}" else card.kun.ifBlank { "—" },
+                    if (level <= StudySelection.MARUGOTO) "${card.kun} · ${card.on}" else card.on.ifBlank { "—" },
+                    if (level <= StudySelection.MARUGOTO) "${fr.kanjiflashcards.core.MarugotoBooks.name(requireNotNull(card.book))} · ${card.lesson}" else card.kun.ifBlank { "—" },
                     card.meanings.joinToString(", "),
                     "${stats.mastery} %",
                     "${stats.shown}",

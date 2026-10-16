@@ -36,8 +36,12 @@ class SettingsScreen(
             })
         }
 
-        content.addView(ui.button("Réinitialiser Marugoto", AppColors.error) {
+        content.addView(ui.button("Réinitialiser Marugoto kanji", AppColors.error) {
             confirmReset(StudySelection.MARUGOTO)
+        })
+
+        content.addView(ui.button("Réinitialiser Marugoto vocabulaire", AppColors.error) {
+            confirmReset(StudySelection.VOCABULARY)
         })
 
         val version = ui.activity.packageManager.getPackageInfo(ui.activity.packageName, 0).versionName

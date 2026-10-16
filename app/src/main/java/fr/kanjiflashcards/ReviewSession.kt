@@ -6,6 +6,7 @@ import fr.kanjiflashcards.core.MarugotoBooks
 import fr.kanjiflashcards.core.QuestionType
 import fr.kanjiflashcards.core.Quiz
 import fr.kanjiflashcards.core.StudySelection
+import fr.kanjiflashcards.core.VocabularyDirection
 
 /** Identifie le champ de saisie dans le mode normal, sans utiliser un booléen ambigu. */
 enum class AnswerField {
@@ -30,7 +31,18 @@ class ReviewSession {
 
     /** Périmètre commun du tirage, des distracteurs et du tableau de progression. */
     val selection: StudySelection
-        get() = StudySelection(level, marugotoLesson, marugotoBook)
+        get() = if (level == StudySelection.VOCABULARY) {
+            StudySelection(level, vocabularyLesson, vocabularyBook)
+        } else {
+            StudySelection(level, marugotoLesson, marugotoBook)
+        }
+
+    /** Sélection indépendante du vocabulaire, comprenant toujours les livres précédents. */
+    var vocabularyBook = 1
+    var vocabularyLesson = 1
+
+    /** Sens de traduction préféré pour les QCM de vocabulaire. */
+    var vocabularyDirection = VocabularyDirection.JAPANESE_TO_FRENCH
 
     /** true pour les quatre choix du QCM, false pour les deux champs du mode normal. */
     var easy = false
@@ -68,7 +80,7 @@ class ReviewSession {
     /** Prépare une nouvelle séance et remet son bilan à zéro. */
     fun begin(level: Int, easy: Boolean) {
         this.level = level
-        this.easy = easy
+        this.easy = easy || level == StudySelection.VOCABULARY
         practice = false
         correctCount = 0
         answerCount = 0
@@ -101,6 +113,9 @@ class ReviewSession {
         state.putInt("marugotoLesson", marugotoLesson)
         state.putInt("marugotoBook", marugotoBook)
         state.putBoolean("marugotoTopics", true)
+        state.putInt("vocabularyBook", vocabularyBook)
+        state.putInt("vocabularyLesson", vocabularyLesson)
+        state.putString("vocabularyDirection", vocabularyDirection.name)
         state.putBoolean("easy", easy)
         state.putBoolean("practice", practice)
         state.putString("card", card?.id)
@@ -117,6 +132,8 @@ class ReviewSession {
         quiz?.let { currentQuiz ->
             state.putStringArrayList("options", ArrayList(currentQuiz.options))
             state.putString("quizType", currentQuiz.type.name)
+            state.putString("quizPrompt", currentQuiz.prompt)
+            state.putString("quizInstruction", currentQuiz.instruction)
             state.putInt("quizCorrect", currentQuiz.correctIndex)
             state.putStringArrayList("optionTypes", ArrayList(currentQuiz.optionTypes.map { it.name }))
         }
@@ -132,6 +149,9 @@ class ReviewSession {
         } else {
             MarugotoBooks.migrateLesson(marugotoBook, restoredLesson)
         }
+        vocabularyBook = state.getInt("vocabularyBook", vocabularyBook).coerceIn(1, 2)
+        vocabularyLesson = state.getInt("vocabularyLesson", vocabularyLesson).coerceIn(1, 9)
+        vocabularyDirection = VocabularyDirection.valueOf(state.getString("vocabularyDirection") ?: vocabularyDirection.name)
         easy = state.getBoolean("easy")
         practice = state.getBoolean("practice")
         card = catalog.find { it.id == state.getString("card") }
@@ -155,6 +175,8 @@ class ReviewSession {
                 options = options,
                 correctIndex = state.getInt("quizCorrect"),
                 optionTypes = optionTypes,
+                prompt = state.getString("quizPrompt"),
+                instruction = state.getString("quizInstruction"),
             )
         }
     }
